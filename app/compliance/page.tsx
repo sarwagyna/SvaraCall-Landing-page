@@ -1,0 +1,55 @@
+import type { Metadata } from "next";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import Compliance from "@/components/Compliance";
+import Reveal from "@/components/Reveal";
+import CtaBand from "@/components/CtaBand";
+import { faqs } from "@/lib/content";
+import { breadcrumbList } from "@/lib/schema";
+
+export const metadata: Metadata = {
+  title: "Compliance — TRAI, DLT & DPDP-Ready AI Calling",
+  description:
+    "SvaraCall AI is compliant by design: TRAI and DLT-registered headers, consent-first dialing, instant opt-outs, recording disclosure, and DPDP-aligned data in India.",
+  alternates: { canonical: "/compliance" },
+};
+
+const trail = [{ name: "Compliance", path: "/compliance" }];
+
+// The compliance-focused FAQ subset (visible only; full FAQPage JSON-LD lives on /faq).
+const complianceFaqs = faqs.filter(
+  (faq) =>
+    faq.q.includes("TRAI-compliant") || faq.q.includes("DPDP Act"),
+);
+
+export default function CompliancePage() {
+  return (
+    <>
+      <Breadcrumbs trail={trail} tone="canvas" />
+      <main>
+        <Compliance headingLevel={1} />
+
+        <section className="bg-canvas-soft">
+          <div className="mx-auto max-w-4xl px-5 py-16 md:py-24">
+            <h2 className="display display-h2">Compliance questions</h2>
+            <dl className="mt-10 space-y-8">
+              {complianceFaqs.map((faq, i) => (
+                <Reveal key={faq.q} delayMs={(i % 2) * 70}>
+                  <dt className="text-lg font-bold text-ink">{faq.q}</dt>
+                  <dd className="mt-2 text-body">{faq.a}</dd>
+                </Reveal>
+              ))}
+            </dl>
+          </div>
+        </section>
+
+        <CtaBand />
+      </main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbList(trail)),
+        }}
+      />
+    </>
+  );
+}

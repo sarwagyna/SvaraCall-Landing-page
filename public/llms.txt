@@ -1,0 +1,65 @@
+# SvaraCall AI
+
+SvaraCall AI is a product of Sarwagyna Private Limited, Ongole, Andhra Pradesh, India. It is an AI outbound voice-calling agent that makes a business's routine calls automatically — lead follow-ups, appointment and booking reminders, payment reminders, order confirmations, and feedback calls — in Telugu, Hindi, and English, and logs every outcome, recording, and transcript to one dashboard. It delivers premium, human-grade calling at a fraction of the cost of a manual calling team, and is priced on outcomes rather than headcount.
+
+## What it does
+
+SvaraCall AI places outbound calls for businesses and holds a natural two-way conversation. It confirms, reschedules, and answers basic questions, and hands complex calls to a human on your team. It dials from your own registered number, on your schedule, with no new hardware. Every call is recorded, transcribed, and logged with an outcome. Because one agent places many calls at once, every day, in the customer's language, it replaces the cost and limits of a manual calling team while keeping quality high on every call.
+
+## Value and pricing
+
+SvaraCall AI delivers premium, human-grade calling at a fraction of the cost of running a manual calling team, a call center, or other AI voice vendors. It is positioned as high quality at low cost: many calls placed at once, on your schedule, every day, in Telugu, Hindi, and English, without the salaries, training, and attrition of a human team. Pricing is outcome-driven — you pay for calls that convert and results delivered, not per seat or per hour — so more of your budget reaches customers instead of overhead. Businesses get enterprise-grade calling quality without an enterprise-grade bill. The best way to see the value is a pilot on your own contacts; contact SvaraCall for a quote matched to your call volume.
+
+## Languages
+
+SvaraCall AI speaks Telugu, Hindi, and English at launch and matches the customer's language during the call. More Indian languages are planned after launch.
+
+## Industries served
+
+SvaraCall AI has dedicated solutions for seven industries in India, each with its own voice workflows:
+
+- Healthcare (clinics and hospitals) — appointment reminders, no-show recovery, post-visit follow-ups, report-ready alerts, and feedback calls.
+- Fintech (banks and NBFCs) — fraud-alert callbacks, balance inquiries, loan support, card activation, EMI and payment reminders, and priority routing.
+- Consultation (advisory and services) — lead qualification, consultation booking, session reminders, reschedules, and follow-ups.
+- E-commerce (D2C and retail) — order status (WISMO), returns and exchanges, stock queries, subscriptions, feedback, and cart recovery.
+- Real estate (developers and brokerages) — instant lead qualification, site-visit and showing scheduling, property inquiries, tenant screening, and open-house follow-ups.
+- HR tech (recruiters and staffing) — candidate screening, interview scheduling, candidate FAQ, onboarding, reference checks, and policy helpdesk.
+- Education (schools, colleges, coaching) — course inquiries, fee transparency, demo booking, exam updates, student support, and alumni engagement.
+
+Across every industry, SvaraCall AI delivers the same premium calling quality at a fraction of a manual calling team's cost, on outcome-driven pricing.
+
+## Compliance
+
+SvaraCall AI runs on TRAI and DLT-registered templates and headers. It dials with consent and honors opt-outs immediately. Every call opens with a recording disclosure. Customer data is handled in line with India's DPDP Act and hosted in India on AWS Mumbai.
+
+## Company
+
+SvaraCall AI is a product of Sarwagyna Private Limited, Ongole, Andhra Pradesh, India. CIN: U62013AP2026PTC124652. Sibling product: SvaraRx, voice prescriptions for doctors.
+
+## Contact
+
+- Website: https://svaracall.sarwagyna.com
+- Email: contact@sarwagyna.com
+- WhatsApp (high-priority support): https://wa.me/916305036991
+- Parent company: https://sarwagyna.com
+- SvaraRx: https://svararx.sarwagyna.com
+
+## Links
+
+- Home: https://svaracall.sarwagyna.com
+- How it works: https://svaracall.sarwagyna.com/how-it-works
+- Voice agents: https://svaracall.sarwagyna.com/voice-agents
+- Use cases: https://svaracall.sarwagyna.com/use-cases
+- Industries: https://svaracall.sarwagyna.com/industries
+- Healthcare: https://svaracall.sarwagyna.com/industries/healthcare
+- Fintech: https://svaracall.sarwagyna.com/industries/fintech
+- Consultation: https://svaracall.sarwagyna.com/industries/consultation
+- E-commerce: https://svaracall.sarwagyna.com/industries/ecommerce
+- Real estate: https://svaracall.sarwagyna.com/industries/real-estate
+- HR tech: https://svaracall.sarwagyna.com/industries/hr-tech
+- Education: https://svaracall.sarwagyna.com/industries/education
+- Compliance: https://svaracall.sarwagyna.com/compliance
+- FAQ: https://svaracall.sarwagyna.com/faq
+- Book a pilot: https://svaracall.sarwagyna.com/book-a-pilot
+
+Last updated: July 2026
