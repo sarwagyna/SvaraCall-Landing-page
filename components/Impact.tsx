@@ -1,6 +1,11 @@
 import Reveal from "./Reveal";
 import { impactStats } from "@/lib/content";
 
+// Hide any stat whose value is still an unmeasured placeholder (e.g. "{X}%")
+// so the live page never shows template tokens. Fill real pilot numbers in
+// `impactStats` to surface them again.
+const measuredStats = impactStats.filter((stat) => !stat.value.includes("{"));
+
 export default function Impact() {
   return (
     <section id="impact" className="bg-canvas-soft">
@@ -14,7 +19,7 @@ export default function Impact() {
         </p>
 
         <dl className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {impactStats.map((stat, i) => (
+          {measuredStats.map((stat, i) => (
             <Reveal
               key={stat.label}
               delayMs={(i % 4) * 70}

@@ -65,6 +65,12 @@ export const metadata: Metadata = {
   category: "technology",
 };
 
+// Only expose real, resolvable profile URLs in `sameAs` — never placeholders,
+// which would otherwise emit invalid structured data.
+const socialProfiles = (
+  [site.social.linkedin, site.social.x, site.social.instagram] as string[]
+).filter((url) => Boolean(url) && !url.includes("{"));
+
 const orgWebsiteGraph = {
   "@context": "https://schema.org",
   "@graph": [
@@ -74,7 +80,12 @@ const orgWebsiteGraph = {
       name: site.legalName,
       legalName: site.legalName,
       url: site.url,
-      logo: `${site.url}/opengraph-image`,
+      logo: {
+        "@type": "ImageObject",
+        url: `${site.url}/android-chrome-512x512.png`,
+        width: 512,
+        height: 512,
+      },
       description: canonicalSentence,
       identifier: {
         "@type": "PropertyValue",
@@ -87,8 +98,7 @@ const orgWebsiteGraph = {
         addressRegion: site.state,
         addressCountry: "IN",
       },
-      // TODO: verify — replace placeholders with real profile URLs
-      sameAs: [site.social.linkedin, site.social.x, site.social.instagram],
+      ...(socialProfiles.length > 0 ? { sameAs: socialProfiles } : {}),
     },
     {
       "@type": "WebSite",

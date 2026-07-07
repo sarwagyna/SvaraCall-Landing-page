@@ -4,7 +4,7 @@ import Problem from "@/components/Problem";
 import Comparison from "@/components/Comparison";
 import WhyUs from "@/components/WhyUs";
 import Explore from "@/components/Explore";
-import RevenueImpactAssessment from "@/components/RevenueImpactAssessment";
+import RevenueImpactAssessmentLazy from "@/components/RevenueImpactAssessmentLazy";
 import CtaBand from "@/components/CtaBand";
 import { site, canonicalSentence, useCases } from "@/lib/content";
 import { breadcrumbList } from "@/lib/schema";
@@ -44,7 +44,7 @@ export default function Home() {
         <Comparison />
         <Explore />
         <WhyUs />
-        <RevenueImpactAssessment />
+        <RevenueImpactAssessmentLazy />
         <CtaBand />
       </main>
       <script
