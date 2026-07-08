@@ -52,7 +52,7 @@ export default function VoiceRoster() {
     "rounded-pill px-4 py-2 text-sm font-semibold transition-colors";
 
   return (
-    <section id="voice-roster" className="bg-canvas-soft">
+    <section id="voice-roster" className="bg-[#0b1110]">
       <div className="mx-auto max-w-6xl px-5 py-16 md:py-24">
         <p className="eyebrow">Voice library</p>
         <h2 className="display display-h2 mt-3 max-w-3xl">
@@ -78,8 +78,8 @@ export default function VoiceRoster() {
                 onClick={() => setUseCase(option)}
                 className={`${chipBase} ${
                   useCase === option
-                    ? "bg-ink text-white"
-                    : "bg-canvas text-body hover:text-ink"
+                    ? "bg-[#121b18] text-white"
+                    : "bg-[#101916] text-white/75 hover:text-white"
                 }`}
               >
                 {option}
@@ -101,7 +101,7 @@ export default function VoiceRoster() {
                 className={`${chipBase} ${
                   gender === option
                     ? "bg-primary text-on-primary"
-                    : "bg-canvas text-body hover:text-ink"
+                    : "bg-[#101916] text-white/75 hover:text-white"
                 }`}
               >
                 {option}
@@ -120,7 +120,7 @@ export default function VoiceRoster() {
             return (
               <li
                 key={voice.name}
-                className="flex items-center gap-4 rounded-card bg-canvas p-5"
+                className="flex items-center gap-4 rounded-card border border-white/10 bg-[#121b18] p-5"
               >
                 <button
                   type="button"
@@ -134,8 +134,8 @@ export default function VoiceRoster() {
                   title={voice.src ? undefined : "Sample coming soon"}
                   className={`grid h-12 w-12 shrink-0 place-items-center rounded-pill transition-colors ${
                     voice.src
-                      ? "bg-ink text-primary hover:bg-ink-deep"
-                      : "cursor-not-allowed bg-canvas-soft text-mute"
+                      ? "bg-[#0b1110] text-primary hover:bg-[#12201b]"
+                      : "cursor-not-allowed bg-[#101916] text-mute"
                   }`}
                 >
                   {isPlaying ? (
@@ -163,7 +163,7 @@ export default function VoiceRoster() {
                     {voice.style}
                   </p>
                   <div className="mt-2">
-                    <span className="rounded-pill bg-canvas-soft px-2.5 py-1 text-xs font-semibold text-body">
+                    <span className="rounded-pill bg-[#101916] px-2.5 py-1 text-xs font-semibold text-white/70">
                       {voice.useCase}
                     </span>
                   </div>

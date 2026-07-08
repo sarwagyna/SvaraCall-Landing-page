@@ -44,7 +44,7 @@ export default function VoiceAgents({
 }) {
   const Heading = headingLevel === 1 ? "h1" : "h2";
   return (
-    <section id="voice-agents" className="bg-canvas-soft">
+    <section id="voice-agents" className="bg-[#0b1110]">
       <div className="mx-auto max-w-6xl px-5 py-16 md:py-24">
         <Heading className="display display-h2 max-w-3xl">
           AI voice agents for every calling job.
@@ -56,10 +56,10 @@ export default function VoiceAgents({
               key={agent.title}
               as="li"
               delayMs={i * 80}
-              className="rounded-card bg-canvas p-7"
+              className="rounded-card border border-white/10 bg-[#121b18] p-7"
             >
               <div className="flex items-center gap-3">
-                <span className="grid h-11 w-11 place-items-center rounded-input bg-ink text-primary">
+                <span className="grid h-11 w-11 place-items-center rounded-input bg-[#0b1110] text-primary">
                   <AgentIcon type={agent.icon} />
                 </span>
                 <span className="eyebrow text-mute">AI Voice</span>
@@ -71,7 +71,7 @@ export default function VoiceAgents({
         </ul>
 
         {/* Revenue systems callout */}
-        <div className="mt-8 rounded-card bg-ink px-6 py-12 text-center md:px-12">
+        <div className="mt-8 rounded-card bg-[#0b1110] px-6 py-12 text-center ring-1 ring-white/10 md:px-12">
           <p className="eyebrow text-primary">Revenue systems</p>
           <h3 className="display display-h2 mt-3 text-white">
             Need a complete transformation?

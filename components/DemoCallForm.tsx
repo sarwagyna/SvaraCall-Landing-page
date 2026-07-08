@@ -1,0 +1,158 @@
+"use client";
+
+import { useState } from "react";
+import { site } from "@/lib/content";
+import { trackEvent } from "@/lib/analytics";
+
+type DemoCallFormProps = {
+  variant?: "inline" | "stacked";
+  theme?: "light" | "dark";
+  inputId?: string;
+  submitEvent?: string;
+  size?: "default" | "compact";
+};
+
+export default function DemoCallForm({
+  variant = "inline",
+  theme = "light",
+  inputId = "demo-phone",
+  submitEvent = "demo_call_submitted",
+  size = "default",
+}: DemoCallFormProps) {
+  const [digits, setDigits] = useState("");
+  const [error, setError] = useState<string | null>(null);
+  const [submitted, setSubmitted] = useState(false);
+
+  const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (digits.length !== 10) {
+      setError("Enter a valid 10-digit mobile number.");
+      return;
+    }
+    setError(null);
+
+    const number = `+91 ${digits}`;
+    const subject = "SvaraCall AI — demo call request";
+    const body = [
+      `Please place a demo call to ${number}.`,
+      "",
+      "Preferred language: Telugu / Hindi / English.",
+    ].join("\n");
+    window.location.href = `mailto:${site.email}?subject=${encodeURIComponent(
+      subject,
+    )}&body=${encodeURIComponent(body)}`;
+    trackEvent(submitEvent);
+    setSubmitted(true);
+  };
+
+  const isDark = theme === "dark";
+  const prefixClass = isDark
+    ? "bg-white/10 text-white"
+    : "bg-canvas-soft text-ink";
+  const inputWrapClass = isDark
+    ? "ring-white/20 focus-within:ring-primary"
+    : "ring-ink/15 focus-within:ring-primary";
+  const inputClass = isDark
+    ? "bg-white/5 text-white placeholder:text-white/40"
+    : "bg-canvas text-ink placeholder:text-mute";
+  const errorClass = isDark ? "text-white/90" : "text-ink";
+  const finePrintClass = isDark ? "text-white/50" : "text-mute";
+  const isCompact = size === "compact";
+
+  if (submitted) {
+    return (
+      <div className={variant === "inline" ? "mt-5" : "text-center"}>
+        <p className={`text-sm font-semibold ${isDark ? "text-white" : "text-ink"}`}>
+          We&apos;re on it — expect a demo call to{" "}
+          <span className="text-primary">+91 {digits}</span> shortly.
+        </p>
+        <button
+          type="button"
+          onClick={() => {
+            setSubmitted(false);
+            setDigits("");
+          }}
+          className="mt-2 text-sm font-semibold text-primary hover:underline"
+        >
+          Use a different number
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <form
+      onSubmit={onSubmit}
+      noValidate
+    >
+      <div
+        className={
+          variant === "inline"
+            ? `flex flex-col ${isCompact ? "gap-2" : "gap-3"} sm:flex-row sm:items-stretch`
+            : "space-y-3"
+        }
+      >
+        <div
+          className={`flex min-w-0 flex-1 items-stretch overflow-hidden rounded-input ring-1 ${inputWrapClass} focus-within:ring-2`}
+        >
+          <span
+            className={`grid shrink-0 place-items-center px-4 text-sm font-semibold ${prefixClass}`}
+          >
+            +91
+          </span>
+          <input
+            id={inputId}
+            name="phone"
+            type="tel"
+            inputMode="numeric"
+            autoComplete="tel-national"
+            placeholder="63050 36991"
+            value={digits}
+            onChange={(e) => {
+              setDigits(e.target.value.replace(/\D/g, "").slice(0, 10));
+              if (error) setError(null);
+            }}
+            aria-invalid={error ? true : undefined}
+            aria-describedby={error ? `${inputId}-error` : undefined}
+            className={`${isCompact ? "h-8 px-3 text-sm" : "h-12 px-4"} w-full outline-none ${inputClass}`}
+          />
+        </div>
+        <button
+          type="submit"
+          className={`inline-flex shrink-0 items-center justify-center gap-2 rounded-pill bg-primary font-semibold text-on-primary transition-colors hover:bg-primary-active ${
+            isCompact ? "h-8 text-sm" : "h-12 text-base"
+          } ${
+            variant === "inline"
+              ? isCompact
+                ? "px-4 sm:px-5"
+                : "px-6 sm:px-8"
+              : "w-full px-8"
+          }`}
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M5 4h3l1.5 4-2 1.5a12 12 0 0 0 6 6l1.5-2 4 1.5V18a2 2 0 0 1-2 2A15 15 0 0 1 5 6a2 2 0 0 1 0-2z" />
+          </svg>
+          Get a demo call
+        </button>
+      </div>
+      {error && (
+        <p id={`${inputId}-error`} className={`mt-2 text-sm ${errorClass}`}>
+          {error}
+        </p>
+      )}
+      <p className={`mt-2 ${isCompact ? "text-[11px]" : "text-xs"} ${finePrintClass}`}>
+        We&apos;ll only use your number to place this demo call.
+      </p>
+    </form>
+  );
+}

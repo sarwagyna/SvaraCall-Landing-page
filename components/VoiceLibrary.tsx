@@ -109,7 +109,7 @@ export default function VoiceLibrary() {
   };
 
   return (
-    <section id="voices" className="bg-ink">
+    <section id="voices" className="bg-[#0b1110]">
       <div className="mx-auto max-w-6xl px-5 py-16 md:py-24">
         <h2 className="display display-h2 text-center text-white">
           Hear the AI in action

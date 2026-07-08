@@ -11,3 +11,20 @@ export const routes: Route[] = [
 ];
 
 export const bookPilotHref = "/book-a-pilot";
+
+/** Vertical space reserved for the fixed CardNav bar */
+export const navTopOffset = "calc(60px + 1.2em)";
+export const navTopOffsetMd = "calc(60px + 2em)";
+
+export function bookPilotWithParams(
+  params: Record<string, string | number | undefined>,
+) {
+  const search = new URLSearchParams();
+  for (const [key, value] of Object.entries(params)) {
+    if (value !== undefined && value !== "") {
+      search.set(key, String(value));
+    }
+  }
+  const qs = search.toString();
+  return qs ? `${bookPilotHref}?${qs}` : bookPilotHref;
+}

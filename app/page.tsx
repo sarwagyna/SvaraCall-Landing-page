@@ -1,13 +1,25 @@
+import dynamic from "next/dynamic";
 import Hero from "@/components/Hero";
-import DemoCall from "@/components/DemoCall";
 import Problem from "@/components/Problem";
-import Comparison from "@/components/Comparison";
+import Solutions from "@/components/Solutions";
+import Process from "@/components/Process";
+import Outcomes from "@/components/Outcomes";
 import WhyUs from "@/components/WhyUs";
-import Explore from "@/components/Explore";
-import RevenueImpactAssessmentLazy from "@/components/RevenueImpactAssessmentLazy";
 import CtaBand from "@/components/CtaBand";
+import StickyMobileCta from "@/components/StickyMobileCta";
 import { site, canonicalSentence, useCases } from "@/lib/content";
-import { breadcrumbList } from "@/lib/schema";
+import { homeFaqs } from "@/lib/homeFaq";
+import { breadcrumbList, faqPageSchema } from "@/lib/schema";
+
+// Defer interactive below-fold islands so their JS isn't on the critical path.
+const RoiCalculator = dynamic(() => import("@/components/RoiCalculator"), {
+  loading: () => (
+    <div className="mx-auto max-w-6xl px-5 py-16 md:py-24" aria-hidden>
+      <div className="h-96 animate-pulse rounded-card bg-canvas-soft" />
+    </div>
+  ),
+});
+const HomeFaq = dynamic(() => import("@/components/HomeFaq"));
 
 const graph = {
   "@context": "https://schema.org",
@@ -31,22 +43,31 @@ const graph = {
       dateModified: site.dateModified,
     },
     breadcrumbList([{ name: "SvaraCall AI", path: "/" }]),
+    faqPageSchema(
+      homeFaqs.map((item) => ({
+        question: item.question,
+        answer: item.answer,
+      })),
+      { graphNode: true },
+    ),
   ],
 };
 
 export default function Home() {
   return (
     <>
-      <main>
+      <main className="pb-20 md:pb-0">
         <Hero />
-        <DemoCall />
         <Problem />
-        <Comparison />
-        <Explore />
+        <Solutions />
+        <Process />
+        <Outcomes />
         <WhyUs />
-        <RevenueImpactAssessmentLazy />
+        <RoiCalculator />
+        <HomeFaq />
         <CtaBand />
       </main>
+      <StickyMobileCta />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(graph) }}

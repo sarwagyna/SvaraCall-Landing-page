@@ -16,7 +16,7 @@ export default function Breadcrumbs({
       aria-label="Breadcrumb"
       className={tone === "canvas" ? "bg-canvas" : "bg-canvas-soft"}
     >
-      <ol className="mx-auto flex max-w-6xl flex-wrap items-center gap-1.5 px-5 pt-6 text-sm text-mute">
+      <ol className="mx-auto flex max-w-6xl flex-wrap items-center gap-1.5 px-5 pt-[calc(1.5rem+60px+1.2em)] text-sm text-mute md:pt-[calc(1.5rem+60px+2em)]">
         {items.map((item, i) => {
           const last = i === items.length - 1;
           return (

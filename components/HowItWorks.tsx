@@ -8,7 +8,7 @@ export default function HowItWorks({
 }) {
   const Heading = headingLevel === 1 ? "h1" : "h2";
   return (
-    <section id="how-it-works" className="bg-canvas-soft">
+    <section id="how-it-works" className="bg-[#0b1110]">
       <div className="mx-auto max-w-6xl px-5 py-16 md:py-24">
         <Heading className="display display-h2 max-w-3xl">
           How does SvaraCall work?
@@ -21,7 +21,7 @@ export default function HowItWorks({
               key={step.n}
               as="li"
               delayMs={i * 80}
-              className="rounded-card bg-canvas p-7"
+              className="rounded-card border border-white/10 bg-[#121b18] p-7"
             >
               <span
                 aria-hidden="true"

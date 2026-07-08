@@ -111,7 +111,7 @@ export default function DemoCall() {
                   type="tel"
                   inputMode="numeric"
                   autoComplete="tel-national"
-                  placeholder="98765 43210"
+                  placeholder="63050 36991"
                   value={digits}
                   onChange={(e) => {
                     setDigits(e.target.value.replace(/\D/g, "").slice(0, 10));

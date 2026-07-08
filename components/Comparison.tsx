@@ -32,7 +32,7 @@ export default function Comparison() {
               <tr>
                 <th
                   scope="col"
-                  className="rounded-tl-card border-b border-white/10 bg-white/5 px-6 py-5 text-sm font-semibold uppercase tracking-wider text-white/50"
+                  className="rounded-tl-card border-b border-white/10 bg-white/5 px-6 py-5 text-sm font-semibold uppercase tracking-wider text-white/70"
                 >
                   Capability
                 </th>
@@ -44,7 +44,7 @@ export default function Comparison() {
                 </th>
                 <th
                   scope="col"
-                  className="rounded-tr-card border-b border-white/10 bg-white/5 px-6 py-5 text-center text-sm font-semibold uppercase tracking-wider text-white/40"
+                  className="rounded-tr-card border-b border-white/10 bg-white/5 px-6 py-5 text-center text-sm font-semibold uppercase tracking-wider text-white/70"
                 >
                   Traditional calling
                 </th>
@@ -67,7 +67,7 @@ export default function Comparison() {
                       {row.svaracall}
                     </td>
                     <td
-                      className={`bg-white/5 px-6 py-5 text-center text-sm text-white/40 ${last ? "rounded-br-card" : "border-b border-white/10"}`}
+                      className={`bg-white/5 px-6 py-5 text-center text-sm text-white/70 ${last ? "rounded-br-card" : "border-b border-white/10"}`}
                     >
                       {row.traditional}
                     </td>

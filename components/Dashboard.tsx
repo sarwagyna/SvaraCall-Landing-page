@@ -9,7 +9,7 @@ const summary = [
 
 export default function Dashboard() {
   return (
-    <section id="dashboard" className="bg-canvas">
+    <section id="dashboard" className="bg-[#0b1110]">
       <div className="mx-auto max-w-6xl px-5 py-16 md:py-24">
         <h2 className="display display-h2 max-w-3xl">
           See every call on one dashboard.
@@ -20,7 +20,7 @@ export default function Dashboard() {
         </p>
 
         {/* Dashboard mockup (styled markup, not an image) */}
-        <div className="mt-10 rounded-card bg-ink p-4 shadow-2xl shadow-ink/20 md:p-6">
+        <div className="mt-10 rounded-card bg-[#0b1110] p-4 shadow-2xl shadow-black/30 ring-1 ring-white/10 md:p-6">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div className="flex items-center gap-2">
               <span className="grid h-7 w-7 place-items-center rounded-pill bg-primary text-on-primary text-xs font-[900]">
@@ -52,7 +52,7 @@ export default function Dashboard() {
                 Sample SvaraCall dashboard call log
               </caption>
               <thead>
-                <tr className="text-xs uppercase tracking-wider text-white/40">
+                <tr className="text-xs uppercase tracking-wider text-white/70">
                   <th scope="col" className="px-4 py-2 font-semibold">
                     Contact
                   </th>

@@ -5,7 +5,7 @@ import { routes, bookPilotHref } from "@/lib/nav";
 
 export default function Footer() {
   return (
-    <footer className="bg-ink text-white/80">
+    <footer className="bg-[#0b1110] text-white/80">
       <div className="mx-auto max-w-6xl px-5 py-14">
         <div className="grid gap-10 md:grid-cols-3">
           <div>
@@ -29,7 +29,7 @@ export default function Footer() {
                 className="inline-flex items-center gap-1.5 align-middle font-semibold text-primary hover:underline"
               >
                 <Image
-                  src="/SvaraRx-Icon.png"
+                  src="/SvaraRx-Icon-sm.webp"
                   alt=""
                   width={18}
                   height={18}
@@ -42,7 +42,7 @@ export default function Footer() {
           </div>
 
           <nav aria-label="Footer">
-            <p className="text-xs font-semibold uppercase tracking-wider text-white/40">
+            <p className="text-xs font-semibold uppercase tracking-wider text-white/70">
               Explore
             </p>
             <ul className="mt-4 flex flex-col gap-2.5 text-sm">
@@ -85,7 +85,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col justify-between gap-3 border-t border-white/10 pt-6 text-xs text-white/50 sm:flex-row">
+        <div className="mt-12 flex flex-col justify-between gap-3 border-t border-white/10 pt-6 text-xs text-white/65 sm:flex-row">
           <p>
             &copy; {new Date().getFullYear()} {site.legalName}. All rights
             reserved.

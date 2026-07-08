@@ -44,7 +44,7 @@ function StepIcon({ type }: { type: TuningStep["icon"] }) {
 
 export default function PilotTuning() {
   return (
-    <section id="pilot-tuning" className="bg-canvas-soft">
+    <section id="pilot-tuning" className="bg-[#0b1110]">
       <div className="mx-auto max-w-6xl px-5 py-16 md:py-24">
         <h2 className="display display-h2 text-center">
           Every pilot is tuned before it goes live.
@@ -57,7 +57,7 @@ export default function PilotTuning() {
         <div className="relative mt-16">
           <div
             aria-hidden="true"
-            className="absolute left-[12.5%] right-[12.5%] top-8 hidden h-px bg-ink/15 md:block"
+            className="absolute left-[12.5%] right-[12.5%] top-8 hidden h-px bg-white/15 md:block"
           />
           <ol className="grid gap-10 sm:grid-cols-2 md:grid-cols-4">
             {tuningSteps.map((step, i) => (
@@ -67,7 +67,7 @@ export default function PilotTuning() {
                 delayMs={i * 90}
                 className="flex flex-col items-center text-center"
               >
-                <span className="grid h-16 w-16 place-items-center rounded-input bg-ink text-primary shadow-lg shadow-ink/10">
+                <span className="grid h-16 w-16 place-items-center rounded-input bg-[#121b18] text-primary shadow-lg shadow-black/20 ring-1 ring-white/10">
                   <StepIcon type={step.icon} />
                 </span>
                 <h3 className="mt-5 text-base font-bold text-ink">

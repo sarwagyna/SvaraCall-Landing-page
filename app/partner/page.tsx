@@ -79,7 +79,7 @@ export default function PartnerPage() {
     <>
       <Breadcrumbs trail={trail} tone="canvas" />
       <main>
-        <section className="bg-canvas">
+        <section className="bg-[#0b1110]">
           <div className="mx-auto max-w-4xl px-5 py-16 md:py-24">
             <p className="eyebrow">Partner with us</p>
             <h1 className="display display-hero mt-4">
@@ -102,7 +102,7 @@ export default function PartnerPage() {
                 href={`https://wa.me/${site.whatsapp}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex h-12 items-center rounded-pill border border-ink/15 px-8 text-base font-semibold text-ink transition-colors hover:bg-canvas-soft"
+                className="inline-flex h-12 items-center rounded-pill border border-white/20 px-8 text-base font-semibold text-white transition-colors hover:bg-white/10"
               >
                 Chat on WhatsApp
               </a>
@@ -110,7 +110,7 @@ export default function PartnerPage() {
           </div>
         </section>
 
-        <section className="bg-canvas-soft">
+        <section className="bg-[#0b1110]">
           <div className="mx-auto max-w-6xl px-5 py-16 md:py-24">
             <h2 className="display display-h2 max-w-3xl">Ways to partner</h2>
             <ul className="mt-10 grid gap-5 md:grid-cols-3">
@@ -119,7 +119,7 @@ export default function PartnerPage() {
                   key={type.title}
                   as="li"
                   delayMs={i * 80}
-                  className="rounded-card bg-canvas p-7"
+                  className="rounded-card border border-white/10 bg-[#121b18] p-7"
                 >
                   <h3 className="text-xl font-bold text-ink">{type.title}</h3>
                   <p className="mt-2 text-body">{type.body}</p>
@@ -129,7 +129,7 @@ export default function PartnerPage() {
           </div>
         </section>
 
-        <section className="bg-canvas">
+        <section className="bg-[#0b1110]">
           <div className="mx-auto max-w-6xl px-5 py-16 md:py-24">
             <h2 className="display display-h2 max-w-3xl">
               Why partners choose us
@@ -140,7 +140,7 @@ export default function PartnerPage() {
                   key={benefit.title}
                   as="li"
                   delayMs={(i % 2) * 80}
-                  className="rounded-card bg-canvas-soft p-7"
+                  className="rounded-card border border-white/10 bg-[#121b18] p-7"
                 >
                   <h3 className="text-xl font-bold text-ink">{benefit.title}</h3>
                   <p className="mt-2 text-body">{benefit.body}</p>
@@ -150,7 +150,7 @@ export default function PartnerPage() {
           </div>
         </section>
 
-        <section className="bg-canvas-soft">
+        <section className="bg-[#0b1110]">
           <div className="mx-auto max-w-6xl px-5 py-16 md:py-24">
             <h2 className="display display-h2 max-w-3xl">How it works</h2>
             <ol className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -159,7 +159,7 @@ export default function PartnerPage() {
                   key={step.n}
                   as="li"
                   delayMs={(i % 4) * 70}
-                  className="rounded-card bg-canvas p-7"
+                  className="rounded-card border border-white/10 bg-[#121b18] p-7"
                 >
                   <span className="grid h-10 w-10 place-items-center rounded-pill bg-primary text-on-primary text-sm font-[900]">
                     {step.n}
@@ -174,9 +174,9 @@ export default function PartnerPage() {
           </div>
         </section>
 
-        <section className="bg-canvas">
+        <section className="bg-[#0b1110]">
           <div className="mx-auto max-w-6xl px-5 py-16 md:py-24">
-            <div className="rounded-card bg-ink px-6 py-14 text-center md:px-12">
+            <div className="rounded-card bg-[#0b1110] px-6 py-14 text-center ring-1 ring-white/10 md:px-12">
               <h2 className="display display-h2 text-white">
                 Let&apos;s build together.
               </h2>

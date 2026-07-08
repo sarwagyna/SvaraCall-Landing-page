@@ -19,7 +19,7 @@ const trail = [{ name: "Voice agents", path: "/voice-agents" }];
 export default function VoiceAgentsPage() {
   return (
     <>
-      <Breadcrumbs trail={trail} />
+      <Breadcrumbs trail={trail} tone="canvas" />
       <main>
         <VoiceAgents headingLevel={1} />
         <VoiceLibrary />

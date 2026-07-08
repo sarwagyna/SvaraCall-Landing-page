@@ -1,22 +1,58 @@
 @import "tailwindcss";
 
+/* ============================================================
+   SVARACALL — FULL DARK THEME
+   ------------------------------------------------------------
+   This file is now 100% dark. IMPORTANT: the sage / off-white
+   bands you see on the live page do NOT come from globals.css —
+   they come from component-level Tailwind classes. After pasting
+   this file, run these find/replaces across /app and /components:
+
+   1. bg-[#e8ebe6]  (sage band bg)        → bg-canvas-soft
+   2. bg-white / bg-[#f7f9f6] (light card)→ bg-surface
+   3. text-[#09100b] / text-[#0e0f0c]
+      (dark text on light bands)          → text-ink
+   4. text-black/60, text-[#3c463f] etc.
+      (body text on light bands)          → text-body
+   5. bg-primary-pale / bg-primary-neutral
+      (chip backgrounds)                  → bg-primary-soft text-primary
+   6. border-black/10, border-[#d9ded8]   → border-line
+   7. Any shadow-* on light cards         → keep, or swap to
+                                            shadow-black/40 for depth
+
+   New tokens added for dark surfaces: surface, surface-raised,
+   line, primary-soft. Everything else keeps its existing name,
+   so nothing already using canvas / ink / body / mute breaks.
+   ============================================================ */
+
 @theme {
+  /* Brand */
   --color-primary: #9fe870;
-  --color-on-primary: #0e0f0c;
+  --color-on-primary: #09100b;
   --color-primary-active: #cdffad;
   --color-primary-neutral: #c5edab;
-  --color-primary-pale: #e2f6d5;
+  /* Translucent lime for chips/badges on dark (replaces pale tint) */
+  --color-primary-soft: rgba(159, 232, 112, 0.12);
+  --color-primary-pale: rgba(159, 232, 112, 0.08);
 
-  --color-ink: #0e0f0c;
-  --color-ink-deep: #163300;
-  --color-body: #454745;
-  --color-mute: #868685;
+  /* Text on dark */
+  --color-ink: #f2f7f0;
+  --color-ink-deep: #d7f3c3;
+  --color-body: #b8c4bc;
+  --color-mute: #8f9d94;
 
-  --color-canvas: #ffffff;
-  --color-canvas-soft: #e8ebe6;
+  /* Dark surfaces (page → band → card → raised card) */
+  --color-canvas: #0b1110;
+  --color-canvas-soft: #141c1a;
+  --color-surface: #182320;
+  --color-surface-raised: #1f2c28;
+
+  /* Hairline borders / dividers on dark */
+  --color-line: rgba(242, 247, 240, 0.09);
+  --color-line-strong: rgba(242, 247, 240, 0.16);
 
   --color-positive: #2ead4b;
-  --color-positive-deep: #054d28;
+  --color-positive-deep: #77db93;
 
   --radius-card: 24px;
   --radius-input: 12px;
@@ -27,12 +63,15 @@
 }
 
 :root {
-  color-scheme: light;
+  color-scheme: dark;
+  /* Native checkboxes, radios, progress, range fallback */
+  accent-color: var(--color-primary);
 }
 
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  background: var(--color-canvas);
 }
 
 body {
@@ -45,6 +84,74 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+/* Text selection in brand lime */
+::selection {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+/* Subtle dark scrollbar (WebKit) */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-canvas);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-surface-raised);
+  border-radius: 9999px;
+  border: 2px solid var(--color-canvas);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-mute);
+}
+
+/* Keep typography consistent across all sections and controls */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+input,
+textarea,
+select {
+  font-family: var(--font-sans);
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 600 !important;
+}
+
+/* Dark-native form controls: no white inputs anywhere */
+input:not([type="range"]):not([type="checkbox"]):not([type="radio"]),
+textarea,
+select {
+  background: var(--color-canvas-soft);
+  color: var(--color-ink);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-input);
+}
+
+::placeholder {
+  color: var(--color-mute);
+  opacity: 1;
+}
+
+/* Kill WebKit's white/yellow autofill flash on dark inputs */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px var(--color-canvas-soft) inset;
+  -webkit-text-fill-color: var(--color-ink);
+  caret-color: var(--color-ink);
+  transition: background-color 9999s ease-in-out 0s;
+}
+
 /* Visible keyboard focus on every interactive element */
 :where(a, button, input, [tabindex]):focus-visible {
   outline: 3px solid var(--color-ink-deep);
@@ -52,12 +159,13 @@ body {
   border-radius: 4px;
 }
 
-/* Display headline: Inter 900, tight tracking.
-   Kept in the base layer so Tailwind color utilities (e.g. text-white on
-   dark backgrounds) can override the default ink color. */
+/* Display headline: Inter 600, tight tracking.
+   Kept in the base layer so Tailwind color utilities (e.g. text-primary)
+   can override the default ink color. */
 @layer base {
   .display {
-    font-weight: 900;
+    font-family: var(--font-sans);
+    font-weight: 600;
     line-height: 0.98;
     letter-spacing: -0.015em;
     color: var(--color-ink);
@@ -73,10 +181,11 @@ body {
 }
 
 /* Eyebrow: 12px / 600 / uppercase / tracked.
-   Kept in the base layer so Tailwind color utilities (e.g. text-primary on
-   dark backgrounds) can override the default ink color. */
+   Kept in the base layer so Tailwind color utilities (e.g. text-primary)
+   can override the default ink color. */
 @layer base {
   .eyebrow {
+    font-family: var(--font-sans);
     font-size: 0.75rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -94,6 +203,8 @@ body {
   -webkit-appearance: none;
   appearance: none;
   outline: none;
+  background: var(--color-surface-raised);
+  border: none;
 }
 
 .roi-range::-webkit-slider-thumb {
@@ -103,7 +214,7 @@ body {
   width: 18px;
   border-radius: 9999px;
   background: var(--color-primary);
-  border: 3px solid #0e0f0c;
+  border: 3px solid var(--color-canvas);
   box-shadow: 0 0 0 1px var(--color-primary);
   cursor: pointer;
   transition: transform 0.15s ease;
@@ -118,7 +229,7 @@ body {
   width: 16px;
   border-radius: 9999px;
   background: var(--color-primary);
-  border: 3px solid #0e0f0c;
+  border: 3px solid var(--color-canvas);
   cursor: pointer;
 }
 
@@ -233,6 +344,26 @@ body {
 .wave-bar {
   transform-origin: center;
   animation: waveBounce 1s ease-in-out infinite;
+}
+
+/* Dark mode compatibility: keep all `bg-ink*` surfaces dark even though
+   `text-ink` is light in this theme token setup. */
+@layer utilities {
+  .bg-ink {
+    background-color: #0b1110 !important;
+  }
+
+  .bg-ink\/90 {
+    background-color: rgb(11 17 16 / 0.9) !important;
+  }
+
+  .hover\:bg-ink\/90:hover {
+    background-color: rgb(11 17 16 / 0.9) !important;
+  }
+
+  .hover\:bg-ink-deep:hover {
+    background-color: #12201b !important;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

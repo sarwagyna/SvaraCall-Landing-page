@@ -19,7 +19,7 @@ const trail = [{ name: "How it works", path: "/how-it-works" }];
 export default function HowItWorksPage() {
   return (
     <>
-      <Breadcrumbs trail={trail} />
+      <Breadcrumbs trail={trail} tone="canvas" />
       <main>
         <HowItWorks headingLevel={1} />
         <Dashboard />

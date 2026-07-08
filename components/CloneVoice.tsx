@@ -35,7 +35,7 @@ function PremiumBadge() {
 
 export default function CloneVoice() {
   return (
-    <section id="clone-voice" className="bg-ink text-white">
+    <section id="clone-voice" className="bg-[#0b1110] text-white">
       <div className="mx-auto max-w-6xl px-5 py-16 md:py-24">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <div>

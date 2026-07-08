@@ -6,11 +6,12 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { site, canonicalSentence } from "@/lib/content";
 
+// Variable Inter = one file for all weights (vs multiple static faces).
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
-  weight: ["400", "600", "700", "900"],
   display: "swap",
+  preload: true,
 });
 
 const notoTelugu = Noto_Sans_Telugu({
@@ -18,6 +19,8 @@ const notoTelugu = Noto_Sans_Telugu({
   subsets: ["telugu"],
   weight: ["400", "600"],
   display: "swap",
+  // Only used for a single language chip — don't block first paint.
+  preload: false,
 });
 
 export const metadata: Metadata = {
