@@ -42,41 +42,127 @@ export const primaryNav = {
   ],
 } as const;
 
-/** Footer columns — includes links moved out of the header. */
-export const footerNav = {
-  product: [
-    { href: "/how-it-works", label: "How it works" },
-    { href: "/features", label: "Features" },
-    { href: "/voice-agents", label: "Voice agents" },
-    { href: "/integrations", label: "Integrations" },
-    { href: "/languages", label: "Languages" },
-    { href: "/compliance", label: "Security & compliance" },
-    { href: bookPilotHref, label: "Book a pilot" },
-  ],
-  solutions: [
-    { href: "/solutions", label: "All solutions" },
-    { href: "/industries", label: "Industries" },
-    { href: "/use-cases", label: "Use cases" },
-    { href: "/for", label: "By business" },
-    { href: "/templates", label: "Templates" },
-    { href: "/compare", label: "Compare" },
-    { href: "/industries/ecommerce", label: "E-commerce" },
-    { href: "/industries/fintech", label: "Lending & Collections" },
-    { href: "/industries/insurance", label: "Insurance" },
-    { href: "/industries/healthcare", label: "Healthcare" },
-    { href: "/industries/automotive", label: "Automotive" },
-  ],
-  company: [
-    { href: "/about", label: "About" },
-    { href: "/partner", label: "Partner" },
-    {
-      href: "https://sarwagyna.com/careers",
-      label: "Careers",
-      external: true,
-    },
-    { href: "/faq", label: "FAQ" },
-  ],
-} as const;
+/** Footer columns — one column per category (links moved out of the header). */
+export type FooterLink = {
+  href: string;
+  label: string;
+  external?: boolean;
+};
+
+export type FooterColumn = {
+  title: string;
+  links: FooterLink[];
+};
+
+export const footerColumns: FooterColumn[] = [
+  {
+    title: "Platform",
+    links: [
+      { href: "/how-it-works", label: "How it works" },
+      { href: "/voice-agents", label: "Voice agents" },
+      { href: "/integrations", label: "Integrations" },
+      { href: "/languages", label: "Languages" },
+      { href: "/compliance", label: "Security & compliance" },
+      { href: bookPilotHref, label: "Book a pilot" },
+    ],
+  },
+  {
+    title: "Solutions",
+    links: [
+      { href: "/solutions", label: "All solutions" },
+      { href: "/solutions/lead-follow-up", label: "Lead follow-up" },
+      { href: "/solutions/appointment-booking", label: "Appointment booking" },
+      { href: "/solutions/no-show-recovery", label: "No-show recovery" },
+      { href: "/solutions/payment-reminders", label: "Payment reminders" },
+      { href: "/solutions/win-back", label: "Win-back" },
+    ],
+  },
+  {
+    title: "Industries",
+    links: [
+      { href: "/industries", label: "All industries" },
+      { href: "/industries/ecommerce", label: "E-commerce" },
+      { href: "/industries/healthcare", label: "Healthcare" },
+      { href: "/industries/fintech", label: "Lending & collections" },
+      { href: "/industries/insurance", label: "Insurance" },
+      { href: "/industries/real-estate", label: "Real estate" },
+      { href: "/industries/education", label: "Education" },
+      { href: "/industries/automotive", label: "Automotive" },
+    ],
+  },
+  {
+    title: "Use cases",
+    links: [
+      { href: "/use-cases", label: "All use cases" },
+      { href: "/use-cases/lead-follow-up", label: "Lead follow-up" },
+      { href: "/use-cases/appointment-reminders", label: "Appointment reminders" },
+      { href: "/use-cases/debt-collection", label: "Debt collection" },
+      { href: "/use-cases/ai-receptionist", label: "AI receptionist" },
+      { href: "/use-cases/insurance-renewals", label: "Insurance renewals" },
+      { href: "/use-cases/patient-follow-up", label: "Patient follow-up" },
+    ],
+  },
+  {
+    title: "By business",
+    links: [
+      { href: "/for", label: "All niches" },
+      { href: "/for/dentists", label: "Dentists" },
+      { href: "/for/hospitals", label: "Hospitals" },
+      { href: "/for/coaching-centers", label: "Coaching centers" },
+      { href: "/for/nbfcs", label: "NBFCs" },
+      { href: "/for/real-estate-brokers", label: "Real estate brokers" },
+      { href: "/for/restaurants", label: "Restaurants" },
+    ],
+  },
+  {
+    title: "Features",
+    links: [
+      { href: "/features", label: "All features" },
+      { href: "/features/multilingual-ai", label: "Multilingual AI" },
+      { href: "/features/voice-cloning", label: "Voice cloning" },
+      { href: "/features/live-transfer", label: "Live transfer" },
+      { href: "/features/crm-integration", label: "CRM integration" },
+      { href: "/features/analytics", label: "Analytics" },
+      { href: "/features/dnc-management", label: "DNC management" },
+    ],
+  },
+  {
+    title: "Templates",
+    links: [
+      { href: "/templates", label: "All templates" },
+      { href: "/templates/lead-follow-up-script", label: "Lead follow-up" },
+      { href: "/templates/appointment-reminder-script", label: "Appointment reminder" },
+      { href: "/templates/collection-call-script", label: "Collection call" },
+      { href: "/templates/insurance-renewal-script", label: "Insurance renewal" },
+      { href: "/templates/patient-follow-up-script", label: "Patient follow-up" },
+    ],
+  },
+  {
+    title: "Compare",
+    links: [
+      { href: "/compare", label: "All comparisons" },
+      { href: "/compare/svaracall-vs-retell-ai", label: "vs Retell AI" },
+      { href: "/compare/svaracall-vs-vapi", label: "vs Vapi" },
+      { href: "/compare/svaracall-vs-exotel", label: "vs Exotel" },
+      { href: "/compare/svaracall-vs-twilio", label: "vs Twilio" },
+      { href: "/compare/svaracall-vs-bolna", label: "vs Bolna" },
+    ],
+  },
+  {
+    title: "Company",
+    links: [
+      { href: "/about", label: "About" },
+      { href: "/partner", label: "Partner" },
+      {
+        href: "https://sarwagyna.com/careers",
+        label: "Careers",
+        external: true,
+      },
+      { href: "/faq", label: "FAQ" },
+      { href: "/compliance", label: "Compliance" },
+    ],
+  },
+];
 
 export function bookPilotWithParams(
   params: Record<string, string | number | undefined>,

@@ -2,16 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/lib/content";
 import { languagePages } from "@/lib/languagePages";
-import { footerNav } from "@/lib/nav";
-
-const productLinks = footerNav.product;
-
-const solutionLinks = footerNav.solutions;
-
-const companyLinks = [
-  ...footerNav.company,
-  { href: `mailto:${site.email}`, label: "Contact" },
-] as const;
+import { footerColumns } from "@/lib/nav";
 
 const legalLinks = [
   { href: "/compliance", label: "Compliance" },
@@ -56,94 +47,75 @@ export default function Footer() {
   return (
     <footer className="bg-[#0b1110] text-white/80">
       <div className="mx-auto max-w-6xl px-5 py-14 md:py-16">
-        {/* Top: brand + columns */}
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5 lg:gap-8">
-          <div className="sm:col-span-2 lg:col-span-1">
-            <Link href="/" className="inline-flex items-center gap-2">
-              <Image
-                src="/logo-mark.webp"
-                alt="SvaraCall AI"
-                width={28}
-                height={28}
-                className="h-7 w-7"
-              />
-              <span className="text-sm font-semibold text-white">
-                SvaraCall AI
-              </span>
-            </Link>
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/65">
-              AI phone agents that sound human — in Telugu, Hindi &amp; English,
-              tuned to your business.
-            </p>
-            <p className="mt-5 text-sm font-semibold text-white">
-              {site.legalName}
-            </p>
-            <p className="mt-1 text-sm text-white/55">
-              {site.city} · {site.state} · {site.country}
-            </p>
+        {/* Brand */}
+        <div className="max-w-md">
+          <Link href="/" className="inline-flex items-center gap-2">
+            <Image
+              src="/logo-mark.webp"
+              alt="SvaraCall AI"
+              width={28}
+              height={28}
+              className="h-7 w-7"
+            />
+            <span className="text-sm font-semibold text-white">
+              SvaraCall AI
+            </span>
+          </Link>
+          <p className="mt-4 text-sm leading-relaxed text-white/65">
+            AI phone agents that sound human — in Telugu, Hindi &amp; English,
+            tuned to your business.
+          </p>
+          <p className="mt-5 text-sm font-semibold text-white">
+            {site.legalName}
+          </p>
+          <p className="mt-1 text-sm text-white/55">
+            {site.city} · {site.state} · {site.country}
+          </p>
+          <a
+            href={`mailto:${site.email}`}
+            className="mt-3 inline-block text-sm text-white/70 transition-colors hover:text-primary"
+          >
+            {site.email}
+          </a>
+          <p className="mt-5 text-sm text-white/55">
+            Also by{" "}
             <a
-              href={`mailto:${site.email}`}
-              className="mt-3 inline-block text-sm text-white/70 transition-colors hover:text-primary"
+              href={site.parentUrl}
+              className="font-semibold text-white hover:underline"
             >
-              {site.email}
+              Sarwagyna
             </a>
-            <p className="mt-5 text-sm text-white/55">
-              Also by{" "}
-              <a
-                href={site.parentUrl}
-                className="font-semibold text-white hover:underline"
-              >
-                Sarwagyna
-              </a>
-              :{" "}
-              <a
-                href={site.svaraRxUrl}
-                className="inline-flex items-center gap-1.5 align-middle font-semibold text-primary hover:underline"
-              >
-                <Image
-                  src="/SvaraRx-Icon-sm.webp"
-                  alt=""
-                  width={16}
-                  height={16}
-                  className="h-4 w-4 rounded-[4px]"
-                />
-                SvaraRx
-              </a>
-            </p>
-          </div>
+            :{" "}
+            <a
+              href={site.svaraRxUrl}
+              className="inline-flex items-center gap-1.5 align-middle font-semibold text-primary hover:underline"
+            >
+              <Image
+                src="/SvaraRx-Icon-sm.webp"
+                alt=""
+                width={16}
+                height={16}
+                className="h-4 w-4 rounded-[4px]"
+              />
+              SvaraRx
+            </a>
+          </p>
+        </div>
 
-          <nav aria-label="Product">
-            <p className="text-sm font-bold text-white">Product</p>
-            <ul className="mt-4 flex flex-col gap-2.5">
-              {productLinks.map((link) => (
-                <li key={link.href}>
-                  <FooterLink {...link} />
-                </li>
-              ))}
-            </ul>
-          </nav>
-
-          <nav aria-label="Solutions">
-            <p className="text-sm font-bold text-white">Solutions</p>
-            <ul className="mt-4 flex flex-col gap-2.5">
-              {solutionLinks.map((link) => (
-                <li key={link.href + link.label}>
-                  <FooterLink {...link} />
-                </li>
-              ))}
-            </ul>
-          </nav>
-
-          <nav aria-label="Company">
-            <p className="text-sm font-bold text-white">Company</p>
-            <ul className="mt-4 flex flex-col gap-2.5">
-              {companyLinks.map((link) => (
-                <li key={link.label}>
-                  <FooterLink {...link} />
-                </li>
-              ))}
-            </ul>
-          </nav>
+        {/* Category columns */}
+        <div className="mt-12 grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+          {footerColumns.map((column) => (
+            <nav key={column.title} aria-label={column.title}>
+              <p className="text-sm font-bold text-white">{column.title}</p>
+              <ul className="mt-4 flex flex-col gap-2.5">
+                {column.links.map((link) => (
+                  <li key={link.href + link.label}>
+                    <FooterLink {...link} />
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          ))}
 
           <nav aria-label="Legal">
             <p className="text-sm font-bold text-white">Legal</p>
@@ -153,6 +125,9 @@ export default function Footer() {
                   <FooterLink {...link} />
                 </li>
               ))}
+              <li>
+                <FooterLink href={`mailto:${site.email}`} label="Contact" />
+              </li>
             </ul>
           </nav>
         </div>
