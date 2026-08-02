@@ -1,15 +1,15 @@
-import type { Metadata } from "next";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import Reveal from "@/components/Reveal";
 import { site } from "@/lib/content";
+import { pageMetadata } from "@/lib/seoMeta";
 import { breadcrumbList } from "@/lib/schema";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Partner With Us — Resell & Integrate SvaraCall AI",
   description:
     "Partner with SvaraCall AI as an agency, reseller, or technology partner. Bring AI outbound calling in Telugu, Hindi & English to your clients and earn with us.",
-  alternates: { canonical: "/partner" },
-};
+  path: "/partner",
+});
 
 const trail = [{ name: "Partner", path: "/partner" }];
 

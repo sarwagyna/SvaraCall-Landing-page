@@ -43,6 +43,7 @@ export const metadata: Metadata = {
       "SvaraCall AI — Affordable AI Outbound Calling Agent for Indian Businesses",
     description:
       "Premium, human-grade AI calling in Telugu, Hindi & English at a fraction of a calling team's cost. Outcome-driven, TRAI & DPDP ready.",
+    images: [{ url: "/opengraph-image" }],
   },
   twitter: {
     card: "summary_large_image",
@@ -50,6 +51,7 @@ export const metadata: Metadata = {
       "SvaraCall AI — Affordable AI Outbound Calling Agent for Indian Businesses",
     description:
       "Premium AI calling in Telugu, Hindi & English at a fraction of a calling team's cost. Outcome-driven, TRAI & DPDP ready.",
+    images: ["/opengraph-image"],
   },
   robots: {
     index: true,

@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import CtaBand from "@/components/CtaBand";
 import SolutionsCatalog from "@/components/solutions/SolutionsCatalog";
@@ -10,13 +9,14 @@ import { SolutionsChatProvider } from "@/components/solutions/SolutionsChatConte
 import { breadcrumbList } from "@/lib/schema";
 import { allSolutionCards } from "@/lib/solutions";
 import { site } from "@/lib/content";
+import { pageMetadata } from "@/lib/seoMeta";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Solutions — AI Outbound Calling Workflows",
   description:
     "Explore SvaraCall AI solutions for lead follow-up, appointment reminders, no-show recovery, payment nudges, order confirmations, and more — in Telugu, Hindi, and English. Chat with our trained assistant to map your bottleneck.",
-  alternates: { canonical: "/solutions" },
-};
+  path: "/solutions",
+});
 
 const trail = [{ name: "Solutions", path: "/solutions" }];
 

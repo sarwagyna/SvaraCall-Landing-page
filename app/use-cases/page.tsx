@@ -1,20 +1,36 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import UseCases from "@/components/UseCases";
 import CtaBand from "@/components/CtaBand";
 import Reveal from "@/components/Reveal";
-import { industryPages } from "@/lib/content";
-import { breadcrumbList } from "@/lib/schema";
+import { industryPages, site } from "@/lib/content";
+import { useCasePages } from "@/lib/useCasePages";
+import { pageMetadata } from "@/lib/seoMeta";
+import { breadcrumbList, collectionPageSchema, jsonLdGraph } from "@/lib/schema";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Use Cases — What Businesses Automate with SvaraCall",
   description:
     "SvaraCall AI use cases: lead follow-ups, appointment reminders, no-show recovery, payment and renewal reminders, confirmations, feedback, and win-back calls — outcome-driven and far cheaper than a manual calling team.",
-  alternates: { canonical: "/use-cases" },
-};
+  path: "/use-cases",
+});
 
 const trail = [{ name: "Use cases", path: "/use-cases" }];
+
+const graph = jsonLdGraph([
+  breadcrumbList(trail),
+  collectionPageSchema({
+    name: "SvaraCall AI Use Cases",
+    description:
+      "SvaraCall AI use cases: lead follow-ups, appointment reminders, no-show recovery, payment and renewal reminders, confirmations, feedback, and win-back calls.",
+    url: `${site.url}/use-cases`,
+    items: useCasePages.map((page) => ({
+      name: page.name,
+      url: `${site.url}/use-cases/${page.slug}`,
+    })),
+    options: { graphNode: true },
+  }),
+]);
 
 export default function UseCasesPage() {
   return (
@@ -22,6 +38,46 @@ export default function UseCasesPage() {
       <Breadcrumbs trail={trail} tone="canvas" />
       <main>
         <UseCases headingLevel={1} />
+
+        <section id="all-use-cases" className="bg-canvas">
+          <div className="mx-auto max-w-6xl px-5 py-16 md:py-24">
+            <h2 className="display display-h2 max-w-3xl">
+              All use-case guides
+            </h2>
+            <p className="mt-5 max-w-3xl text-lg text-body">
+              Deep dives with workflows, ROI models, scripts, and FAQs for each
+              outbound and inbound journey.
+            </p>
+            <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {useCasePages.map((page, i) => (
+                <Reveal
+                  key={page.slug}
+                  as="li"
+                  delayMs={(i % 3) * 50}
+                  className="rounded-card bg-canvas-soft p-6"
+                >
+                  <h3 className="text-base font-bold text-ink">
+                    <Link
+                      href={`/use-cases/${page.slug}`}
+                      className="hover:underline"
+                    >
+                      {page.name}
+                    </Link>
+                  </h3>
+                  <p className="mt-2 text-sm text-body line-clamp-3">
+                    {page.subcopy}
+                  </p>
+                  <Link
+                    href={`/use-cases/${page.slug}`}
+                    className="mt-3 inline-block text-sm font-semibold text-ink-deep hover:underline"
+                  >
+                    Open guide →
+                  </Link>
+                </Reveal>
+              ))}
+            </ul>
+          </div>
+        </section>
 
         <section id="by-industry" className="bg-canvas-soft">
           <div className="mx-auto max-w-6xl px-5 py-16 md:py-24">
@@ -75,7 +131,7 @@ export default function UseCasesPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbList(trail)),
+          __html: JSON.stringify(graph),
         }}
       />
     </>

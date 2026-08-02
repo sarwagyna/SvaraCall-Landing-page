@@ -12,11 +12,15 @@ SvaraCall AI delivers premium, human-grade calling at a fraction of the cost of 
 
 ## Languages
 
-SvaraCall AI speaks Telugu, Hindi, and English at launch and matches the customer's language during the call. Hinglish (mixed Hindi-English) is also live for callers who code-switch. Dedicated language pages cover Hindi, Hinglish, Telugu, Tamil, Bengali, Marathi, Gujarati, Kannada, Malayalam, and Punjabi — with Tamil, Bengali, Marathi, Gujarati, Kannada, Malayalam, and Punjabi on the expansion roadmap.
+SvaraCall AI speaks Telugu, Hindi, and English at launch and matches the customer's language during the call. Hinglish (mixed Hindi-English) is also live for callers who code-switch. Dedicated language pages cover English, Hindi, Hinglish, Telugu, Tamil, Bengali, Marathi, Gujarati, Kannada, Malayalam, and Punjabi — with Tamil, Bengali, Marathi, Gujarati, Kannada, Malayalam, and Punjabi on the expansion roadmap.
+
+## Programmatic SEO (live)
+
+Indexable URL families include use cases (`/use-cases/{slug}`), features (`/features/{slug}`), solutions (`/solutions/{slug}`), integrations (`/integrations/{slug}`), comparisons (`/compare/svaracall-vs-{competitor}`), niche business pages (`/for/{slug}`), call script templates (`/templates/{slug}`), industries, and languages (including English).
 
 ## Industries served
 
-SvaraCall AI has dedicated solutions for eleven industries in India, each with its own voice workflows:
+SvaraCall AI has dedicated solutions across healthcare, fintech, banking, insurance, brokerage, consultation, e-commerce, real estate, HR tech, education, automotive, telecom & IT, hotels, logistics, manufacturing, government, political outreach, pharmacies, travel, retail, and staffing — each with voice workflows in Telugu, Hindi, and English.
 
 - Healthcare (clinics and hospitals) — appointment reminders, no-show recovery, post-visit follow-ups, report-ready alerts, and feedback calls.
 - Fintech (banks and NBFCs) — fraud-alert callbacks, balance inquiries, loan support, card activation, EMI and payment reminders, and priority routing.
@@ -55,6 +59,7 @@ SvaraCall AI is a product of Sarwagyna Private Limited, Ongole, Andhra Pradesh, 
 - How it works: https://svaracall.sarwagyna.com/how-it-works
 - Voice agents: https://svaracall.sarwagyna.com/voice-agents
 - Languages: https://svaracall.sarwagyna.com/languages
+- English: https://svaracall.sarwagyna.com/languages/english
 - Hindi: https://svaracall.sarwagyna.com/languages/hindi
 - Hinglish: https://svaracall.sarwagyna.com/languages/hinglish
 - Telugu: https://svaracall.sarwagyna.com/languages/telugu
@@ -66,8 +71,23 @@ SvaraCall AI is a product of Sarwagyna Private Limited, Ongole, Andhra Pradesh, 
 - Malayalam: https://svaracall.sarwagyna.com/languages/malayalam
 - Punjabi: https://svaracall.sarwagyna.com/languages/punjabi
 - Integrations: https://svaracall.sarwagyna.com/integrations
+- Features: https://svaracall.sarwagyna.com/features
+- Compare: https://svaracall.sarwagyna.com/compare
 - Use cases: https://svaracall.sarwagyna.com/use-cases
+- Lead follow-up: https://svaracall.sarwagyna.com/use-cases/lead-follow-up
+- Appointment reminders: https://svaracall.sarwagyna.com/use-cases/appointment-reminders
+- AI receptionist: https://svaracall.sarwagyna.com/use-cases/ai-receptionist
+- Multilingual AI: https://svaracall.sarwagyna.com/features/multilingual-ai
+- Voice cloning: https://svaracall.sarwagyna.com/features/voice-cloning
+- Salesforce integration: https://svaracall.sarwagyna.com/integrations/salesforce
+- SvaraCall vs Retell AI: https://svaracall.sarwagyna.com/compare/svaracall-vs-retell-ai
+- By business: https://svaracall.sarwagyna.com/for
+- Dentists: https://svaracall.sarwagyna.com/for/dentists
+- Templates: https://svaracall.sarwagyna.com/templates
+- Appointment reminder script: https://svaracall.sarwagyna.com/templates/appointment-reminder-script
 - Industries: https://svaracall.sarwagyna.com/industries
+- Banking: https://svaracall.sarwagyna.com/industries/banking
+- Hotels: https://svaracall.sarwagyna.com/industries/hotels
 - Healthcare: https://svaracall.sarwagyna.com/industries/healthcare
 - Fintech: https://svaracall.sarwagyna.com/industries/fintech
 - Insurance: https://svaracall.sarwagyna.com/industries/insurance

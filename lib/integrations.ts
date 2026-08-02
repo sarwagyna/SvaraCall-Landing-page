@@ -871,7 +871,9 @@ export const integrationStats = {
   enterprise: integrations.filter((i) => i.status === "enterprise").length,
 } as const;
 
-export function integrationMark(item: Integration): string {
+export function integrationMark(
+  item: Pick<Integration, "name" | "mark">,
+): string {
   if (item.mark) return item.mark;
   const parts = item.name.split(/\s+/);
   if (parts.length === 1) return item.name.slice(0, 2).toUpperCase();

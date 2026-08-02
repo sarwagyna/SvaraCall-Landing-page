@@ -1,20 +1,35 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import Reveal from "@/components/Reveal";
 import CtaBand from "@/components/CtaBand";
 import { site } from "@/lib/content";
 import { languagePages } from "@/lib/languagePages";
-import { breadcrumbList } from "@/lib/schema";
+import { pageMetadata } from "@/lib/seoMeta";
+import { breadcrumbList, collectionPageSchema, jsonLdGraph } from "@/lib/schema";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Languages — AI Voice Agents Across India",
   description:
     "SvaraCall AI voice agents in Telugu, Hindi, and English today — with Tamil, Bengali, Marathi, Gujarati, Kannada, Malayalam, Punjabi, and Hinglish on the roadmap.",
-  alternates: { canonical: "/languages" },
-};
+  path: "/languages",
+});
 
 const trail = [{ name: "Languages", path: "/languages" }];
+
+const graph = jsonLdGraph([
+  breadcrumbList(trail),
+  collectionPageSchema({
+    name: "SvaraCall AI Languages",
+    description:
+      "SvaraCall AI voice agents in Telugu, Hindi, and English today — with Tamil, Bengali, Marathi, Gujarati, Kannada, Malayalam, Punjabi, and Hinglish on the roadmap.",
+    url: `${site.url}/languages`,
+    items: languagePages.map((page) => ({
+      name: page.name,
+      url: `${site.url}/languages/${page.slug}`,
+    })),
+    options: { graphNode: true },
+  }),
+]);
 
 export default function LanguagesIndexPage() {
   return (
@@ -71,23 +86,7 @@ export default function LanguagesIndexPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbList(trail)),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "ItemList",
-            name: "SvaraCall AI languages",
-            itemListElement: languagePages.map((page, i) => ({
-              "@type": "ListItem",
-              position: i + 1,
-              name: page.name,
-              url: `${site.url}/languages/${page.slug}`,
-            })),
-          }),
+          __html: JSON.stringify(graph),
         }}
       />
     </>

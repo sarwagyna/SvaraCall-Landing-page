@@ -1,6 +1,15 @@
 import type { MetadataRoute } from "next";
 import { site, industryPages } from "@/lib/content";
 import { languagePages } from "@/lib/languagePages";
+import { useCasePages } from "@/lib/useCasePages";
+import { featurePages } from "@/lib/featurePages";
+import { comparePages } from "@/lib/comparePages";
+import {
+  integrationPages,
+  solutionPages,
+} from "@/lib/integrationPages";
+import { nichePages } from "@/lib/nichePages";
+import { templatePages } from "@/lib/templatePages";
 import { routes, bookPilotHref } from "@/lib/nav";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -42,6 +51,48 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified,
       changeFrequency: "monthly" as const,
       priority: 0.7,
+    })),
+    ...useCasePages.map((page) => ({
+      url: `${site.url}/use-cases/${page.slug}`,
+      lastModified,
+      changeFrequency: "monthly" as const,
+      priority: 0.75,
+    })),
+    ...featurePages.map((page) => ({
+      url: `${site.url}/features/${page.slug}`,
+      lastModified,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    })),
+    ...solutionPages.map((page) => ({
+      url: `${site.url}/solutions/${page.slug}`,
+      lastModified,
+      changeFrequency: "monthly" as const,
+      priority: 0.75,
+    })),
+    ...integrationPages.map((page) => ({
+      url: `${site.url}/integrations/${page.slug}`,
+      lastModified,
+      changeFrequency: "monthly" as const,
+      priority: 0.65,
+    })),
+    ...comparePages.map((page) => ({
+      url: `${site.url}/compare/${page.slug}`,
+      lastModified,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    })),
+    ...nichePages.map((page) => ({
+      url: `${site.url}/for/${page.slug}`,
+      lastModified,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    })),
+    ...templatePages.map((page) => ({
+      url: `${site.url}/templates/${page.slug}`,
+      lastModified,
+      changeFrequency: "monthly" as const,
+      priority: 0.65,
     })),
   ];
 }

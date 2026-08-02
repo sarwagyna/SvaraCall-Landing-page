@@ -1,17 +1,17 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import Reveal from "@/components/Reveal";
 import CtaBand from "@/components/CtaBand";
 import { site, canonicalSentence } from "@/lib/content";
+import { pageMetadata } from "@/lib/seoMeta";
 import { breadcrumbList } from "@/lib/schema";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "About Us — The Team Behind SvaraCall AI",
   description:
     "SvaraCall AI is built by Sarwagyna Private Limited, an India-first AI and software company. Learn about our mission to automate outbound calling for Indian businesses.",
-  alternates: { canonical: "/about" },
-};
+  path: "/about",
+});
 
 const trail = [{ name: "About Us", path: "/about" }];
 

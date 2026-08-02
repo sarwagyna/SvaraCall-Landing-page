@@ -51,7 +51,7 @@ export const solutionGroups: SolutionGroup[] = [
         filter: "revenue",
         tone: "deep",
         keywords: ["lead", "follow", "cold", "enquiry", "inquiry", "sales"],
-        href: "/use-cases",
+        href: "/solutions/lead-follow-up",
       },
       {
         id: "lead-qualification",
@@ -60,7 +60,7 @@ export const solutionGroups: SolutionGroup[] = [
         filter: "revenue",
         tone: "mid",
         keywords: ["qualify", "qualification", "score", "intent", "sales"],
-        href: "/use-cases",
+        href: "/solutions/lead-qualification",
       },
       {
         id: "appointment-booking",
@@ -69,7 +69,7 @@ export const solutionGroups: SolutionGroup[] = [
         filter: "revenue",
         tone: "pale",
         keywords: ["appointment", "booking", "schedule", "calendar", "slot"],
-        href: "/use-cases",
+        href: "/solutions/appointment-booking",
       },
       {
         id: "win-back",
@@ -78,7 +78,7 @@ export const solutionGroups: SolutionGroup[] = [
         filter: "revenue",
         tone: "deep",
         keywords: ["win-back", "winback", "dormant", "lapsed", "churn", "upsell"],
-        href: "/use-cases",
+        href: "/solutions/win-back",
       },
       {
         id: "event-reminders",
@@ -87,7 +87,7 @@ export const solutionGroups: SolutionGroup[] = [
         filter: "revenue",
         tone: "mid",
         keywords: ["event", "webinar", "reminder", "attendance"],
-        href: "/use-cases",
+        href: "/solutions/event-reminders",
       },
       {
         id: "surveys",
@@ -96,7 +96,7 @@ export const solutionGroups: SolutionGroup[] = [
         filter: "revenue",
         tone: "pale",
         keywords: ["survey", "nps", "feedback", "poll", "score"],
-        href: "/use-cases",
+        href: "/solutions/surveys",
       },
     ],
   },
@@ -111,7 +111,7 @@ export const solutionGroups: SolutionGroup[] = [
         filter: "experience",
         tone: "mid",
         keywords: ["reminder", "appointment", "confirm", "no-show", "noshow"],
-        href: "/use-cases",
+        href: "/solutions/appointment-reminders",
       },
       {
         id: "no-show-recovery",
@@ -120,7 +120,7 @@ export const solutionGroups: SolutionGroup[] = [
         filter: "experience",
         tone: "deep",
         keywords: ["no-show", "noshow", "missed", "recovery", "reschedule"],
-        href: "/use-cases",
+        href: "/solutions/no-show-recovery",
       },
       {
         id: "order-updates",
@@ -129,7 +129,7 @@ export const solutionGroups: SolutionGroup[] = [
         filter: "experience",
         tone: "pale",
         keywords: ["order", "delivery", "cod", "status", "wismo", "shipping"],
-        href: "/industries/ecommerce",
+        href: "/solutions/order-updates",
       },
       {
         id: "payment-reminders",
@@ -138,7 +138,7 @@ export const solutionGroups: SolutionGroup[] = [
         filter: "experience",
         tone: "mid",
         keywords: ["payment", "renewal", "emi", "due", "collection", "invoice"],
-        href: "/use-cases",
+        href: "/solutions/payment-reminders",
       },
     ],
   },
@@ -153,7 +153,7 @@ export const solutionGroups: SolutionGroup[] = [
         filter: "operations",
         tone: "deep",
         keywords: ["crm", "log", "dashboard", "outcome", "transcript", "recording"],
-        href: "/how-it-works",
+        href: "/solutions/crm-logging",
       },
       {
         id: "data-collection",
@@ -162,7 +162,7 @@ export const solutionGroups: SolutionGroup[] = [
         filter: "operations",
         tone: "pale",
         keywords: ["data", "collect", "form", "preference", "feedback"],
-        href: "/use-cases",
+        href: "/solutions/data-collection",
       },
       {
         id: "escalation",
@@ -171,7 +171,7 @@ export const solutionGroups: SolutionGroup[] = [
         filter: "operations",
         tone: "mid",
         keywords: ["escalation", "handoff", "human", "transfer", "agent"],
-        href: "/voice-agents",
+        href: "/solutions/escalation",
       },
       {
         id: "compliance",
@@ -180,7 +180,7 @@ export const solutionGroups: SolutionGroup[] = [
         filter: "operations",
         tone: "deep",
         keywords: ["compliance", "consent", "trai", "dlt", "dpdp", "opt-out", "verify"],
-        href: "/compliance",
+        href: "/solutions/compliance",
       },
     ],
   },
@@ -249,7 +249,7 @@ export const solutionsPlays = [
     category: "Automate",
     title: "Lead follow-up that never sleeps",
     body: "New enquiries get a natural call in minutes — in the customer's language — so intent doesn't go cold overnight.",
-    href: "/use-cases",
+    href: "/solutions/lead-follow-up",
     cta: "See lead follow-up",
   },
   {

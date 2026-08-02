@@ -2,36 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/lib/content";
 import { languagePages } from "@/lib/languagePages";
-import { bookPilotHref } from "@/lib/nav";
+import { footerNav } from "@/lib/nav";
 
-const productLinks = [
-  { href: "/how-it-works", label: "Platform" },
-  { href: "/voice-agents", label: "Voice agents" },
-  { href: "/languages", label: "Languages" },
-  { href: "/integrations", label: "Integrations" },
-  { href: "/compliance", label: "Security" },
-  { href: bookPilotHref, label: "Book a pilot" },
-] as const;
+const productLinks = footerNav.product;
 
-const solutionLinks = [
-  { href: "/industries/ecommerce", label: "E-commerce" },
-  { href: "/industries/fintech", label: "Lending & Collections" },
-  { href: "/industries/insurance", label: "Insurance" },
-  { href: "/industries/healthcare", label: "Healthcare" },
-  { href: "/industries/automotive", label: "Automotive" },
-  { href: "/industries", label: "Industry intelligence" },
-  { href: "/use-cases", label: "Use cases" },
-] as const;
+const solutionLinks = footerNav.solutions;
 
 const companyLinks = [
-  { href: "/about", label: "About" },
-  { href: "/partner", label: "Partner" },
-  {
-    href: "https://sarwagyna.com/careers",
-    label: "Careers",
-    external: true,
-  },
-  { href: "/faq", label: "FAQ" },
+  ...footerNav.company,
   { href: `mailto:${site.email}`, label: "Contact" },
 ] as const;
 

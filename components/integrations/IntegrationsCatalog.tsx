@@ -4,10 +4,10 @@ import Link from "next/link";
 import { useDeferredValue, useMemo, useState } from "react";
 import SoftAuroraLazy from "@/components/SoftAuroraLazy";
 import Reveal from "@/components/Reveal";
+import IntegrationLogo from "@/components/integrations/IntegrationLogo";
 import { bookPilotHref } from "@/lib/nav";
 import {
   integrationCategories,
-  integrationMark,
   integrationStats,
   integrations,
   type Integration,
@@ -19,34 +19,33 @@ type StatusFilter = "all" | IntegrationStatus;
 type CategoryFilter = "all" | IntegrationCategory;
 
 function IntegrationCard({ item }: { item: Integration }) {
-  const mark = integrationMark(item);
-
   return (
-    <li className="group flex gap-3.5 rounded-2xl border border-line bg-surface/60 p-4 transition-colors hover:border-primary/35 hover:bg-surface-raised/80 sm:p-5">
-      <span
-        className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-[11px] font-bold tracking-tight text-white shadow-sm ring-1 ring-white/10"
-        style={{ backgroundColor: item.color }}
-        aria-hidden
+    <li>
+      <Link
+        href={`/integrations/${item.id}`}
+        className="group flex gap-3.5 rounded-2xl border border-line bg-surface/60 p-4 transition-colors hover:border-primary/35 hover:bg-surface-raised/80 sm:p-5"
       >
-        {mark.slice(0, 4)}
-      </span>
-      <div className="min-w-0 flex-1">
-        <div className="flex flex-wrap items-center gap-2">
-          <h3 className="text-sm font-semibold text-ink sm:text-[15px]">
-            {item.name}
-          </h3>
-          {item.status === "enterprise" ? (
-            <span className="rounded-pill bg-white/8 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-mute">
-              Enterprise
-            </span>
-          ) : (
-            <span className="rounded-pill bg-primary-soft px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-primary">
-              Ready
-            </span>
-          )}
+        <IntegrationLogo item={item} size={44} />
+        <div className="min-w-0 flex-1">
+          <div className="flex flex-wrap items-center gap-2">
+            <h3 className="text-sm font-semibold text-ink sm:text-[15px]">
+              {item.name}
+            </h3>
+            {item.status === "enterprise" ? (
+              <span className="rounded-pill bg-white/8 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-mute">
+                Enterprise
+              </span>
+            ) : (
+              <span className="rounded-pill bg-primary-soft px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-primary">
+                Ready
+              </span>
+            )}
+          </div>
+          <p className="mt-1 text-sm leading-relaxed text-body">
+            {item.description}
+          </p>
         </div>
-        <p className="mt-1 text-sm leading-relaxed text-body">{item.description}</p>
-      </div>
+      </Link>
     </li>
   );
 }
@@ -281,17 +280,20 @@ export default function IntegrationsCatalog() {
             </div>
           )}
 
-          <div className="mt-14 rounded-[2rem] bg-primary px-6 py-12 text-center text-on-primary sm:mt-16 sm:rounded-[2.5rem] sm:px-10 sm:py-14 md:px-14">
-            <h2 className="display text-[clamp(1.75rem,4vw,2.75rem)] leading-tight">
+          <div className="mt-14 rounded-[2rem] bg-primary px-6 py-12 text-center sm:mt-16 sm:rounded-[2.5rem] sm:px-10 sm:py-14 md:px-14">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-on-primary/70">
+              Custom integrations are also available
+            </p>
+            <h2 className="display mt-3 text-[clamp(1.75rem,4vw,2.75rem)] leading-tight text-white">
               Don&apos;t see yours?
             </h2>
-            <p className="mx-auto mt-3 max-w-xl text-base text-on-primary/80 sm:text-lg">
+            <p className="mx-auto mt-3 max-w-xl text-base text-on-primary sm:text-lg">
               If it has an API, we can usually bridge it — book a pilot and
               we&apos;ll map your stack in a live call.
             </p>
             <Link
               href={bookPilotHref}
-              className="mt-8 inline-flex h-12 items-center justify-center rounded-pill bg-on-primary px-8 text-base font-semibold text-primary transition-opacity hover:opacity-90"
+              className="mt-8 inline-flex h-12 items-center justify-center rounded-pill bg-ink px-8 text-base font-semibold text-primary transition-opacity hover:opacity-90"
             >
               Book a pilot
             </Link>

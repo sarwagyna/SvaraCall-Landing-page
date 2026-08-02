@@ -1,17 +1,17 @@
-import type { Metadata } from "next";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import CtaBand from "@/components/CtaBand";
 import IntegrationsCatalog from "@/components/integrations/IntegrationsCatalog";
 import { breadcrumbList } from "@/lib/schema";
 import { integrationStats, integrations } from "@/lib/integrations";
 import { site } from "@/lib/content";
+import { pageMetadata } from "@/lib/seoMeta";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Integrations — CRM, WhatsApp, Telephony & More",
   description:
     "Connect SvaraCall AI to the tools you already use — CRM, automation, e-commerce, WhatsApp, SMS, telephony, and more. Your stack stays yours.",
-  alternates: { canonical: "/integrations" },
-};
+  path: "/integrations",
+});
 
 const trail = [{ name: "Integrations", path: "/integrations" }];
 

@@ -1,21 +1,36 @@
-import type { Metadata } from "next";
 import RemoteImage from "@/components/RemoteImage";
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import Reveal from "@/components/Reveal";
 import CtaBand from "@/components/CtaBand";
-import { answers, industryPages } from "@/lib/content";
+import { answers, industryPages, site } from "@/lib/content";
 import { industryImages } from "@/lib/images";
-import { breadcrumbList } from "@/lib/schema";
+import { pageMetadata } from "@/lib/seoMeta";
+import { breadcrumbList, collectionPageSchema, jsonLdGraph } from "@/lib/schema";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Industries — AI Outbound Calling Across India",
   description:
     "SvaraCall AI adapts reminder, follow-up, and confirmation calls to every Indian industry — healthcare, fintech, real estate, education, e-commerce, telecom & IT, and more — premium quality at a fraction of a calling team's cost.",
-  alternates: { canonical: "/industries" },
-};
+  path: "/industries",
+});
 
 const trail = [{ name: "Industries", path: "/industries" }];
+
+const graph = jsonLdGraph([
+  breadcrumbList(trail),
+  collectionPageSchema({
+    name: "SvaraCall AI Industries",
+    description:
+      "SvaraCall AI adapts reminder, follow-up, and confirmation calls to every Indian industry — healthcare, fintech, real estate, education, e-commerce, telecom & IT, and more.",
+    url: `${site.url}/industries`,
+    items: industryPages.map((page) => ({
+      name: page.name,
+      url: `${site.url}/industries/${page.slug}`,
+    })),
+    options: { graphNode: true },
+  }),
+]);
 
 export default function IndustriesPage() {
   return (
@@ -76,7 +91,7 @@ export default function IndustriesPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbList(trail)),
+          __html: JSON.stringify(graph),
         }}
       />
     </>

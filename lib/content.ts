@@ -1340,6 +1340,776 @@ export const industryPages: IndustryPage[] = [
     metaDescription:
       "AI voice agent for telecom and IT in India. Run bill reminders, outage alerts, SIM activation, and IT ticket updates in Telugu, Hindi & English.",
   },
+  {
+    slug: "banking",
+    name: "Banking",
+    eyebrow: "SvaraCall for Banking",
+    heroTitle: "Branch-grade service",
+    heroAccent: "without branch queues",
+    heroSubcopy:
+      "SvaraCall AI handles account service, loan follow-ups, and fraud verification for banks and NBFCs — in Telugu, Hindi, and English — so branches and call centers focus on complex cases.",
+    heroMetric: { value: "24/7", label: "Account service coverage" },
+    heroTiles: [
+      { value: "KYC", label: "Document nudges" },
+      { value: "2FA", label: "Verified callbacks" },
+      { value: "DPDP", label: "Data compliant" },
+      { value: "API", label: "Core banking ready" },
+    ],
+    standardTitle: "Scale routine",
+    standardAccent: "banking voice work",
+    standardBody:
+      "Public and private banks face rising call volume on balances, cards, and loan status. SvaraCall AI runs verified outbound and inbound flows, logs every outcome, and escalates high-value queries with full context.",
+    bigStat: {
+      value: "Lower",
+      label: "Cost per routine contact vs night-shift staffing",
+      points: [
+        "Verify suspicious transactions with secure voice callbacks",
+        "Nudge KYC and document submission before account blocks",
+        "Handle loan status and EMI reminders at scale",
+      ],
+    },
+    workflows: [
+      {
+        title: "Fraud verification calls",
+        body: "Reach customers instantly on flagged transactions with structured identity checks.",
+      },
+      {
+        title: "Loan status inquiries",
+        body: "Answer inbound status checks and guide applicants to the next documentation step.",
+      },
+      {
+        title: "EMI & overdue reminders",
+        body: "Polite, scheduled nudges before accounts slip into collections.",
+      },
+      {
+        title: "KYC document collection",
+        body: "Chase pending IDs and address proofs until the file is complete.",
+      },
+      {
+        title: "Card activation & reissue",
+        body: "Activate cards and confirm delivery over a fast, verified call.",
+      },
+      {
+        title: "Priority escalation routing",
+        body: "Route HNI and complex queries to relationship managers with transcript intact.",
+      },
+    ],
+    results: {
+      title: "A regional bank",
+      accent: "cleared routine queues",
+      body: "Illustrative outcome: a mid-size bank used voice AI for fraud callbacks and EMI reminders — relationship managers only handled escalations while every call stayed logged.",
+      stats: [
+        { value: "Faster", label: "Fraud callback turnaround" },
+        { value: "Lower", label: "Routine contact cost" },
+        { value: "24/7", label: "Service coverage" },
+        { value: "3 langs", label: "Telugu · Hindi · English" },
+      ],
+      quote:
+        "Routine calls finally run on schedule — in the customer's language — and our RM desk only sees what needs a human.",
+      author: "Operations lead, regional bank",
+    },
+    ctaTitle: "Hear a fraud callback",
+    ctaAccent: "on your number",
+    ctaSubcopy:
+      "We'll place a live SvaraCall that verifies a transaction the way your customers actually speak.",
+    metaTitle:
+      "SvaraCall AI for Banking — Fraud Alerts, Loans & Account Service",
+    metaDescription:
+      "AI voice agent for banks and NBFCs in India. Run fraud verification, loan follow-ups, EMI reminders, and KYC nudges in Telugu, Hindi & English. DPDP-ready.",
+  },
+  {
+    slug: "hotels",
+    name: "Hotels",
+    eyebrow: "SvaraCall for Hotels",
+    heroTitle: "Guest experience",
+    heroAccent: "starts on the phone",
+    heroSubcopy:
+      "SvaraCall AI confirms bookings, handles pre-arrival requests, and follows up after checkout — in Telugu, Hindi, and English — so front desks stay free for guests in the lobby.",
+    heroMetric: { value: "Higher", label: "Booking confirmation rate" },
+    heroTiles: [
+      { value: "Pre-arrival", label: "Guest calls" },
+      { value: "Upsell", label: "Room upgrades" },
+      { value: "Feedback", label: "Post-stay surveys" },
+      { value: "24/7", label: "Reservation desk" },
+    ],
+    standardTitle: "Fill rooms",
+    standardAccent: "and protect reputation",
+    standardBody:
+      "Hotels and resorts lose revenue to no-shows and missed upsell moments. SvaraCall AI confirms reservations, collects special requests before arrival, and gathers feedback after checkout — all logged to your PMS or CRM.",
+    bigStat: {
+      value: "Fewer",
+      label: "No-shows on confirmed bookings",
+      points: [
+        "Confirm reservations and collect arrival time a day ahead",
+        "Offer upgrades and late checkout before guests arrive",
+        "Follow up after stay to capture reviews and repeat bookings",
+      ],
+    },
+    workflows: [
+      {
+        title: "Booking confirmations",
+        body: "Confirm reservations and collect ETA so rooms aren't held for no-shows.",
+      },
+      {
+        title: "Pre-arrival requests",
+        body: "Capture dietary, accessibility, and transport needs before check-in.",
+      },
+      {
+        title: "Upsell & upgrade offers",
+        body: "Pitch room upgrades and spa packages when intent is highest — before arrival.",
+      },
+      {
+        title: "No-show recovery",
+        body: "Reach guests who missed check-in and offer rebooking on a fresh date.",
+      },
+      {
+        title: "Post-stay feedback",
+        body: "Call after checkout to capture satisfaction scores and review prompts.",
+      },
+      {
+        title: "Event & banquet reminders",
+        body: "Confirm headcount and menu choices for weddings and corporate events.",
+      },
+    ],
+    results: {
+      title: "A boutique hotel group",
+      accent: "cut no-shows",
+      body: "Illustrative outcome: a multi-property group used voice AI for booking confirmations and post-stay feedback — front desk staff focused on in-house guests while confirmation rates improved.",
+      stats: [
+        { value: "Fewer", label: "No-shows" },
+        { value: "Higher", label: "Pre-arrival upsell capture" },
+        { value: "24/7", label: "Reservation coverage" },
+        { value: "3 langs", label: "Telugu · Hindi · English" },
+      ],
+      quote:
+        "Confirmation calls happen automatically — in the guest's language — and our team greets people who actually show up.",
+      author: "Front office manager, boutique hotel group",
+    },
+    ctaTitle: "Hear a booking confirm",
+    ctaAccent: "on your number",
+    ctaSubcopy:
+      "We'll place a live SvaraCall that confirms a reservation the way your guests actually speak.",
+    metaTitle:
+      "SvaraCall AI for Hotels — Booking Confirmations & Guest Follow-ups",
+    metaDescription:
+      "AI voice agent for hotels and resorts in India. Confirm bookings, handle pre-arrival requests, upsell upgrades, and collect post-stay feedback in Telugu, Hindi & English.",
+  },
+  {
+    slug: "logistics",
+    name: "Logistics",
+    eyebrow: "SvaraCall for Logistics",
+    heroTitle: "Deliveries confirmed",
+    heroAccent: "before the driver arrives",
+    heroSubcopy:
+      "SvaraCall AI confirms COD orders, reschedules failed deliveries, and updates shipment status — in Telugu, Hindi, and English — so last-mile teams stop wasting trips.",
+    heroMetric: { value: "Fewer", label: "Failed delivery attempts" },
+    heroTiles: [
+      { value: "COD", label: "Order confirms" },
+      { value: "NDR", label: "Recovery calls" },
+      { value: "POD", label: "Status updates" },
+      { value: "24/7", label: "Dispatch desk" },
+    ],
+    standardTitle: "Last-mile voice",
+    standardAccent: "that saves fuel",
+    standardBody:
+      "Couriers and 3PLs burn cost on reattempts and RTO. SvaraCall AI calls before dispatch, confirms availability, and recovers non-delivery reports — every outcome synced to your TMS or OMS.",
+    bigStat: {
+      value: "Lower",
+      label: "Reattempt rate on confirmed orders",
+      points: [
+        "Confirm COD intent and address before the rider leaves the hub",
+        "Reschedule failed deliveries while the customer is still reachable",
+        "Notify consignees on delays before they call your helpline",
+      ],
+    },
+    workflows: [
+      {
+        title: "COD order confirmation",
+        body: "Verify purchase intent and address before dispatch to cut RTO.",
+      },
+      {
+        title: "Delivery slot rescheduling",
+        body: "Reach customers who missed a drop and book a new window.",
+      },
+      {
+        title: "NDR recovery calls",
+        body: "Resolve non-delivery reports with address correction or alternate contact.",
+      },
+      {
+        title: "Shipment status updates",
+        body: "Proactive voice updates when parcels are delayed or held at hub.",
+      },
+      {
+        title: "Pickup scheduling",
+        body: "Confirm reverse pickup windows for returns and B2B collections.",
+      },
+      {
+        title: "Driver coordination alerts",
+        body: "Notify consignees minutes before arrival so someone is home.",
+      },
+    ],
+    results: {
+      title: "A last-mile operator",
+      accent: "recovered failed drops",
+      body: "Illustrative outcome: a regional courier used voice AI for COD confirms and NDR recovery — riders made fewer wasted trips while customer contact rates improved.",
+      stats: [
+        { value: "Lower", label: "RTO on confirmed COD" },
+        { value: "Fewer", label: "Reattempt trips" },
+        { value: "Faster", label: "NDR resolution" },
+        { value: "3 langs", label: "Telugu · Hindi · English" },
+      ],
+      quote:
+        "We confirm before dispatch now — in the customer's language — and riders aren't knocking on empty doors.",
+      author: "Ops lead, last-mile delivery operator",
+    },
+    ctaTitle: "Hear a COD confirm",
+    ctaAccent: "on your number",
+    ctaSubcopy:
+      "We'll place a live SvaraCall that confirms a delivery the way your consignees actually speak.",
+    metaTitle:
+      "SvaraCall AI for Logistics — COD Confirms, NDR Recovery & Delivery Updates",
+    metaDescription:
+      "AI voice agent for logistics and last-mile in India. Confirm COD orders, recover failed deliveries, and update shipment status in Telugu, Hindi & English.",
+  },
+  {
+    slug: "manufacturing",
+    name: "Manufacturing",
+    eyebrow: "SvaraCall for Manufacturing",
+    heroTitle: "Supplier coordination",
+    heroAccent: "without the phone tag",
+    heroSubcopy:
+      "SvaraCall AI confirms POs, chases vendor documents, and updates distributors on dispatch — in Telugu, Hindi, and English — so plant and procurement teams stay on the floor.",
+    heroMetric: { value: "Faster", label: "Vendor response turnaround" },
+    heroTiles: [
+      { value: "PO", label: "Confirmations" },
+      { value: "GRN", label: "Receipt alerts" },
+      { value: "Dispatch", label: "Status calls" },
+      { value: "24/7", label: "Coordination desk" },
+    ],
+    standardTitle: "Keep production",
+    standardAccent: "moving on schedule",
+    standardBody:
+      "Manufacturers lose days to missed vendor callbacks and unclear dispatch status. SvaraCall AI runs structured outbound to suppliers and distributors, logs commitments, and escalates only when SLAs slip.",
+    bigStat: {
+      value: "Shorter",
+      label: "Procurement follow-up cycles",
+      points: [
+        "Confirm PO acceptance and delivery dates with vendors",
+        "Chase invoices, challans, and compliance documents on schedule",
+        "Update distributors on dispatch and ETA before they chase you",
+      ],
+    },
+    workflows: [
+      {
+        title: "PO confirmation calls",
+        body: "Verify vendor acceptance, quantity, and committed delivery date.",
+      },
+      {
+        title: "Vendor document collection",
+        body: "Chase pending invoices, test certificates, and compliance papers.",
+      },
+      {
+        title: "Dispatch & ETA updates",
+        body: "Proactive calls to distributors when shipments leave the plant.",
+      },
+      {
+        title: "Quality hold notifications",
+        body: "Inform buyers when batches fail QC and next steps are ready.",
+      },
+      {
+        title: "Maintenance schedule reminders",
+        body: "Remind plant teams and AMC vendors before service windows.",
+      },
+      {
+        title: "Distributor stock checks",
+        body: "Periodic voice checks on inventory levels before reorder triggers.",
+      },
+    ],
+    results: {
+      title: "A mid-size manufacturer",
+      accent: "shortened vendor cycles",
+      body: "Illustrative outcome: an industrial unit used voice AI for PO confirms and document chases — procurement spent less time on phone tag while vendor response times improved.",
+      stats: [
+        { value: "Faster", label: "Vendor callbacks" },
+        { value: "Shorter", label: "Doc collection cycles" },
+        { value: "Clearer", label: "Dispatch accountability" },
+        { value: "3 langs", label: "Telugu · Hindi · English" },
+      ],
+      quote:
+        "Vendor follow-ups run on a schedule now — in their language — and our team only steps in when dates slip.",
+      author: "Procurement head, mid-size manufacturer",
+    },
+    ctaTitle: "Hear a PO confirm",
+    ctaAccent: "on your number",
+    ctaSubcopy:
+      "We'll place a live SvaraCall that confirms a purchase order the way your vendors actually speak.",
+    metaTitle:
+      "SvaraCall AI for Manufacturing — PO Confirms, Vendor Follow-ups & Dispatch Updates",
+    metaDescription:
+      "AI voice agent for manufacturers in India. Confirm POs, chase vendor documents, and update distributors on dispatch in Telugu, Hindi & English.",
+  },
+  {
+    slug: "government",
+    name: "Government",
+    eyebrow: "SvaraCall for Government",
+    heroTitle: "Citizen outreach",
+    heroAccent: "at public-sector scale",
+    heroSubcopy:
+      "SvaraCall AI runs scheme awareness, appointment reminders, and application status updates — in Telugu, Hindi, and English — so field staff focus on citizens who need in-person help.",
+    heroMetric: { value: "Wider", label: "Scheme awareness reach" },
+    heroTiles: [
+      { value: "TRAI", label: "Registered calls" },
+      { value: "DPDP", label: "Data compliant" },
+      { value: "IVR", label: "Escalation ready" },
+      { value: "24/7", label: "Citizen desk" },
+    ],
+    standardTitle: "Reach citizens",
+    standardAccent: "in their language",
+    standardBody:
+      "Municipal bodies, PSUs, and welfare departments need voice outreach that scales without adding headcount. SvaraCall AI delivers scheduled, compliant calls with full audit logs and human escalation paths.",
+    bigStat: {
+      value: "Higher",
+      label: "Citizen contact rate vs SMS-only nudges",
+      points: [
+        "Notify beneficiaries about scheme deadlines and document camps",
+        "Confirm appointment slots for citizen service centers",
+        "Deliver application status updates before helpline queues build",
+      ],
+    },
+    workflows: [
+      {
+        title: "Scheme awareness calls",
+        body: "Inform eligible citizens about benefits, deadlines, and required documents.",
+      },
+      {
+        title: "Appointment confirmations",
+        body: "Confirm slots at seva kendras and municipal offices a day ahead.",
+      },
+      {
+        title: "Application status updates",
+        body: "Proactive voice updates on passport, license, and permit processing.",
+      },
+      {
+        title: "Document camp reminders",
+        body: "Remind registrants before enrollment drives and health camps.",
+      },
+      {
+        title: "Survey & feedback collection",
+        body: "Gather citizen satisfaction scores on services with structured scripts.",
+      },
+      {
+        title: "Emergency & advisory alerts",
+        body: "Blast weather, water, and safety advisories to affected wards.",
+      },
+    ],
+    results: {
+      title: "A municipal body",
+      accent: "scaled citizen outreach",
+      body: "Illustrative outcome: a district administration used voice AI for scheme reminders and appointment confirms — field teams handled complex cases while contact rates rose versus SMS-only campaigns.",
+      stats: [
+        { value: "Higher", label: "Citizen contact rate" },
+        { value: "Fewer", label: "Missed appointments" },
+        { value: "Full", label: "Audit trail per call" },
+        { value: "3 langs", label: "Telugu · Hindi · English" },
+      ],
+      quote:
+        "Citizens hear about schemes in their language — and our seva kendra staff see people who actually prepared their documents.",
+      author: "Program coordinator, district administration",
+    },
+    ctaTitle: "Hear a scheme awareness call",
+    ctaAccent: "on your number",
+    ctaSubcopy:
+      "We'll place a live SvaraCall that delivers a citizen update the way your constituency actually speaks.",
+    metaTitle:
+      "SvaraCall AI for Government — Citizen Outreach, Appointments & Scheme Alerts",
+    metaDescription:
+      "AI voice agent for government and PSUs in India. Run scheme awareness, appointment confirmations, and status updates in Telugu, Hindi & English. TRAI-registered, DPDP-ready.",
+  },
+  {
+    slug: "political",
+    name: "Political",
+    eyebrow: "SvaraCall for Political Campaigns",
+    heroTitle: "Constituency reach",
+    heroAccent: "without dialer fatigue",
+    heroSubcopy:
+      "SvaraCall AI runs voter outreach, event reminders, and volunteer coordination — in Telugu, Hindi, and English — with compliant scripts, consent tracking, and full call logs.",
+    heroMetric: { value: "Higher", label: "Voter contact rate" },
+    heroTiles: [
+      { value: "TRAI", label: "Compliant dialing" },
+      { value: "Opt-out", label: "Honored on request" },
+      { value: "Surveys", label: "Sentiment capture" },
+      { value: "24/7", label: "Campaign desk" },
+    ],
+    standardTitle: "Scale outreach",
+    standardAccent: "stay compliant",
+    standardBody:
+      "Campaigns need volume without burning volunteer goodwill or crossing telecom rules. SvaraCall AI delivers structured outbound with DND respect, opt-out handling, and transcripts your war room can audit.",
+    bigStat: {
+      value: "More",
+      label: "Contacts per volunteer hour vs manual dialing",
+      points: [
+        "Reach voters with localized messages on issues and events",
+        "Confirm rally attendance and booth volunteer shifts",
+        "Run quick sentiment surveys before field teams knock doors",
+      ],
+    },
+    workflows: [
+      {
+        title: "Voter awareness calls",
+        body: "Share candidate messages and policy highlights in the voter's language.",
+      },
+      {
+        title: "Event & rally reminders",
+        body: "Confirm attendance for sabhas, roadshows, and ward meetings.",
+      },
+      {
+        title: "Volunteer shift coordination",
+        body: "Remind booth workers and call center volunteers before their slot.",
+      },
+      {
+        title: "Sentiment & issue surveys",
+        body: "Capture top concerns by ward before canvassing teams deploy.",
+      },
+      {
+        title: "GOTV reminders",
+        body: "Election-day nudges with polling booth and timing details.",
+      },
+      {
+        title: "Donor & supporter follow-ups",
+        body: "Thank contributors and confirm participation in fundraising events.",
+      },
+    ],
+    results: {
+      title: "A state assembly campaign",
+      accent: "expanded voter reach",
+      body: "Illustrative outcome: a regional campaign used voice AI for event reminders and GOTV nudges — volunteers focused on door-to-door while contact rates scaled across multiple constituencies.",
+      stats: [
+        { value: "Higher", label: "Voter contact rate" },
+        { value: "More", label: "Contacts per volunteer hour" },
+        { value: "Compliant", label: "TRAI-registered dialing" },
+        { value: "3 langs", label: "Telugu · Hindi · English" },
+      ],
+      quote:
+        "Our war room sees every call logged — in the voter's language — and field teams know which wards care about which issues.",
+      author: "Campaign operations lead, state assembly race",
+    },
+    ctaTitle: "Hear a voter outreach call",
+    ctaAccent: "on your number",
+    ctaSubcopy:
+      "We'll place a live SvaraCall that delivers a campaign message the way your constituency actually speaks.",
+    metaTitle:
+      "SvaraCall AI for Political Campaigns — Voter Outreach, Events & GOTV",
+    metaDescription:
+      "AI voice agent for political campaigns in India. Run voter outreach, event reminders, and GOTV nudges in Telugu, Hindi & English. TRAI-registered with full audit logs.",
+  },
+  {
+    slug: "pharmacies",
+    name: "Pharmacies",
+    eyebrow: "SvaraCall for Pharmacies",
+    heroTitle: "Refill reminders",
+    heroAccent: "that patients actually pick up",
+    heroSubcopy:
+      "SvaraCall AI reminds patients about refills, confirms prescription readiness, and follows up on chronic care — in Telugu, Hindi, and English — so pharmacists stay at the counter.",
+    heroMetric: { value: "Higher", label: "Refill pickup rate" },
+    heroTiles: [
+      { value: "Refill", label: "Reminders" },
+      { value: "Rx", label: "Ready alerts" },
+      { value: "Chronic", label: "Care follow-ups" },
+      { value: "24/7", label: "Patient desk" },
+    ],
+    standardTitle: "Keep patients",
+    standardAccent: "on their regimen",
+    standardBody:
+      "Pharmacy chains lose revenue when chronic prescriptions lapse silently. SvaraCall AI calls before refills run out, confirms when orders are ready, and nudges adherence — logged to your POS or CRM.",
+    bigStat: {
+      value: "More",
+      label: "Refills collected before stock-out",
+      points: [
+        "Remind patients before diabetes, BP, and cardiac scripts run out",
+        "Notify when prescriptions and OTC orders are ready for pickup",
+        "Follow up on missed refills with home delivery options",
+      ],
+    },
+    workflows: [
+      {
+        title: "Refill reminders",
+        body: "Call before chronic medications run out and confirm pickup or delivery.",
+      },
+      {
+        title: "Prescription ready alerts",
+        body: "Notify patients when Rx orders are filled and waiting at the counter.",
+      },
+      {
+        title: "Adherence follow-ups",
+        body: "Check in on long-term therapy patients and log concerns for the pharmacist.",
+      },
+      {
+        title: "Home delivery coordination",
+        body: "Confirm address and slot for medicine delivery orders.",
+      },
+      {
+        title: "Insurance & discount nudges",
+        body: "Remind patients about applicable schemes before they pay full price.",
+      },
+      {
+        title: "Health camp reminders",
+        body: "Notify registered patients about free check-up drives at the store.",
+      },
+    ],
+    results: {
+      title: "A pharmacy chain",
+      accent: "lifted refill pickups",
+      body: "Illustrative outcome: a multi-branch pharmacy used voice AI for refill reminders and ready alerts — counter staff handled consultations while repeat prescription revenue improved.",
+      stats: [
+        { value: "Higher", label: "Refill pickup rate" },
+        { value: "Fewer", label: "Expired scripts on shelf" },
+        { value: "24/7", label: "Reminder coverage" },
+        { value: "3 langs", label: "Telugu · Hindi · English" },
+      ],
+      quote:
+        "Patients hear about refills in their language — and our pharmacists spend time on advice, not chasing callbacks.",
+      author: "Store operations lead, pharmacy chain",
+    },
+    ctaTitle: "Hear a refill reminder",
+    ctaAccent: "on your number",
+    ctaSubcopy:
+      "We'll place a live SvaraCall that reminds a patient the way your customers actually speak.",
+    metaTitle:
+      "SvaraCall AI for Pharmacies — Refill Reminders & Prescription Alerts",
+    metaDescription:
+      "AI voice agent for pharmacies in India. Run refill reminders, prescription ready alerts, and chronic care follow-ups in Telugu, Hindi & English.",
+  },
+  {
+    slug: "travel",
+    name: "Travel",
+    eyebrow: "SvaraCall for Travel",
+    heroTitle: "Itineraries confirmed",
+    heroAccent: "before departure day",
+    heroSubcopy:
+      "SvaraCall AI confirms bookings, sends travel document reminders, and follows up after trips — in Telugu, Hindi, and English — so agents focus on complex itineraries and upsells.",
+    heroMetric: { value: "Fewer", label: "Last-minute cancellations" },
+    heroTiles: [
+      { value: "Flights", label: "Check-in nudges" },
+      { value: "Visa", label: "Doc reminders" },
+      { value: "Tours", label: "Pre-trip calls" },
+      { value: "24/7", label: "Travel desk" },
+    ],
+    standardTitle: "Protect bookings",
+    standardAccent: "and repeat business",
+    standardBody:
+      "Travel agencies and OTAs lose margin to no-shows and document delays. SvaraCall AI confirms packages, chases visa papers, and gathers post-trip feedback — every outcome synced to your booking system.",
+    bigStat: {
+      value: "Higher",
+      label: "Document-ready rate before departure",
+      points: [
+        "Confirm package bookings and payment milestones on schedule",
+        "Remind travelers about visa documents and insurance deadlines",
+        "Follow up after trips to capture reviews and repeat bookings",
+      ],
+    },
+    workflows: [
+      {
+        title: "Booking confirmations",
+        body: "Verify package intent, dates, and payment before tickets are issued.",
+      },
+      {
+        title: "Document & visa reminders",
+        body: "Chase passport copies, photos, and visa forms before deadlines slip.",
+      },
+      {
+        title: "Pre-departure briefings",
+        body: "Confirm flight times, hotel check-in, and emergency contacts a day ahead.",
+      },
+      {
+        title: "Payment milestone nudges",
+        body: "Remind customers about installment due dates before bookings lapse.",
+      },
+      {
+        title: "Post-trip feedback",
+        body: "Call after return to capture satisfaction and referral opportunities.",
+      },
+      {
+        title: "Upsell & add-on offers",
+        body: "Pitch insurance, upgrades, and local experiences before departure.",
+      },
+    ],
+    results: {
+      title: "A travel agency network",
+      accent: "reduced no-shows",
+      body: "Illustrative outcome: a regional agency group used voice AI for booking confirms and visa reminders — consultants handled complex routes while document-ready rates improved before departure.",
+      stats: [
+        { value: "Fewer", label: "Last-minute cancellations" },
+        { value: "Higher", label: "Doc-ready before departure" },
+        { value: "24/7", label: "Travel desk coverage" },
+        { value: "3 langs", label: "Telugu · Hindi · English" },
+      ],
+      quote:
+        "Travelers get reminders in their language — and our agents spend time on itineraries, not chasing passport copies.",
+      author: "Operations head, travel agency network",
+    },
+    ctaTitle: "Hear a booking confirm",
+    ctaAccent: "on your number",
+    ctaSubcopy:
+      "We'll place a live SvaraCall that confirms a trip the way your travelers actually speak.",
+    metaTitle:
+      "SvaraCall AI for Travel — Booking Confirms, Visa Reminders & Trip Follow-ups",
+    metaDescription:
+      "AI voice agent for travel agencies and OTAs in India. Confirm bookings, chase visa documents, and follow up after trips in Telugu, Hindi & English.",
+  },
+  {
+    slug: "retail",
+    name: "Retail",
+    eyebrow: "SvaraCall for Retail",
+    heroTitle: "Store traffic",
+    heroAccent: "starts with a phone call",
+    heroSubcopy:
+      "SvaraCall AI confirms orders, drives loyalty redemptions, and follows up on abandoned carts — in Telugu, Hindi, and English — so store staff focus on customers on the floor.",
+    heroMetric: { value: "Higher", label: "Order confirmation rate" },
+    heroTiles: [
+      { value: "COD", label: "Order confirms" },
+      { value: "Loyalty", label: "Points nudges" },
+      { value: "Sale", label: "Event reminders" },
+      { value: "24/7", label: "Customer desk" },
+    ],
+    standardTitle: "Convert interest",
+    standardAccent: "into footfall",
+    standardBody:
+      "Retail chains and D2C brands lose sales to unconfirmed COD orders and cold loyalty members. SvaraCall AI runs outbound at scale, speaks the shopper's language, and logs every outcome to your CRM or OMS.",
+    bigStat: {
+      value: "Lower",
+      label: "RTO on confirmed retail orders",
+      points: [
+        "Confirm COD and high-value orders before dispatch",
+        "Remind loyalty members about points expiry and store events",
+        "Recover abandoned carts with a polite callback offer",
+      ],
+    },
+    workflows: [
+      {
+        title: "COD order confirmation",
+        body: "Verify purchase intent and address before the package ships.",
+      },
+      {
+        title: "Loyalty & points reminders",
+        body: "Nudge members about expiring points and exclusive store events.",
+      },
+      {
+        title: "Sale & launch alerts",
+        body: "Call VIP lists before seasonal sales and new collection drops.",
+      },
+      {
+        title: "Abandoned cart recovery",
+        body: "Follow up on dropped checkouts with offers or assistance.",
+      },
+      {
+        title: "Exchange & return coordination",
+        body: "Confirm pickup slots and refund status for return requests.",
+      },
+      {
+        title: "Post-purchase feedback",
+        body: "Gather satisfaction scores and review prompts after delivery.",
+      },
+    ],
+    results: {
+      title: "A retail chain",
+      accent: "cut COD returns",
+      body: "Illustrative outcome: a multi-store retailer used voice AI for COD confirms and loyalty nudges — floor staff handled in-store service while order confirmation rates improved.",
+      stats: [
+        { value: "Lower", label: "RTO on confirmed orders" },
+        { value: "Higher", label: "Loyalty redemption rate" },
+        { value: "24/7", label: "Customer desk coverage" },
+        { value: "3 langs", label: "Telugu · Hindi · English" },
+      ],
+      quote:
+        "We confirm before dispatch now — in the shopper's language — and stores see fewer returns and more redemptions.",
+      author: "Customer experience lead, retail chain",
+    },
+    ctaTitle: "Hear a COD confirm",
+    ctaAccent: "on your number",
+    ctaSubcopy:
+      "We'll place a live SvaraCall that confirms an order the way your shoppers actually speak.",
+    metaTitle:
+      "SvaraCall AI for Retail — COD Confirms, Loyalty Nudges & Cart Recovery",
+    metaDescription:
+      "AI voice agent for retail and D2C in India. Confirm COD orders, drive loyalty redemptions, and recover abandoned carts in Telugu, Hindi & English.",
+  },
+  {
+    slug: "staffing",
+    name: "Staffing",
+    eyebrow: "SvaraCall for Staffing",
+    heroTitle: "Candidates reached",
+    heroAccent: "before your competitor calls",
+    heroSubcopy:
+      "SvaraCall AI screens applicants, confirms interview slots, and follows up on offer letters — in Telugu, Hindi, and English — so recruiters focus on closing hires.",
+    heroMetric: { value: "Faster", label: "Candidate response time" },
+    heroTiles: [
+      { value: "Screen", label: "First-round calls" },
+      { value: "Interview", label: "Slot confirms" },
+      { value: "Offer", label: "Follow-ups" },
+      { value: "24/7", label: "Recruiting desk" },
+    ],
+    standardTitle: "Fill roles",
+    standardAccent: "without recruiter burnout",
+    standardBody:
+      "Staffing firms and HR teams drown in unanswered applications and no-show interviews. SvaraCall AI runs first-touch screening, confirms slots, and chases offer acceptances — logged to your ATS.",
+    bigStat: {
+      value: "More",
+      label: "Candidates contacted per recruiter hour",
+      points: [
+        "Screen applicants on availability, location, and role fit",
+        "Confirm interview slots and send reminders a day ahead",
+        "Follow up on offer letters until acceptance or decline",
+      ],
+    },
+    workflows: [
+      {
+        title: "Applicant screening calls",
+        body: "Qualify candidates on skills, availability, and salary expectations.",
+      },
+      {
+        title: "Interview slot confirmations",
+        body: "Book and confirm interviews so fewer candidates no-show.",
+      },
+      {
+        title: "Offer letter follow-ups",
+        body: "Chase pending acceptances and answer basic compensation questions.",
+      },
+      {
+        title: "Shift & deployment reminders",
+        body: "Confirm gig and contract workers before site deployment.",
+      },
+      {
+        title: "Reference check coordination",
+        body: "Reach referees and log responses for recruiter review.",
+      },
+      {
+        title: "Re-engagement campaigns",
+        body: "Call past candidates when matching roles open up again.",
+      },
+    ],
+    results: {
+      title: "A staffing firm",
+      accent: "accelerated hiring cycles",
+      body: "Illustrative outcome: a regional staffing agency used voice AI for screening and interview confirms — recruiters closed roles faster while candidate contact rates improved.",
+      stats: [
+        { value: "Faster", label: "Candidate response time" },
+        { value: "More", label: "Contacts per recruiter hour" },
+        { value: "Fewer", label: "Interview no-shows" },
+        { value: "3 langs", label: "Telugu · Hindi · English" },
+      ],
+      quote:
+        "First-touch calls happen automatically — in the candidate's language — and our recruiters only talk to people ready to interview.",
+      author: "Recruiting operations lead, staffing firm",
+    },
+    ctaTitle: "Hear a screening call",
+    ctaAccent: "on your number",
+    ctaSubcopy:
+      "We'll place a live SvaraCall that screens a candidate the way your applicants actually speak.",
+    metaTitle:
+      "SvaraCall AI for Staffing — Candidate Screening, Interviews & Offer Follow-ups",
+    metaDescription:
+      "AI voice agent for staffing and HR in India. Screen applicants, confirm interview slots, and follow up on offers in Telugu, Hindi & English.",
+  },
 ];
 
 export function getIndustryPage(slug: string): IndustryPage | undefined {

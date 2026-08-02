@@ -44,6 +44,123 @@ export type LanguagePage = {
 
 export const languagePages: LanguagePage[] = [
   {
+    slug: "english",
+    name: "English",
+    nativeName: "English",
+    scriptLabel: "Latin",
+    locale: "en-IN",
+    langAttr: "en",
+    script: "latin",
+    status: "live",
+    metaTitle:
+      "English Voice Agents — AI Calling in Indian & Global English | SvaraCall",
+    metaDescription:
+      "English voice agents tuned for Indian phones — metro accents, South Indian English, global business English, and seamless handoff to Hindi or Hinglish when callers switch.",
+    eyebrow: "Languages · English (Latin)",
+    headline: "English voice agents for Indian and global callers",
+    subcopy:
+      "Clear, natural English for outbound and inbound — Indian metro accents, South Indian English, and global business tone, with instant handoff to Hindi or Hinglish when callers code-switch.",
+    primaryCta: "Start a free trial call",
+    heroChips: [
+      "Indian English",
+      "Global tone",
+      "Hinglish handoff",
+      "Low latency",
+    ],
+    stats: [
+      { value: "25 Cr+", label: "English-first callers addressable in India" },
+      { value: "6+", label: "Indian English accent profiles" },
+      { value: "2+", label: "Production voices available" },
+      { value: "<800ms", label: "Typical response latency" },
+    ],
+    useCasesTitle: "Where English voice agents win business",
+    useCases: [
+      {
+        title: "Outbound sales & follow-ups",
+        body: "Lead qualification, demo booking, and win-back calls in crisp business English that urban buyers actually answer.",
+      },
+      {
+        title: "Inbound support & routing",
+        body: "Handle FAQs, ticket triage, and smart escalation — then hand off to Hindi or Hinglish when the caller switches mid-call.",
+      },
+      {
+        title: "BFSI & compliance calls",
+        body: "Fraud alerts, EMI reminders, and KYC nudges with product terms in English and empathy tuned for Indian phone habits.",
+      },
+    ],
+    voicesTitle: "Production voices in English",
+    voices: [
+      {
+        name: "Ananya",
+        gender: "Female",
+        locale: "en-IN",
+        accent: "Indian English — Metro",
+      },
+      {
+        name: "Rohan",
+        gender: "Male",
+        locale: "en-IN",
+        accent: "Indian English — South",
+      },
+    ],
+    dialectsTitle: "Accents & code-switching",
+    dialectsBody:
+      "Covers metro Indian English, South Indian English, and neutral global business tone — and hands off to Hindi or Hinglish when callers mix languages mid-sentence.",
+    dialectSample:
+      "Your EMI is due on the 5th — shall I send the payment link on WhatsApp?",
+    dialectSampleGloss:
+      "Standard Indian English phrasing with familiar product terms and polite closings.",
+    dialectQuote:
+      "English on Indian phones is its own dialect — we train for that, not textbook BBC.",
+    faqsTitle: "English voice AI, common questions",
+    faqs: [
+      {
+        q: "Which English accents do you support?",
+        a: "Metro Indian English (Delhi, Mumbai, Bangalore), South Indian English, and neutral global business tone. Tell us your regions on the pilot and we'll match the script.",
+      },
+      {
+        q: "Can it hand off to Hindi or Hinglish mid-call?",
+        a: "Yes. When a caller code-switches, the agent follows into Hindi or Hinglish without breaking the turn — or escalates to your team with full transcript.",
+      },
+      {
+        q: "Is this Indian English or US/UK accent?",
+        a: "Primarily Indian English tuned for local phones — clear, professional, and familiar. Global neutral tone is available for export or enterprise accounts.",
+      },
+      {
+        q: "How do I integrate English agents?",
+        a: "Upload a contact sheet or connect your CRM, pick a workflow, and start. English ships today alongside Telugu, Hindi, and Hinglish.",
+      },
+    ],
+    callLabel: "Outbound · Demo booking",
+    callLength: 26,
+    callOutcome: "Demo booked · Calendar sent · Logged",
+    callScript: [
+      { t: 0, kind: "status", text: "Connected" },
+      {
+        t: 2,
+        kind: "agent",
+        text: "Hi, this is Ananya from SvaraCall — I'm calling about the demo you requested for our voice AI platform.",
+      },
+      {
+        t: 10,
+        kind: "customer",
+        text: "Yes, I wanted to see how it handles outbound calls in English.",
+      },
+      {
+        t: 16,
+        kind: "agent",
+        text: "Perfect — I can book a 20-minute walkthrough tomorrow at 11 AM. Shall I send the calendar invite to this number?",
+      },
+      {
+        t: 22,
+        kind: "customer",
+        text: "That works, please send it.",
+      },
+    ],
+    bandImage:
+      "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&h=400&fit=crop&q=80",
+  },
+  {
     slug: "hindi",
     name: "Hindi",
     nativeName: "हिन्दी",

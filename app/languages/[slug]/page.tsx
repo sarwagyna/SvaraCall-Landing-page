@@ -4,7 +4,12 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import LanguageVertical from "@/components/languages/LanguageVertical";
 import { site } from "@/lib/content";
 import { getLanguagePage, languagePages } from "@/lib/languagePages";
-import { breadcrumbList, faqPageSchema } from "@/lib/schema";
+import {
+  breadcrumbList,
+  faqPageSchema,
+  jsonLdGraph,
+  serviceSchema,
+} from "@/lib/schema";
 
 type PageProps = { params: Promise<{ slug: string }> };
 
@@ -52,6 +57,7 @@ export default async function LanguagePage({ params }: PageProps) {
     { name: data.name, path: `/languages/${slug}` },
   ];
   const breadcrumb = breadcrumbList(trail);
+  const url = `${site.url}/languages/${slug}`;
 
   return (
     <>
@@ -62,10 +68,15 @@ export default async function LanguagePage({ params }: PageProps) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@graph": [
+          __html: JSON.stringify(
+            jsonLdGraph([
               breadcrumb,
+              serviceSchema({
+                name: `${data.name} AI Voice Agents — SvaraCall`,
+                description: data.metaDescription,
+                url,
+                options: { graphNode: true },
+              }),
               faqPageSchema(
                 data.faqs.map((item) => ({
                   question: item.q,
@@ -73,8 +84,8 @@ export default async function LanguagePage({ params }: PageProps) {
                 })),
                 { graphNode: true },
               ),
-            ],
-          }),
+            ]),
+          ),
         }}
       />
     </>

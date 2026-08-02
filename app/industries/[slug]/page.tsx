@@ -10,8 +10,13 @@ import BrokerageVertical from "@/components/industries/BrokerageVertical";
 import RealEstateVertical from "@/components/industries/RealEstateVertical";
 import EducationVertical from "@/components/industries/EducationVertical";
 import AutomotiveVertical from "@/components/industries/AutomotiveVertical";
-import { site, getIndustryPage, industryPages } from "@/lib/content";
-import { breadcrumbList, faqPageSchema } from "@/lib/schema";
+import { site, getIndustryPage, industryPages, type IndustryPage } from "@/lib/content";
+import {
+  breadcrumbList,
+  faqPageSchema,
+  jsonLdGraph,
+  serviceSchema,
+} from "@/lib/schema";
 import { ecommerceFaqs } from "@/lib/ecommerce";
 import { insuranceFaqs } from "@/lib/insurance";
 import { telecomFaqs } from "@/lib/telecom";
@@ -22,6 +27,56 @@ import { automotiveFaqs } from "@/lib/automotive";
 import { bookPilotHref } from "@/lib/nav";
 
 type PageProps = { params: Promise<{ slug: string }> };
+
+function industryFaqs(data: IndustryPage) {
+  const workflowSummary = data.workflows
+    .slice(0, 3)
+    .map((w) => w.title)
+    .join(", ");
+  return [
+    {
+      question: `How does SvaraCall help ${data.name}?`,
+      answer: `${data.standardBody} Key workflows include ${workflowSummary}.`,
+    },
+    {
+      question: "What languages does SvaraCall support?",
+      answer:
+        "SvaraCall AI voice agents speak Telugu, Hindi, and English — with code-switching for natural Indian conversations.",
+    },
+    {
+      question: "Is SvaraCall TRAI compliant?",
+      answer:
+        "Yes. SvaraCall follows TRAI guidelines for commercial communications, including consent capture, quiet hours, and AI/recording disclosure where required.",
+    },
+    {
+      question: "How fast can we pilot SvaraCall?",
+      answer:
+        "Most teams launch a focused pilot within 1–2 weeks — one workflow, one language, and clear outcome metrics before scaling.",
+    },
+    {
+      question: "What outcomes are logged?",
+      answer: `Every call logs connect status, intent, disposition, and next steps. ${data.results.body}`,
+    },
+  ];
+}
+
+function industrySchemaGraph(
+  breadcrumb: ReturnType<typeof breadcrumbList>,
+  data: IndustryPage,
+  slug: string,
+  faqs: { question: string; answer: string }[],
+) {
+  return jsonLdGraph([
+    breadcrumb,
+    serviceSchema({
+      name: `${data.name} AI Voice Agents — SvaraCall`,
+      description: data.metaDescription,
+      url: `${site.url}/industries/${slug}`,
+      options: { graphNode: true },
+    }),
+    faqPageSchema(faqs, { graphNode: true }),
+  ]);
+}
 
 // The industry list is fixed, so prerender every page at build time and return
 // 404 for anything else. This keeps the route fully static (no lambda needed).
@@ -79,19 +134,17 @@ export default async function IndustryPage({ params }: PageProps) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@graph": [
+            __html: JSON.stringify(
+              industrySchemaGraph(
                 breadcrumb,
-                faqPageSchema(
-                  ecommerceFaqs.map((item) => ({
-                    question: item.q,
-                    answer: item.a,
-                  })),
-                  { graphNode: true },
-                ),
-              ],
-            }),
+                data,
+                slug,
+                ecommerceFaqs.map((item) => ({
+                  question: item.q,
+                  answer: item.a,
+                })),
+              ),
+            ),
           }}
         />
       </>
@@ -108,19 +161,17 @@ export default async function IndustryPage({ params }: PageProps) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@graph": [
+            __html: JSON.stringify(
+              industrySchemaGraph(
                 breadcrumb,
-                faqPageSchema(
-                  insuranceFaqs.map((item) => ({
-                    question: item.q,
-                    answer: item.a,
-                  })),
-                  { graphNode: true },
-                ),
-              ],
-            }),
+                data,
+                slug,
+                insuranceFaqs.map((item) => ({
+                  question: item.q,
+                  answer: item.a,
+                })),
+              ),
+            ),
           }}
         />
       </>
@@ -137,19 +188,17 @@ export default async function IndustryPage({ params }: PageProps) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@graph": [
+            __html: JSON.stringify(
+              industrySchemaGraph(
                 breadcrumb,
-                faqPageSchema(
-                  telecomFaqs.map((item) => ({
-                    question: item.q,
-                    answer: item.a,
-                  })),
-                  { graphNode: true },
-                ),
-              ],
-            }),
+                data,
+                slug,
+                telecomFaqs.map((item) => ({
+                  question: item.q,
+                  answer: item.a,
+                })),
+              ),
+            ),
           }}
         />
       </>
@@ -166,19 +215,17 @@ export default async function IndustryPage({ params }: PageProps) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@graph": [
+            __html: JSON.stringify(
+              industrySchemaGraph(
                 breadcrumb,
-                faqPageSchema(
-                  brokerageFaqs.map((item) => ({
-                    question: item.q,
-                    answer: item.a,
-                  })),
-                  { graphNode: true },
-                ),
-              ],
-            }),
+                data,
+                slug,
+                brokerageFaqs.map((item) => ({
+                  question: item.q,
+                  answer: item.a,
+                })),
+              ),
+            ),
           }}
         />
       </>
@@ -195,19 +242,17 @@ export default async function IndustryPage({ params }: PageProps) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@graph": [
+            __html: JSON.stringify(
+              industrySchemaGraph(
                 breadcrumb,
-                faqPageSchema(
-                  realEstateFaqs.map((item) => ({
-                    question: item.q,
-                    answer: item.a,
-                  })),
-                  { graphNode: true },
-                ),
-              ],
-            }),
+                data,
+                slug,
+                realEstateFaqs.map((item) => ({
+                  question: item.q,
+                  answer: item.a,
+                })),
+              ),
+            ),
           }}
         />
       </>
@@ -224,19 +269,17 @@ export default async function IndustryPage({ params }: PageProps) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@graph": [
+            __html: JSON.stringify(
+              industrySchemaGraph(
                 breadcrumb,
-                faqPageSchema(
-                  educationFaqs.map((item) => ({
-                    question: item.q,
-                    answer: item.a,
-                  })),
-                  { graphNode: true },
-                ),
-              ],
-            }),
+                data,
+                slug,
+                educationFaqs.map((item) => ({
+                  question: item.q,
+                  answer: item.a,
+                })),
+              ),
+            ),
           }}
         />
       </>
@@ -253,19 +296,17 @@ export default async function IndustryPage({ params }: PageProps) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@graph": [
+            __html: JSON.stringify(
+              industrySchemaGraph(
                 breadcrumb,
-                faqPageSchema(
-                  automotiveFaqs.map((item) => ({
-                    question: item.q,
-                    answer: item.a,
-                  })),
-                  { graphNode: true },
-                ),
-              ],
-            }),
+                data,
+                slug,
+                automotiveFaqs.map((item) => ({
+                  question: item.q,
+                  answer: item.a,
+                })),
+              ),
+            ),
           }}
         />
       </>
@@ -486,7 +527,11 @@ export default async function IndustryPage({ params }: PageProps) {
       </main>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            industrySchemaGraph(breadcrumb, data, slug, industryFaqs(data)),
+          ),
+        }}
       />
     </>
   );
