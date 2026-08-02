@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { site, industryPages } from "@/lib/content";
+import { languagePages } from "@/lib/languagePages";
 import { routes, bookPilotHref } from "@/lib/nav";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -32,6 +33,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
     ...industryPages.map((industry) => ({
       url: `${site.url}/industries/${industry.slug}`,
+      lastModified,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    })),
+    ...languagePages.map((page) => ({
+      url: `${site.url}/languages/${page.slug}`,
       lastModified,
       changeFrequency: "monthly" as const,
       priority: 0.7,

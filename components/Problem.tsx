@@ -4,7 +4,7 @@ import { HeroHighlight, Highlight } from "./ui/hero-highlight";
 
 export default function Problem() {
   return (
-    <section id="problem" className="bg-[#0b1110] text-white">
+    <section id="problem" className="section-cv bg-[#0b1110] text-white">
       <div className="mx-auto max-w-6xl px-5 py-16 md:py-24">
         <HeroHighlight>
           <Reveal>

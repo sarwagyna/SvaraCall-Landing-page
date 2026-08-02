@@ -10,9 +10,11 @@ const items: CardNavItem[] = [
     bgColor: "#0e0f0c",
     textColor: "#ffffff",
     links: [
+      { label: "All solutions", href: "/solutions", ariaLabel: "View all solutions" },
       { label: "Use cases", href: "/use-cases", ariaLabel: "View use cases" },
       { label: "Industries", href: "/industries", ariaLabel: "View industries" },
       { label: "Voice agents", href: "/voice-agents", ariaLabel: "Voice agents" },
+      { label: "Languages", href: "/languages", ariaLabel: "Languages" },
     ],
   },
   {
@@ -21,6 +23,7 @@ const items: CardNavItem[] = [
     textColor: "#ffffff",
     links: [
       { label: "How it works", href: "/how-it-works", ariaLabel: "How it works" },
+      { label: "Integrations", href: "/integrations", ariaLabel: "Integrations" },
       { label: "Compliance", href: "/compliance", ariaLabel: "Compliance" },
       { label: "FAQ", href: "/faq", ariaLabel: "Frequently asked questions" },
     ],

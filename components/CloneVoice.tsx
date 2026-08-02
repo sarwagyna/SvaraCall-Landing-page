@@ -1,5 +1,7 @@
+import RemoteImage from "@/components/RemoteImage";
 import Link from "next/link";
 import { bookPilotHref } from "@/lib/nav";
+import { sceneImages } from "@/lib/images";
 
 const steps = [
   {
@@ -63,25 +65,40 @@ export default function CloneVoice() {
             </p>
           </div>
 
-          <ol className="flex flex-col gap-4">
-            {steps.map((step, i) => (
-              <li
-                key={step.title}
-                className="flex gap-4 rounded-card bg-white/5 p-6 ring-1 ring-white/10"
-              >
-                <span
-                  aria-hidden="true"
-                  className="tabular grid h-10 w-10 shrink-0 place-items-center rounded-pill bg-primary text-on-primary font-bold"
+          <div className="flex flex-col gap-4">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-card">
+              <RemoteImage
+                src={sceneImages.conversation.src}
+                alt={sceneImages.conversation.alt}
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+              />
+              <div
+                className="absolute inset-0 bg-gradient-to-t from-[#0b1110]/70 via-transparent to-transparent"
+                aria-hidden
+              />
+            </div>
+            <ol className="flex flex-col gap-4">
+              {steps.map((step, i) => (
+                <li
+                  key={step.title}
+                  className="flex gap-4 rounded-card bg-white/5 p-6 ring-1 ring-white/10"
                 >
-                  {i + 1}
-                </span>
-                <div>
-                  <h3 className="text-lg font-bold text-white">{step.title}</h3>
-                  <p className="mt-1.5 text-white/60">{step.body}</p>
-                </div>
-              </li>
-            ))}
-          </ol>
+                  <span
+                    aria-hidden="true"
+                    className="tabular grid h-10 w-10 shrink-0 place-items-center rounded-pill bg-primary text-on-primary font-bold"
+                  >
+                    {i + 1}
+                  </span>
+                  <div>
+                    <h3 className="text-lg font-bold text-white">{step.title}</h3>
+                    <p className="mt-1.5 text-white/60">{step.body}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </div>
         </div>
       </div>
     </section>

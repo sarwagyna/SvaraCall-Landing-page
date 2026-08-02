@@ -12,8 +12,8 @@ export const site = {
   country: "India",
   cin: "U62013AP2026PTC124652",
   languages: ["Telugu", "Hindi", "English"] as const,
-  lastUpdated: "July 2026",
-  dateModified: "2026-07-07",
+  lastUpdated: "August 2026",
+  dateModified: "2026-08-02",
   email: "contact@sarwagyna.com",
   whatsapp: "916305036991",
   parentUrl: "https://sarwagyna.com",
@@ -166,12 +166,24 @@ export const industries: Card[] = [
     body: "EMI reminders, document collection, and KYC follow-ups.",
   },
   {
+    title: "Insurance",
+    body: "Renewal reminders, claim updates, and premium nudges that retain.",
+  },
+  {
+    title: "Brokerage",
+    body: "KYC chase, account activation, and margin alerts — never advice.",
+  },
+  {
     title: "D2C & retail",
     body: "Order confirmation, COD verification, and win-back of lapsed buyers.",
   },
   {
     title: "Services",
     body: "Booking confirmations, service-due reminders, and feedback calls.",
+  },
+  {
+    title: "Automotive",
+    body: "Service bay booking, PSF follow-ups, and sales callbacks that convert.",
   },
 ];
 
@@ -636,6 +648,160 @@ export const industryPages: IndustryPage[] = [
       "AI voice agent for banks and NBFCs in India. Handle fraud alerts, balance inquiries, loan support, and reminders in Telugu, Hindi & English. TRAI-registered, DPDP-ready.",
   },
   {
+    slug: "insurance",
+    name: "Insurance",
+    eyebrow: "SvaraCall for Insurance",
+    heroTitle: "Renewals that stick.",
+    heroAccent: "Servicing that scales.",
+    heroSubcopy:
+      "SvaraCall AI reminds policyholders, collects documents, and updates claim status — in Telugu, Hindi, and English — so renewals close and service queues stay short.",
+    heroMetric: { value: "Higher", label: "Renewal conversion" },
+    heroTiles: [
+      { value: "Motor", label: "Renewal calls" },
+      { value: "Life", label: "Premium nudges" },
+      { value: "Health", label: "Claim updates" },
+      { value: "24/7", label: "Coverage" },
+    ],
+    standardTitle: "Keep policies",
+    standardAccent: "from lapsing",
+    standardBody:
+      "Missed renewal calls cost retention. SvaraCall AI dials on schedule, speaks the customer's language, collects the next step, and logs every outcome so advisors only handle the conversations that need a human.",
+    bigStat: {
+      value: "Faster",
+      label: "Turnaround on renewals and claim updates",
+      points: [
+        "Remind before expiry and nudge premium payment",
+        "Chase KYC and claim documents until complete",
+        "Qualify new leads and book advisor appointments",
+      ],
+    },
+    workflows: [
+      {
+        title: "Policy renewal reminders",
+        body: "Call before expiry, confirm intent, and nudge payment before lapse.",
+      },
+      {
+        title: "Premium due nudges",
+        body: "Polite, scheduled reminders so premiums don't slip past the due date.",
+      },
+      {
+        title: "Claim status updates",
+        body: "Proactive voice updates so customers aren't stuck checking portals.",
+      },
+      {
+        title: "Document collection",
+        body: "Chase KYC, medicals, and claim docs until the file is complete.",
+      },
+      {
+        title: "Lead qualification",
+        body: "Score intent, budget, and product fit before an advisor picks up.",
+      },
+      {
+        title: "Advisor appointment booking",
+        body: "Book and confirm meetings so fewer prospects go cold.",
+      },
+    ],
+    results: {
+      title: "Retention without",
+      accent: "dialer headcount",
+      body: "A multi-line broker used SvaraCall AI to run renewal and document-chase calls at scale — advisors only saw the conversations ready to close.",
+      stats: [
+        { value: "Higher", label: "Renewal conversion" },
+        { value: "Faster", label: "Doc collection" },
+        { value: "Clearer", label: "Call accountability" },
+        { value: "3 langs", label: "Telugu · Hindi · English" },
+      ],
+      quote:
+        "Renewal calls finally happen on time — in the customer's language — and our advisors only see the ones ready to close.",
+      author: "Operations head, multi-line insurance broker",
+    },
+    ctaTitle: "Hear a renewal call",
+    ctaAccent: "on your number",
+    ctaSubcopy:
+      "We'll place a live SvaraCall that renews a policy the way your customers actually speak.",
+    metaTitle:
+      "SvaraCall AI for Insurance — Renewals, Claims & Premium Nudges",
+    metaDescription:
+      "AI voice agent for insurers and brokers in India. Run renewals, claim updates, document collection, and lead qualification in Telugu, Hindi & English.",
+  },
+  {
+    slug: "brokerage",
+    name: "Brokerage",
+    eyebrow: "SvaraCall for Brokerage & Capital Markets",
+    heroTitle: "Activate accounts. Clear KYC.",
+    heroAccent: "Never give advice.",
+    heroSubcopy:
+      "SvaraCall AI runs onboarding, KYC chases, and margin alerts — in Telugu, Hindi, and English — with hard guardrails so every call stays operational, never advisory.",
+    heroMetric: { value: "0", label: "Investment advice given" },
+    heroTiles: [
+      { value: "KYC", label: "Doc chase calls" },
+      { value: "SEBI", label: "Advice-free scripts" },
+      { value: "24/7", label: "Activation coverage" },
+      { value: "DPDP", label: "Data in India" },
+    ],
+    standardTitle: "Operational voice,",
+    standardAccent: "never advisory",
+    standardBody:
+      "Brokerage books drown in incomplete KYC and dormant activations. SvaraCall AI dials on schedule, clears operational steps, and escalates anything that sounds like advice to a licensed human — with every outcome logged.",
+    bigStat: {
+      value: "Advice-free",
+      label: "Guardrails on every scripted call",
+      points: [
+        "Activate accounts and chase pending KYC documents",
+        "Notify margin shortfalls without recommending trades",
+        "Escalate advice-seeking questions to licensed staff",
+      ],
+    },
+    workflows: [
+      {
+        title: "Account activation",
+        body: "Walk new clients through activation steps and confirm when live.",
+      },
+      {
+        title: "KYC / document collection",
+        body: "Chase pending KYC and eSign docs until the file clears.",
+      },
+      {
+        title: "Margin call notifications",
+        body: "Alert clients to margin shortfalls and approved next steps.",
+      },
+      {
+        title: "Funding & SIP reminders",
+        body: "Remind clients to fund accounts or continue instructed SIPs.",
+      },
+      {
+        title: "RM appointment booking",
+        body: "Book relationship-manager calls without product recommendations.",
+      },
+      {
+        title: "Advice-free escalation",
+        body: "Route advice-like asks to a licensed human with full context.",
+      },
+    ],
+    results: {
+      title: "Faster onboarding,",
+      accent: "cleaner compliance",
+      body: "A brokerage desk used SvaraCall AI to clear KYC and activation queues — without risking advisory language on automated calls.",
+      stats: [
+        { value: "Faster", label: "KYC completion" },
+        { value: "0 advice", label: "On automated calls" },
+        { value: "Logged", label: "Audit trail per call" },
+        { value: "3 langs", label: "Telugu · Hindi · English" },
+      ],
+      quote:
+        "Activation and KYC finally move without putting advisory language on an automated line.",
+      author: "Compliance lead, retail brokerage",
+    },
+    ctaTitle: "Hear an activation call",
+    ctaAccent: "on your number",
+    ctaSubcopy:
+      "We'll place a live SvaraCall that clears KYC steps — with advice-free guardrails intact.",
+    metaTitle:
+      "SvaraCall AI for Brokerage — KYC, Activation & Advice-Free Voice",
+    metaDescription:
+      "AI voice agent for brokers in India. Activate accounts, chase KYC, notify margin calls — never give investment advice. Telugu, Hindi & English. TRAI & DPDP ready.",
+  },
+  {
     slug: "consultation",
     name: "Consultation",
     eyebrow: "SvaraCall for Consultations",
@@ -716,131 +882,131 @@ export const industryPages: IndustryPage[] = [
     slug: "ecommerce",
     name: "E-commerce",
     eyebrow: "SvaraCall for E-commerce",
-    heroTitle: "Instant support for",
-    heroAccent: "every shopper",
+    heroTitle: "Kill RTO before it",
+    heroAccent: "kills your margins",
     heroSubcopy:
-      "SvaraCall AI handles order status, returns, stock questions, and cart recovery — in Telugu, Hindi, and English — with voice support that scales through peak seasons.",
-    heroMetric: { value: "60%", label: "Lower support cost" },
+      "SvaraCall AI verifies COD orders, confirms addresses, and recovers abandoned carts — in Telugu, Hindi, and English — so fewer parcels come back unpaid.",
+    heroMetric: { value: "20–30%", label: "RTO reduction" },
     heroTiles: [
-      { value: "10×", label: "Peak capacity" },
-      { value: "OMS", label: "Live sync" },
-      { value: "24/7", label: "Customer support" },
-      { value: "CSAT", label: "Feedback capture" },
+      { value: "COD", label: "Pre-dispatch verify" },
+      { value: "Same-day", label: "Pilot go-live" },
+      { value: "24/7", label: "Peak coverage" },
+      { value: "NDR", label: "Re-attempt calls" },
     ],
-    standardTitle: "Scale support,",
-    standardAccent: "not headcount",
+    standardTitle: "Verify before",
+    standardAccent: "you ship",
     standardBody:
-      "Seasonal spikes shouldn't become staffing crises. SvaraCall AI absorbs surges instantly and gives shoppers useful answers without long hold times. Connected to your store and OMS, it handles order status, return updates, and subscription changes over the phone.",
+      "COD and wrong addresses drain margin. SvaraCall AI confirms intent and delivery details before dispatch, follows up on NDRs, and recovers high-value carts — so your warehouse ships orders that stick.",
     bigStat: {
-      value: "10×",
-      label: "Volume spikes absorbed",
+      value: "20–30%",
+      label: "RTO reduction from pre-dispatch verify",
       points: [
-        "Answer where-is-my-order calls from live order data",
-        "Process returns and exchanges without an agent",
-        "Recover high-value carts before they lapse",
+        "Confirm COD and address before the courier leaves",
+        "Re-attempt NDR deliveries with a fresh call",
+        "Recover abandoned carts and failed payments by voice",
       ],
     },
     workflows: [
+      {
+        title: "COD verification",
+        body: "Call to confirm the order and payment mode before dispatch.",
+      },
+      {
+        title: "Address confirmation",
+        body: "Verify landmark, pin, and phone so fewer parcels bounce.",
+      },
+      {
+        title: "RTO / NDR follow-up",
+        body: "Re-attempt failed deliveries with a fresh confirmation call.",
+      },
+      {
+        title: "Abandoned cart recovery",
+        body: "Call high-value drop-offs with a reason to finish checkout.",
+      },
       {
         title: "WISMO automation",
         body: "Answer 'where is my order' calls instantly from live order data.",
       },
       {
         title: "Returns & exchanges",
-        body: "Guide shoppers through returns and exchanges without an agent.",
-      },
-      {
-        title: "Stock queries",
-        body: "Share stock and restock status so shoppers know what's available.",
-      },
-      {
-        title: "Subscriptions",
-        body: "Handle pause, skip, and plan changes without cancelling.",
-      },
-      {
-        title: "Feedback collection",
-        body: "Collect CSAT and NPS after delivery and log it on the record.",
-      },
-      {
-        title: "Cart recovery",
-        body: "Call shoppers who dropped off with a reason to finish checkout.",
+        body: "Guide pickup scheduling and reason capture without an agent.",
       },
     ],
     results: {
-      title: "Peak-season support",
-      accent: "without overtime",
-      body: "A retail brand used SvaraCall AI to keep support consistent through traffic spikes and absorb volume — without piling on overtime or sacrificing customer experience.",
+      title: "Lower RTO,",
+      accent: "higher kept orders",
+      body: "A D2C brand used SvaraCall AI to verify COD before dispatch and recover carts — cutting returns without adding a calling team for peak season.",
       stats: [
-        { value: "60%", label: "Lower support cost" },
-        { value: "24/7", label: "Order assistance" },
-        { value: "10×", label: "Peak headroom" },
-        { value: "OMS", label: "Connected sync" },
+        { value: "20–30%", label: "RTO reduction" },
+        { value: "24/7", label: "Verify & recover" },
+        { value: "Same-day", label: "Pilot live" },
+        { value: "COD", label: "Pre-ship confirm" },
       ],
       quote:
-        "We absorbed peak-season volume without adding a single seat to the support floor.",
-      author: "Support lead, D2C retail brand",
+        "We stopped shipping doubtful COD. Returns dropped and the warehouse finally trusted the order list.",
+      author: "Ops lead, D2C apparel brand",
     },
-    ctaTitle: "Upgrade your shopper",
-    ctaAccent: "voice support",
+    ctaTitle: "Hear a COD verify",
+    ctaAccent: "on your number",
     ctaSubcopy:
-      "Launch a fast voice layer for orders, returns, and cart recovery before the next peak cycle hits.",
+      "We'll place a live SvaraCall that confirms an order the way your shoppers actually speak.",
     metaTitle:
-      "SvaraCall AI for E-commerce — Order Status, Returns & Cart Recovery",
+      "SvaraCall AI for E-commerce — COD Verify, RTO Cut & Cart Recovery",
     metaDescription:
-      "AI voice agent for D2C and retail brands in India. Handle WISMO, returns, stock queries, and cart recovery in Telugu, Hindi & English. Scale support through peak seasons.",
+      "AI voice agent for D2C and retail in India. Verify COD, confirm addresses, cut RTO, recover abandoned carts — in Telugu, Hindi & English.",
   },
   {
     slug: "real-estate",
     name: "Real Estate",
     eyebrow: "SvaraCall for Real Estate",
-    heroTitle: "Qualify every lead",
-    heroAccent: "within seconds",
+    heroTitle: "Answer every portal lead",
+    heroAccent: "in seconds — before it dies",
     heroSubcopy:
-      "SvaraCall AI responds to inbound leads instantly, verifies budget and urgency, and books site visits — in Telugu, Hindi, and English — before the competing broker even calls back.",
-    heroMetric: { value: "300%", label: "More showings booked" },
+      "SvaraCall AI calls Magicbricks, 99acres, and website leads instantly, qualifies budget and timeline, and books site visits — in Telugu, Hindi, and English — before the next broker dials.",
+    heroMetric: { value: "Seconds", label: "Speed to lead" },
     heroTiles: [
-      { value: "30s", label: "Speed to lead" },
-      { value: "400%", label: "More site visits" },
-      { value: "ISA", label: "Voice layer" },
-      { value: "24/7", label: "Lead coverage" },
+      { value: "25–45%", label: "Visit conversion lift" },
+      { value: "24/7", label: "Portal coverage" },
+      { value: "3 langs", label: "Telugu · Hindi · English" },
+      { value: "CRM", label: "Outcome logged" },
     ],
     standardTitle: "Win the first",
     standardAccent: "five minutes",
     standardBody:
       "In high-intent real estate, the first conversation often decides who wins the lead. SvaraCall AI calls immediately, verifies fit, and keeps the prospect moving while intent is fresh — qualifying timeline, budget, and property fit before live-transferring to an agent or booking the site visit directly.",
     bigStat: {
-      value: "400%",
-      label: "Higher conversion with fast response",
+      value: "25–45%",
+      label: "Higher lead-to-visit conversion with instant response",
       points: [
-        "Call inbound leads within seconds, while intent is fresh",
+        "Call portal leads within seconds, while intent is fresh",
         "Book site visits straight into your agents' calendars",
-        "Live-transfer ready buyers with full context intact",
+        "Re-engage dormant CRM leads without burning agent time",
       ],
     },
     workflows: [
+      {
+        title: "Portal lead auto-dial",
+        body: "Call Magicbricks, 99acres, and Housing leads the moment they enquire.",
+      },
       {
         title: "Lead qualification",
         body: "Verify budget, timeline, and property fit before handoff.",
       },
       {
-        title: "Showing scheduling",
-        body: "Book and confirm site visits into agent calendars.",
+        title: "Site-visit scheduling",
+        body: "Book and confirm showings into agent calendars.",
       },
       {
-        title: "Property inquiries",
-        body: "Answer listing questions and route serious buyers to an agent.",
+        title: "Missed-call callbacks",
+        body: "Return every missed enquiry so no warm lead goes unanswered.",
       },
       {
-        title: "Tenant screening",
-        body: "Pre-screen rental leads on budget, move-in date, and eligibility.",
+        title: "Visit reminders",
+        body: "Confirm tomorrow's site visits so no-shows don't empty the calendar.",
       },
       {
-        title: "Maintenance logic",
-        body: "Take maintenance requests and route them to the right team.",
-      },
-      {
-        title: "Open-house follow-up",
-        body: "Follow up after open houses and re-engage warm leads.",
+        title: "Dormant CRM reactivation",
+        body: "Wake cold inventory with a reason to tour again.",
       },
     ],
     results: {
@@ -848,23 +1014,23 @@ export const industryPages: IndustryPage[] = [
       accent: "more showings",
       body: "Brokerages used SvaraCall AI to call faster than competitors, qualify leads consistently, and keep agents focused on closing instead of chasing callbacks.",
       stats: [
-        { value: "300%", label: "Showing lift" },
-        { value: "30s", label: "Response time" },
+        { value: "Seconds", label: "Speed to lead" },
+        { value: "25–45%", label: "Visit conversion" },
         { value: "24/7", label: "Lead coverage" },
-        { value: "ISA", label: "Automation layer" },
+        { value: "CRM", label: "Outcomes logged" },
       ],
       quote:
         "We answer every new lead in seconds now — buyers book a visit before a rival even calls back.",
       author: "Sales head, property brokerage",
     },
-    ctaTitle: "Turn every inquiry into",
-    ctaAccent: "a faster showing",
+    ctaTitle: "Hear a portal lead call",
+    ctaAccent: "on your number",
     ctaSubcopy:
-      "Launch an AI lead-response layer that protects your speed to lead and keeps agents focused on buyers who are ready.",
+      "We'll place a live SvaraCall that qualifies a buyer and books a site visit — in their language.",
     metaTitle:
-      "SvaraCall AI for Real Estate — Lead Qualification & Site Visits",
+      "SvaraCall AI for Real Estate — Instant Portal Leads & Site Visits",
     metaDescription:
-      "AI voice agent for real estate and brokerages in India. Qualify leads in seconds, book site visits, and follow up in Telugu, Hindi & English. DPDP-ready.",
+      "AI voice agent for real estate in India. Answer Magicbricks and 99acres leads in seconds, qualify buyers, and book site visits in Telugu, Hindi & English.",
   },
   {
     slug: "hr-tech",
@@ -947,77 +1113,232 @@ export const industryPages: IndustryPage[] = [
     slug: "education",
     name: "Education",
     eyebrow: "SvaraCall for Education",
-    heroTitle: "Scale your",
-    heroAccent: "admissions protocol",
+    heroTitle: "Every lead called in 60 seconds,",
+    heroAccent: "in their language",
     heroSubcopy:
-      "SvaraCall AI converts enquiries into enrollments faster — handling course questions, fee structures, and counselor scheduling — in Telugu, Hindi, and English, around the clock.",
-    heroMetric: { value: "30%", label: "Enrollment lift" },
+      "SvaraCall AI dials new enquiries instantly, answers course and fee questions, and books counseling — in Telugu, Hindi, and English — so admissions never wait until morning.",
+    heroMetric: { value: "<60s", label: "Time to first call" },
     heroTiles: [
-      { value: "24/7", label: "Inquiry response" },
-      { value: "50%", label: "Lower cost" },
+      { value: "2.7×", label: "Conversion lift" },
+      { value: "24/7", label: "Enquiry coverage" },
+      { value: "Fee", label: "Clarity on call" },
       { value: "Demo", label: "Auto booking" },
-      { value: "Fee", label: "Clarity" },
     ],
     standardTitle: "Empower your",
-    standardAccent: "human faculty",
+    standardAccent: "human counselors",
     standardBody:
       "Institutes lose a large share of leads outside operating hours. SvaraCall AI answers every enquiry instantly, with the same accuracy every time. By offloading repetitive syllabus, fee, and schedule questions, your counselors spend more time on the high-conversion conversations that actually close enrollments.",
     bigStat: {
-      value: "30%",
-      label: "Enrollment growth",
+      value: "2.7×",
+      label: "Higher conversion with sub-minute response",
       points: [
-        "Handle course, fee, and schedule questions in one guided call",
-        "Book demos and counseling sessions without a live counselor",
-        "Keep students updated with reminders and exam notifications",
+        "Call every new enquiry within 60 seconds",
+        "Book demos and counseling without a live counselor on first touch",
+        "Chase fees and documents until the seat is confirmed",
       ],
     },
     workflows: [
       {
-        title: "Course inquiries",
-        body: "Answer course, syllabus, and eligibility questions any time of day.",
+        title: "Welcome & introduction",
+        body: "Greet new enquiries and set expectations for the next step.",
       },
       {
-        title: "Fee transparency",
-        body: "Explain fee structures, installments, and scholarships clearly.",
+        title: "Course & fee clarity",
+        body: "Answer syllabus, eligibility, and fee questions any time of day.",
       },
       {
-        title: "Demo booking",
-        body: "Book demo classes and counseling sessions without a live counselor.",
+        title: "Demo / counseling booking",
+        body: "Book sessions into counselor calendars without manual chase.",
       },
       {
-        title: "Exam updates",
-        body: "Notify students of exam dates, results, and schedule changes.",
+        title: "Document collection",
+        body: "Chase marksheets and forms until the admissions file is complete.",
       },
       {
-        title: "Student support",
-        body: "Answer common student questions and route the rest to staff.",
+        title: "Fee payment reminders",
+        body: "Nudge pending fees and installments before seats lapse.",
       },
       {
-        title: "Alumni engagement",
-        body: "Re-engage alumni for events, referrals, and higher programs.",
+        title: "Exam & schedule updates",
+        body: "Notify date changes, results windows, and batch shifts.",
       },
     ],
     results: {
-      title: "BrightFuture Institute",
-      accent: "scaled admissions",
-      body: "BrightFuture used SvaraCall AI to answer enquiries immediately, book demos faster, and keep counselors focused on high-intent prospects.",
+      title: "Faster admissions,",
+      accent: "fuller batches",
+      body: "Coaching institutes used SvaraCall AI to answer enquiries immediately, book demos faster, and keep counselors focused on high-intent prospects.",
       stats: [
-        { value: "50%", label: "Lower cost" },
-        { value: "30%", label: "Enrollment growth" },
-        { value: "2 min", label: "Response time" },
+        { value: "<60s", label: "First call" },
+        { value: "2.7×", label: "Conversion lift" },
         { value: "24/7", label: "Coverage" },
+        { value: "3 langs", label: "Telugu · Hindi · English" },
       ],
       quote:
         "Every enquiry gets an instant answer now, in the family's language — counselors only take the calls that convert.",
       author: "Director, coaching institute",
     },
-    ctaTitle: "Fill your next",
-    ctaAccent: "student batch",
+    ctaTitle: "Hear an admissions call",
+    ctaAccent: "on your number",
     ctaSubcopy:
-      "Deploy an automated admissions voice workflow that keeps every enquiry moving toward enrollment.",
-    metaTitle: "SvaraCall AI for Education — Admissions, Fees & Demo Booking",
+      "We'll place a live SvaraCall that qualifies a student enquiry and books counseling — in their language.",
+    metaTitle:
+      "SvaraCall AI for Education — 60-Second Admissions Outreach",
     metaDescription:
-      "AI voice agent for schools, colleges, and coaching centers in India. Answer course and fee questions, book demos, and send reminders in Telugu, Hindi & English.",
+      "AI voice agent for schools, colleges, and coaching centers in India. Call every lead in 60 seconds, explain fees, book counseling — in Telugu, Hindi & English.",
+  },
+  {
+    slug: "automotive",
+    name: "Automotive",
+    eyebrow: "SvaraCall for Automotive",
+    heroTitle: "Every service bay full.",
+    heroAccent: "Every PSF call covered.",
+    heroSubcopy:
+      "SvaraCall AI books service slots, reminds customers, and runs post-service follow-ups — in Telugu, Hindi, and English — so dealerships fill bays without adding dialer seats.",
+    heroMetric: { value: "100%", label: "PSF coverage" },
+    heroTiles: [
+      { value: "Bay", label: "Service booking" },
+      { value: "PSF", label: "Post-service NPS" },
+      { value: "Fewer", label: "No-shows" },
+      { value: "24/7", label: "Callback coverage" },
+    ],
+    standardTitle: "Fill the bay,",
+    standardAccent: "cover every PSF",
+    standardBody:
+      "Idle bays and missed post-service calls drain dealership revenue. SvaraCall AI dials due vehicles, confirms slots, and closes the loop after every job — escalating only what needs a human advisor.",
+    bigStat: {
+      value: "Fuller",
+      label: "Service calendars with fewer empty bays",
+      points: [
+        "Book periodic service before the week fills",
+        "Remind appointments the day before to cut no-shows",
+        "Cover 100% of delivered jobs with PSF / NPS calls",
+      ],
+    },
+    workflows: [
+      {
+        title: "Periodic service booking",
+        body: "Call due vehicles, offer slots, and lock the bay before the week fills.",
+      },
+      {
+        title: "Appointment reminders",
+        body: "Confirm tomorrow's jobs so no-shows don't leave bays idle.",
+      },
+      {
+        title: "Post-service feedback (PSF)",
+        body: "Cover every delivered job with a polite outcome-logged follow-up.",
+      },
+      {
+        title: "Test-drive scheduling",
+        body: "Book and confirm test drives into salesperson calendars.",
+      },
+      {
+        title: "Sales lead qualification",
+        body: "Score budget, timeline, and model interest before an SE spends a slot.",
+      },
+      {
+        title: "Insurance renewals",
+        body: "Remind policy expiry and route hot renewals to the desk.",
+      },
+    ],
+    results: {
+      title: "Fuller bays,",
+      accent: "complete PSF",
+      body: "Dealerships used SvaraCall AI to book due service, cut no-shows, and cover every delivered job with a follow-up — without hiring another dialer shift.",
+      stats: [
+        { value: "Fuller", label: "Service bays" },
+        { value: "100%", label: "PSF coverage" },
+        { value: "Fewer", label: "No-shows" },
+        { value: "3 langs", label: "Telugu · Hindi · English" },
+      ],
+      quote:
+        "Service bays stay full and every delivered job gets a PSF call — without hiring another dialer shift.",
+      author: "Service manager, multi-brand dealership",
+    },
+    ctaTitle: "Hear a service booking",
+    ctaAccent: "on your number",
+    ctaSubcopy:
+      "We'll place a live SvaraCall that books a service bay the way your customers actually speak.",
+    metaTitle:
+      "SvaraCall AI for Automotive — Service Booking, PSF & Sales Callbacks",
+    metaDescription:
+      "AI voice agent for dealerships in India. Fill service bays, cover PSF calls, remind appointments, and qualify sales leads — in Telugu, Hindi & English.",
+  },
+  {
+    slug: "telecom",
+    name: "Telecom & IT",
+    eyebrow: "SvaraCall for Telecom & IT",
+    heroTitle: "Handle the high-volume calls",
+    heroAccent: "humans shouldn't have to",
+    heroSubcopy:
+      "SvaraCall AI covers bill reminders, outage alerts, SIM activation, and basic IT support — in Telugu, Hindi, and English — so your team only takes the calls that need a human.",
+    heroMetric: { value: "24/7", label: "After-hours coverage" },
+    heroTiles: [
+      { value: "Bill", label: "Payment nudges" },
+      { value: "Outage", label: "Status blasts" },
+      { value: "SIM", label: "Activation track" },
+      { value: "IT", label: "Ticket updates" },
+    ],
+    standardTitle: "Absorb peak",
+    standardAccent: "without overtime",
+    standardBody:
+      "Telecom and IT queues spike on bill cycles, outages, and product incidents. SvaraCall AI runs the routine voice work at scale and escalates only what needs a specialist.",
+    bigStat: {
+      value: "Lower",
+      label: "Cost per routine contact vs night-shift staffing",
+      points: [
+        "Remind bills and usage before disconnect or overage",
+        "Notify outages and incidents before the queue floods",
+        "Handle after-hours FAQs and escalate with full context",
+      ],
+    },
+    workflows: [
+      {
+        title: "Bill payment support",
+        body: "Remind about dues and guide customers to pay before disconnect.",
+      },
+      {
+        title: "Service outage notification",
+        body: "Blast affected subscribers with ETA before the call center floods.",
+      },
+      {
+        title: "After-hours support",
+        body: "Answer simple queries overnight so tickets don't pile up until morning.",
+      },
+      {
+        title: "SIM activation tracking",
+        body: "Confirm KYC steps and track SIM delivery so activations don't stall.",
+      },
+      {
+        title: "Ticket status updates",
+        body: "Proactive voice updates so users aren't stuck refreshing the portal.",
+      },
+      {
+        title: "Subscription renewal nudges",
+        body: "Remind before lapse and collect renew or cancel intent for the CSM.",
+      },
+    ],
+    results: {
+      title: "Fewer queues,",
+      accent: "clearer outcomes",
+      body: "A regional ISP used SvaraCall AI for bill reminders and outage blasts — agents only handled complex faults while every call stayed logged.",
+      stats: [
+        { value: "24/7", label: "Care coverage" },
+        { value: "Faster", label: "Outage notify" },
+        { value: "Lower", label: "Cost per contact" },
+        { value: "3 langs", label: "Telugu · Hindi · English" },
+      ],
+      quote:
+        "Bill and outage calls finally run on schedule — in the subscriber's language — and L2 only sees what needs a human.",
+      author: "Customer ops lead, regional ISP",
+    },
+    ctaTitle: "Hear a bill reminder",
+    ctaAccent: "on your number",
+    ctaSubcopy:
+      "We'll place a live SvaraCall that handles a telecom reminder the way your subscribers actually speak.",
+    metaTitle:
+      "SvaraCall AI for Telecom & IT — Bills, Outages & Support Calls",
+    metaDescription:
+      "AI voice agent for telecom and IT in India. Run bill reminders, outage alerts, SIM activation, and IT ticket updates in Telugu, Hindi & English.",
   },
 ];
 
@@ -1069,6 +1390,6 @@ export const faqs: Faq[] = [
   },
   {
     q: "Which industries can use SvaraCall?",
-    a: "SvaraCall AI is used across industries in India — clinics and hospitals, real estate, education and coaching, finance and NBFCs, D2C and retail, and service businesses. Any business that calls customers at scale for reminders, follow-ups, confirmations, or collections can automate those calls, in the customer's language, while keeping every outcome logged.",
+    a: "SvaraCall AI is used across industries in India — clinics and hospitals, real estate, education and coaching, finance and NBFCs, insurance, D2C and retail, telecom and IT, and service businesses. Any business that calls customers at scale for reminders, follow-ups, confirmations, or collections can automate those calls, in the customer's language, while keeping every outcome logged.",
   },
 ];

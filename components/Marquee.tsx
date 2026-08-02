@@ -1,9 +1,38 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+
 type MarqueeProps = {
   items: string[];
   label?: string;
 };
 
+/**
+ * CSS marquee with animation paused while offscreen so the compositor
+ * isn't continuously updating a translateX track during page scroll.
+ */
 export default function Marquee({ items, label }: MarqueeProps) {
+  const trackRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return;
+
+    if (typeof IntersectionObserver === "undefined") return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        track.style.animationPlayState = entry.isIntersecting
+          ? "running"
+          : "paused";
+      },
+      { rootMargin: "80px 0px" },
+    );
+
+    observer.observe(track);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div>
       {label ? (
@@ -11,7 +40,10 @@ export default function Marquee({ items, label }: MarqueeProps) {
       ) : null}
 
       <div className="marquee overflow-hidden">
-        <div className="marquee-track flex w-max flex-nowrap gap-3">
+        <div
+          ref={trackRef}
+          className="marquee-track flex w-max flex-nowrap gap-3"
+        >
           {/* Two identical groups: first is read by AT, second is decorative */}
           {[0, 1].map((group) => (
             <ul

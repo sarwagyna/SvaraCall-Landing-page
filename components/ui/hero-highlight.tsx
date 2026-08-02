@@ -9,7 +9,7 @@ export function HeroHighlight({ children }: PropsWithChildren) {
     <div className="relative">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-1/2 h-20 -translate-y-1/2 bg-primary/20 blur-3xl"
+        className="pointer-events-none absolute inset-x-0 top-1/2 h-20 -translate-y-1/2 bg-primary/20 blur-3xl [contain:paint]"
       />
       <div className="relative">{children}</div>
     </div>

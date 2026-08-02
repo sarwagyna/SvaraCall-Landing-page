@@ -5,7 +5,7 @@ import { bookPilotHref } from "@/lib/nav";
 
 export default function CtaBand() {
   return (
-    <section id="final-cta" className="bg-[#0b1110]">
+    <section id="final-cta" className="section-cv bg-[#0b1110]">
       <div className="mx-auto max-w-6xl px-5 py-16 md:py-24">
         <div className="relative overflow-hidden rounded-card bg-[#0b1110] ring-1 ring-white/10">
           <div className="pointer-events-none absolute inset-0" aria-hidden>

@@ -3,7 +3,7 @@ import { whyUs, answers } from "@/lib/content";
 
 export default function WhyUs() {
   return (
-    <section id="why-us" className="bg-[#0b1110] text-white">
+    <section id="why-us" className="section-cv bg-[#0b1110] text-white">
       <div className="mx-auto grid max-w-6xl gap-12 px-5 py-16 md:py-24 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.4fr)] lg:gap-16">
         <div className="lg:sticky lg:top-24 lg:self-start">
           <p className="eyebrow text-primary">Why SvaraCall</p>

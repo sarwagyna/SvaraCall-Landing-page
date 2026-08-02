@@ -1,7 +1,9 @@
 "use client";
 
+import RemoteImage from "@/components/RemoteImage";
 import { useMemo, useRef, useState } from "react";
 import { agentVoices, type VoiceUseCase } from "@/lib/content";
+import { voiceAvatar } from "@/lib/images";
 
 const useCaseFilters: ("All" | VoiceUseCase)[] = [
   "All",
@@ -117,6 +119,7 @@ export default function VoiceRoster() {
         <ul className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {filtered.map((voice) => {
             const isPlaying = playing === voice.name;
+            const avatar = voiceAvatar(voice.name, voice.gender);
             return (
               <li
                 key={voice.name}
@@ -132,22 +135,37 @@ export default function VoiceRoster() {
                       : `${voice.name} sample coming soon`
                   }
                   title={voice.src ? undefined : "Sample coming soon"}
-                  className={`grid h-12 w-12 shrink-0 place-items-center rounded-pill transition-colors ${
+                  className={`relative grid h-14 w-14 shrink-0 place-items-center overflow-hidden rounded-pill transition-opacity ${
                     voice.src
-                      ? "bg-[#0b1110] text-primary hover:bg-[#12201b]"
-                      : "cursor-not-allowed bg-[#101916] text-mute"
+                      ? "hover:opacity-90"
+                      : "cursor-not-allowed opacity-60"
                   }`}
                 >
-                  {isPlaying ? (
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                      <rect x="6" y="5" width="4" height="14" rx="1" />
-                      <rect x="14" y="5" width="4" height="14" rx="1" />
-                    </svg>
-                  ) : (
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                      <path d="M8 5.14v13.72a1 1 0 0 0 1.54.84l10.29-6.86a1 1 0 0 0 0-1.68L9.54 4.3A1 1 0 0 0 8 5.14z" />
-                    </svg>
-                  )}
+                  <RemoteImage
+                    src={avatar}
+                    alt=""
+                    fill
+                    sizes="56px"
+                    className="object-cover"
+                  />
+                  <span
+                    className={`absolute inset-0 grid place-items-center ${
+                      isPlaying
+                        ? "bg-[#0b1110]/55 text-primary"
+                        : "bg-[#0b1110]/35 text-white"
+                    }`}
+                  >
+                    {isPlaying ? (
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <rect x="6" y="5" width="4" height="14" rx="1" />
+                        <rect x="14" y="5" width="4" height="14" rx="1" />
+                      </svg>
+                    ) : (
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M8 5.14v13.72a1 1 0 0 0 1.54.84l10.29-6.86a1 1 0 0 0 0-1.68L9.54 4.3A1 1 0 0 0 8 5.14z" />
+                      </svg>
+                    )}
+                  </span>
                 </button>
 
                 <div className="min-w-0 flex-1">

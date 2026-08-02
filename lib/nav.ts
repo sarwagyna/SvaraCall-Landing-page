@@ -2,8 +2,11 @@
 export type Route = { href: string; label: string };
 
 export const routes: Route[] = [
+  { href: "/solutions", label: "Solutions" },
   { href: "/how-it-works", label: "How it works" },
   { href: "/voice-agents", label: "Voice agents" },
+  { href: "/languages", label: "Languages" },
+  { href: "/integrations", label: "Integrations" },
   { href: "/use-cases", label: "Use cases" },
   { href: "/industries", label: "Industries" },
   { href: "/compliance", label: "Compliance" },

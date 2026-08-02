@@ -17,7 +17,7 @@ const outcomeStrip = [
 
 export default function Outcomes() {
   return (
-    <section id="outcomes" className="bg-canvas">
+    <section id="outcomes" className="section-cv bg-canvas">
       <div className="mx-auto max-w-5xl px-5 py-16 md:py-24">
         <h2 className="display display-h2 max-w-3xl">
           More calls, better outcomes, far less cost.

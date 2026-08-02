@@ -60,6 +60,13 @@
 
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-telugu: var(--font-noto-telugu), var(--font-inter), sans-serif;
+  --font-devanagari: var(--font-noto-devanagari), var(--font-inter), sans-serif;
+  --font-gurmukhi: var(--font-noto-gurmukhi), var(--font-inter), sans-serif;
+  --font-bengali: var(--font-noto-bengali), var(--font-inter), sans-serif;
+  --font-tamil: var(--font-noto-tamil), var(--font-inter), sans-serif;
+  --font-kannada: var(--font-noto-kannada), var(--font-inter), sans-serif;
+  --font-malayalam: var(--font-noto-malayalam), var(--font-inter), sans-serif;
+  --font-gujarati: var(--font-noto-gujarati), var(--font-inter), sans-serif;
 }
 
 :root {
@@ -180,6 +187,43 @@ input:-webkit-autofill:focus {
   font-size: clamp(1.9rem, 3.6vw, 2.9rem);
 }
 
+/* Industry landing heroes — compact so type + call demo fit without dominating.
+   ~0.82 ≈ 90% look even when the browser is zoomed to 110%. */
+.industry-hero-zoom {
+  zoom: 0.82;
+}
+
+.industry-hero-zoom .display-hero {
+  font-size: clamp(1.7rem, 4.2vw, 3.25rem);
+}
+
+.industry-hero-zoom .industry-call-demo {
+  min-height: 0;
+}
+
+@supports not (zoom: 1) {
+  .industry-hero-zoom {
+    transform: scale(0.82);
+    transform-origin: top center;
+    width: 121.95%;
+    margin-left: -10.975%;
+    margin-bottom: -6%;
+  }
+}
+
+/* Solutions hero — sized for 100–110% browser zoom so the first viewport
+   stays one composition (headline + input + prompts) without clipping chips. */
+.solutions-hero-compact .display-hero {
+  font-size: clamp(1.75rem, 4.6vw, 3.15rem);
+  line-height: 1.05;
+}
+
+@media (min-width: 768px) {
+  .solutions-hero-compact .display-hero {
+    font-size: clamp(2.15rem, 3.8vw, 3.25rem);
+  }
+}
+
 /* Eyebrow: 12px / 600 / uppercase / tracked.
    Kept in the base layer so Tailwind color utilities (e.g. text-primary)
    can override the default ink color. */
@@ -237,19 +281,54 @@ input:-webkit-autofill:focus {
   box-shadow: 0 0 0 3px var(--color-primary-neutral);
 }
 
-/* Intersection-observer reveal */
+/* Soft aurora CSS stand-in — paints instantly; WebGL upgrades after load/idle */
+.aurora-fallback {
+  background:
+    radial-gradient(
+      ellipse 70% 55% at 50% 58%,
+      rgba(159, 232, 112, 0.28),
+      transparent 58%
+    ),
+    radial-gradient(
+      ellipse 45% 40% at 22% 42%,
+      rgba(232, 235, 230, 0.14),
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse 50% 45% at 78% 62%,
+      rgba(159, 232, 112, 0.18),
+      transparent 52%
+    ),
+    #0b1110;
+}
+
+/* Intersection-observer reveal — transform/opacity only, no permanent will-change */
 .reveal {
   opacity: 0;
-  transform: translateY(16px);
+  transform: translate3d(0, 16px, 0);
   transition:
-    opacity 0.6s ease,
-    transform 0.6s ease;
-  will-change: opacity, transform;
+    opacity 0.4s ease,
+    transform 0.4s ease;
 }
 
 .reveal.is-visible {
   opacity: 1;
-  transform: none;
+  transform: translate3d(0, 0, 0);
+}
+
+/* Skip rendering work for offscreen bands (no visual change when in view) */
+.section-cv {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 720px;
+}
+
+/* No-JS: keep content visible */
+@media (scripting: none) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 /* Hero use-case marquee (CSS only, no JS) */
@@ -366,6 +445,22 @@ input:-webkit-autofill:focus {
   }
 }
 
+@keyframes verticalBarRise {
+  from {
+    transform: scaleY(0.55);
+    opacity: 0.55;
+  }
+  to {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+.vertical-bar {
+  transform-origin: bottom center;
+  animation: verticalBarRise 0.9s ease-out both;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -378,7 +473,8 @@ input:-webkit-autofill:focus {
   .live-dot,
   .wave-bar,
   .marquee-track,
-  .wa-bubble {
-    animation: none;
+  .wa-bubble,
+  .vertical-bar {
+    animation: none !important;
   }
 }

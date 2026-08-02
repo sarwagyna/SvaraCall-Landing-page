@@ -183,8 +183,25 @@ export default function SoftAurora({
   useEffect(() => {
     if (!containerRef.current) return;
     const container = containerRef.current;
-    const renderer = new Renderer({ alpha: true, premultipliedAlpha: false });
+
+    // OGL throws if getContext fails (Strict Mode remount / GPU limits).
+    let renderer: Renderer;
+    try {
+      renderer = new Renderer({
+        alpha: true,
+        antialias: false,
+        depth: false,
+        premultipliedAlpha: false,
+        powerPreference: "low-power",
+        // Cap DPR so retina devices don't 2–3× GPU fill during scroll.
+        dpr: Math.min(typeof window !== "undefined" ? window.devicePixelRatio || 1 : 1, 1.5),
+      });
+    } catch {
+      return;
+    }
     const gl = renderer.gl;
+    if (!gl) return;
+
     gl.clearColor(0, 0, 0, 0);
     gl.canvas.style.display = "block";
     gl.canvas.style.width = "100%";
@@ -286,10 +303,16 @@ export default function SoftAurora({
       window.addEventListener("scroll", cacheCanvasRect, { passive: true });
     }
 
-    let animationFrameId: number;
+    let animationFrameId = 0;
+    let inView = true;
+    let pageVisible = document.visibilityState !== "hidden";
 
-    function update(time: number) {
-      animationFrameId = requestAnimationFrame(update);
+    function tick(time: number) {
+      if (!inView || !pageVisible || gl.isContextLost()) {
+        animationFrameId = 0;
+        return;
+      }
+      animationFrameId = requestAnimationFrame(tick);
       program.uniforms.uTime.value = time * 0.001;
 
       if (enableMouseInteraction) {
@@ -304,20 +327,50 @@ export default function SoftAurora({
 
       renderer.render({ scene: mesh });
     }
-    animationFrameId = requestAnimationFrame(update);
+
+    function resume() {
+      if (!animationFrameId && inView && pageVisible && !gl.isContextLost()) {
+        animationFrameId = requestAnimationFrame(tick);
+      }
+    }
+
+    const visibilityIo =
+      typeof IntersectionObserver !== "undefined"
+        ? new IntersectionObserver(
+            (entries) => {
+              inView = entries.some((entry) => entry.isIntersecting);
+              if (inView) resume();
+            },
+            { threshold: 0.01 },
+          )
+        : null;
+    visibilityIo?.observe(container);
+
+    function onVisibilityChange() {
+      pageVisible = document.visibilityState !== "hidden";
+      if (pageVisible) resume();
+    }
+    document.addEventListener("visibilitychange", onVisibilityChange);
+
+    resume();
 
     return () => {
       cancelAnimationFrame(animationFrameId);
       cancelAnimationFrame(resizeRaf);
       resizeObserver?.disconnect();
+      visibilityIo?.disconnect();
+      document.removeEventListener("visibilitychange", onVisibilityChange);
       window.removeEventListener("resize", scheduleResize);
       if (enableMouseInteraction) {
         gl.canvas.removeEventListener("mousemove", handleMouseMove);
         gl.canvas.removeEventListener("mouseleave", handleMouseLeave);
         window.removeEventListener("scroll", cacheCanvasRect);
       }
-      container.removeChild(gl.canvas);
-      gl.getExtension("WEBGL_lose_context")?.loseContext();
+      // Detach only — avoid loseContext() so React Strict Mode remount
+      // can allocate a fresh context without racing a forced GPU teardown.
+      if (gl.canvas.parentNode === container) {
+        container.removeChild(gl.canvas);
+      }
     };
   }, [
     speed,

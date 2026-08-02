@@ -1,4 +1,4 @@
-import dynamic from "next/dynamic";
+import nextDynamic from "next/dynamic";
 import Hero from "@/components/Hero";
 import Problem from "@/components/Problem";
 import Solutions from "@/components/Solutions";
@@ -6,20 +6,26 @@ import Process from "@/components/Process";
 import Outcomes from "@/components/Outcomes";
 import WhyUs from "@/components/WhyUs";
 import CtaBand from "@/components/CtaBand";
-import StickyMobileCta from "@/components/StickyMobileCta";
+import LazyMount from "@/components/LazyMount";
 import { site, canonicalSentence, useCases } from "@/lib/content";
 import { homeFaqs } from "@/lib/homeFaq";
 import { breadcrumbList, faqPageSchema } from "@/lib/schema";
 
+// Fully static marketing page — no request-time rendering.
+export const dynamic = "force-static";
+
 // Defer interactive below-fold islands so their JS isn't on the critical path.
-const RoiCalculator = dynamic(() => import("@/components/RoiCalculator"), {
+const RoiCalculator = nextDynamic(() => import("@/components/RoiCalculator"), {
   loading: () => (
     <div className="mx-auto max-w-6xl px-5 py-16 md:py-24" aria-hidden>
       <div className="h-96 animate-pulse rounded-card bg-canvas-soft" />
     </div>
   ),
 });
-const HomeFaq = dynamic(() => import("@/components/HomeFaq"));
+const HomeFaq = nextDynamic(() => import("@/components/HomeFaq"));
+const StickyMobileCta = nextDynamic(
+  () => import("@/components/StickyMobileCtaLazy"),
+);
 
 const graph = {
   "@context": "https://schema.org",
@@ -63,8 +69,12 @@ export default function Home() {
         <Process />
         <Outcomes />
         <WhyUs />
-        <RoiCalculator />
-        <HomeFaq />
+        <LazyMount minHeight={420}>
+          <RoiCalculator />
+        </LazyMount>
+        <LazyMount minHeight={480}>
+          <HomeFaq />
+        </LazyMount>
         <CtaBand />
       </main>
       <StickyMobileCta />

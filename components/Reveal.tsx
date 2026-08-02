@@ -9,6 +9,40 @@ type RevealProps = {
   delayMs?: number;
 };
 
+/**
+ * One shared IntersectionObserver for every Reveal on the page.
+ * Dozens of per-instance observers force repeated scroll/layout work.
+ */
+const callbacks = new Map<Element, () => void>();
+let sharedObserver: IntersectionObserver | null = null;
+
+function getSharedObserver() {
+  if (typeof IntersectionObserver === "undefined") return null;
+  if (!sharedObserver) {
+    sharedObserver = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          const el = entry.target;
+          sharedObserver?.unobserve(el);
+          const cb = callbacks.get(el);
+          if (cb) {
+            callbacks.delete(el);
+            cb();
+          }
+        }
+      },
+      // once: true behavior via unobserve; modest rootMargin avoids late reveals
+      { threshold: 0.12, rootMargin: "0px 0px -6% 0px" },
+    );
+  }
+  return sharedObserver;
+}
+
+function prefersReducedMotion() {
+  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+}
+
 export default function Reveal({
   children,
   as: Tag = "div",
@@ -22,33 +56,31 @@ export default function Reveal({
     const node = ref.current;
     if (!node) return;
 
-    if (typeof IntersectionObserver === "undefined") {
-      // No IO support: reveal on the next frame so we never call setState
-      // synchronously inside the effect body.
+    if (prefersReducedMotion()) {
       const id = requestAnimationFrame(() => setVisible(true));
       return () => cancelAnimationFrame(id);
     }
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            setVisible(true);
-            observer.disconnect();
-          }
-        }
-      },
-      { threshold: 0.15, rootMargin: "0px 0px -10% 0px" },
-    );
+    const observer = getSharedObserver();
+    if (!observer) {
+      const id = requestAnimationFrame(() => setVisible(true));
+      return () => cancelAnimationFrame(id);
+    }
 
+    const reveal = () => setVisible(true);
+    callbacks.set(node, reveal);
     observer.observe(node);
-    return () => observer.disconnect();
+
+    return () => {
+      callbacks.delete(node);
+      observer.unobserve(node);
+    };
   }, []);
 
   return (
     <Tag
       ref={ref}
-      className={`reveal ${visible ? "is-visible" : ""} ${className}`}
+      className={`reveal${visible ? " is-visible" : ""}${className ? ` ${className}` : ""}`}
       style={delayMs ? { transitionDelay: `${delayMs}ms` } : undefined}
     >
       {children}

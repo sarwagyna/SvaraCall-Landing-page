@@ -15,8 +15,15 @@ export default function StickyMobileCta() {
 
     let pastProblem = false;
     let finalInView = false;
+    let raf = 0;
 
-    const update = () => setVisible(pastProblem && !finalInView);
+    const update = () => {
+      if (raf) return;
+      raf = requestAnimationFrame(() => {
+        raf = 0;
+        setVisible(pastProblem && !finalInView);
+      });
+    };
 
     const problemObserver = new IntersectionObserver(
       ([entry]) => {
@@ -38,6 +45,7 @@ export default function StickyMobileCta() {
     finalObserver.observe(finalCta);
 
     return () => {
+      cancelAnimationFrame(raf);
       problemObserver.disconnect();
       finalObserver.disconnect();
     };

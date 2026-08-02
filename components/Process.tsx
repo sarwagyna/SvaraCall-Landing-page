@@ -1,6 +1,8 @@
+import RemoteImage from "@/components/RemoteImage";
 import Link from "next/link";
 import Reveal from "./Reveal";
 import { bookPilotHref } from "@/lib/nav";
+import { sceneImages } from "@/lib/images";
 
 const processSteps = [
   {
@@ -27,12 +29,27 @@ const processSteps = [
 
 export default function Process() {
   return (
-    <section id="process" className="bg-[#0b1110] text-white">
+    <section id="process" className="section-cv bg-[#0b1110] text-white">
       <div className="mx-auto max-w-6xl px-5 py-16 md:py-24">
         <p className="eyebrow text-primary">Our process</p>
         <h2 className="display display-h2 mt-4 max-w-3xl text-white">
           From list to logged calls in four steps.
         </h2>
+
+        <Reveal className="relative mt-10 aspect-[21/9] overflow-hidden rounded-[28px]">
+          <RemoteImage
+            src={sceneImages.callingDesk.src}
+            alt={sceneImages.callingDesk.alt}
+            fill
+            sizes="(max-width: 1152px) 100vw, 1152px"
+            className="object-cover"
+            priority={false}
+          />
+          <div
+            className="absolute inset-0 bg-gradient-to-r from-[#0b1110]/75 via-[#0b1110]/35 to-transparent"
+            aria-hidden
+          />
+        </Reveal>
 
         <ol className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
           {processSteps.map((step, i) => (

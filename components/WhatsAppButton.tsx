@@ -25,7 +25,7 @@ export default function WhatsAppButton() {
       >
         <WhatsAppGlyph className="h-5 w-5 text-[#25D366]" />
         <span className="whitespace-nowrap text-sm font-semibold text-ink">
-          Hire Employee
+          Chat on WhatsApp
         </span>
         <span
           aria-hidden="true"
@@ -40,10 +40,6 @@ export default function WhatsAppButton() {
         aria-label="Chat with SvaraCall AI on WhatsApp"
         className="group relative inline-flex h-14 w-14 items-center justify-center rounded-pill bg-[#25D366] text-white shadow-lg transition-transform hover:scale-105 focus-visible:scale-105"
       >
-        <span
-          aria-hidden="true"
-          className="absolute inset-0 rounded-pill bg-[#25D366] opacity-70 animate-ping motion-reduce:animate-none"
-        />
         <span className="sr-only">Chat on WhatsApp</span>
         <WhatsAppGlyph className="relative h-7 w-7" />
       </a>

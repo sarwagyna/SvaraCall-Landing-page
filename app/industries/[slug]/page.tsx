@@ -3,8 +3,22 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import Reveal from "@/components/Reveal";
+import EcommerceVertical from "@/components/industries/EcommerceVertical";
+import InsuranceVertical from "@/components/industries/InsuranceVertical";
+import TelecomVertical from "@/components/industries/TelecomVertical";
+import BrokerageVertical from "@/components/industries/BrokerageVertical";
+import RealEstateVertical from "@/components/industries/RealEstateVertical";
+import EducationVertical from "@/components/industries/EducationVertical";
+import AutomotiveVertical from "@/components/industries/AutomotiveVertical";
 import { site, getIndustryPage, industryPages } from "@/lib/content";
-import { breadcrumbList } from "@/lib/schema";
+import { breadcrumbList, faqPageSchema } from "@/lib/schema";
+import { ecommerceFaqs } from "@/lib/ecommerce";
+import { insuranceFaqs } from "@/lib/insurance";
+import { telecomFaqs } from "@/lib/telecom";
+import { brokerageFaqs } from "@/lib/brokerage";
+import { realEstateFaqs } from "@/lib/realEstate";
+import { educationFaqs } from "@/lib/education";
+import { automotiveFaqs } from "@/lib/automotive";
 import { bookPilotHref } from "@/lib/nav";
 
 type PageProps = { params: Promise<{ slug: string }> };
@@ -55,23 +69,226 @@ export default async function IndustryPage({ params }: PageProps) {
   ];
   const breadcrumb = breadcrumbList(trail);
 
+  if (slug === "ecommerce") {
+    return (
+      <>
+        <Breadcrumbs trail={trail} tone="canvas" />
+        <main>
+          <EcommerceVertical />
+        </main>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                breadcrumb,
+                faqPageSchema(
+                  ecommerceFaqs.map((item) => ({
+                    question: item.q,
+                    answer: item.a,
+                  })),
+                  { graphNode: true },
+                ),
+              ],
+            }),
+          }}
+        />
+      </>
+    );
+  }
+
+  if (slug === "insurance") {
+    return (
+      <>
+        <Breadcrumbs trail={trail} tone="canvas" />
+        <main>
+          <InsuranceVertical />
+        </main>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                breadcrumb,
+                faqPageSchema(
+                  insuranceFaqs.map((item) => ({
+                    question: item.q,
+                    answer: item.a,
+                  })),
+                  { graphNode: true },
+                ),
+              ],
+            }),
+          }}
+        />
+      </>
+    );
+  }
+
+  if (slug === "telecom") {
+    return (
+      <>
+        <Breadcrumbs trail={trail} tone="canvas" />
+        <main>
+          <TelecomVertical />
+        </main>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                breadcrumb,
+                faqPageSchema(
+                  telecomFaqs.map((item) => ({
+                    question: item.q,
+                    answer: item.a,
+                  })),
+                  { graphNode: true },
+                ),
+              ],
+            }),
+          }}
+        />
+      </>
+    );
+  }
+
+  if (slug === "brokerage") {
+    return (
+      <>
+        <Breadcrumbs trail={trail} tone="canvas" />
+        <main>
+          <BrokerageVertical />
+        </main>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                breadcrumb,
+                faqPageSchema(
+                  brokerageFaqs.map((item) => ({
+                    question: item.q,
+                    answer: item.a,
+                  })),
+                  { graphNode: true },
+                ),
+              ],
+            }),
+          }}
+        />
+      </>
+    );
+  }
+
+  if (slug === "real-estate") {
+    return (
+      <>
+        <Breadcrumbs trail={trail} tone="canvas" />
+        <main>
+          <RealEstateVertical />
+        </main>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                breadcrumb,
+                faqPageSchema(
+                  realEstateFaqs.map((item) => ({
+                    question: item.q,
+                    answer: item.a,
+                  })),
+                  { graphNode: true },
+                ),
+              ],
+            }),
+          }}
+        />
+      </>
+    );
+  }
+
+  if (slug === "education") {
+    return (
+      <>
+        <Breadcrumbs trail={trail} tone="canvas" />
+        <main>
+          <EducationVertical />
+        </main>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                breadcrumb,
+                faqPageSchema(
+                  educationFaqs.map((item) => ({
+                    question: item.q,
+                    answer: item.a,
+                  })),
+                  { graphNode: true },
+                ),
+              ],
+            }),
+          }}
+        />
+      </>
+    );
+  }
+
+  if (slug === "automotive") {
+    return (
+      <>
+        <Breadcrumbs trail={trail} tone="canvas" />
+        <main>
+          <AutomotiveVertical />
+        </main>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                breadcrumb,
+                faqPageSchema(
+                  automotiveFaqs.map((item) => ({
+                    question: item.q,
+                    answer: item.a,
+                  })),
+                  { graphNode: true },
+                ),
+              ],
+            }),
+          }}
+        />
+      </>
+    );
+  }
+
   return (
     <>
       <Breadcrumbs trail={trail} />
       <main>
         {/* Hero */}
         <section id="top" className="bg-canvas-soft">
-          <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 md:py-24 lg:grid-cols-2">
+          <div className="industry-hero-zoom mx-auto grid max-w-6xl items-center gap-8 px-5 py-10 md:gap-10 md:py-14 lg:grid-cols-2">
             <div>
               <p className="eyebrow">{data.eyebrow}</p>
-              <h1 className="display display-hero mt-4">
+              <h1 className="display display-hero mt-3">
                 {data.heroTitle}
                 <br />
                 <span className="text-ink-deep">{data.heroAccent}</span>
               </h1>
-              <p className="mt-6 max-w-xl text-lg text-body">{data.heroSubcopy}</p>
+              <p className="mt-4 max-w-xl text-base text-body sm:text-lg">{data.heroSubcopy}</p>
 
-              <div className="mt-8 flex flex-wrap gap-3">
+              <div className="mt-6 flex flex-wrap gap-3">
                 <Link
                   href={bookPilotHref}
                   className="inline-flex h-12 items-center rounded-pill bg-primary px-7 text-base font-semibold text-on-primary transition-colors hover:bg-primary-active"

@@ -11,6 +11,37 @@ const trustFeatures = [
 
 const languageChips = ["हिन्दी", "తెలుగు", "English"];
 
+/** Compact SVG waveform — one DOM node instead of ~90 divs. */
+function HeroWaveform() {
+  const bars = [
+    28, 42, 56, 38, 64, 48, 72, 44, 60, 36, 52, 68, 40, 58, 34, 50, 66, 46, 62,
+    38, 54, 70, 42, 58, 32, 48, 64, 44, 60, 36, 52, 68, 40, 56, 30, 46, 62, 42,
+    58, 34, 50, 66, 38, 54, 72, 44, 60, 36, 52, 68, 40, 58, 32, 48,
+  ];
+  const gap = 4;
+  const width = bars.length * gap;
+  return (
+    <svg
+      className="pointer-events-none absolute inset-x-0 -bottom-6 mx-auto h-36 w-full max-w-3xl opacity-30 md:h-44"
+      viewBox={`0 0 ${width} 100`}
+      preserveAspectRatio="none"
+      aria-hidden
+    >
+      {bars.map((height, index) => (
+        <rect
+          key={index}
+          x={index * gap + 1}
+          y={100 - height}
+          width="1.2"
+          height={height}
+          rx="0.6"
+          className="fill-primary/50"
+        />
+      ))}
+    </svg>
+  );
+}
+
 function CheckCircleIcon() {
   return (
     <svg
@@ -24,25 +55,17 @@ function CheckCircleIcon() {
   );
 }
 
-const waveformHeights = [
-  28, 42, 56, 38, 64, 48, 72, 44, 60, 36, 52, 68, 40, 58, 34, 50, 66, 46, 62,
-  38, 54, 70, 42, 58, 32, 48, 64, 44, 60, 36, 52, 68, 40, 56, 30, 46, 62, 42,
-  58, 34, 50, 66, 38, 54, 72, 44, 60, 36, 52, 68, 40, 58, 32, 48, 64, 44, 60,
-  36, 52, 68, 40, 56, 34, 50, 66, 42, 58, 38, 54, 70, 44, 60, 36, 52, 68, 40,
-  58, 32, 48, 64, 44, 60, 36, 52, 68, 40, 56, 34, 50, 66, 38, 54, 72, 44, 60,
-];
-
 export default function Hero() {
   return (
     <section
       id="top"
       className="relative flex min-h-[calc(100dvh-60px)] flex-col overflow-hidden bg-[#0b1110] pt-[calc(60px+2.5em)] pb-8 md:pt-[calc(60px+3.5em)] md:pb-12"
     >
-      <div
-        className="pointer-events-none absolute inset-0"
-        aria-hidden
-      >
+      <div className="pointer-events-none absolute inset-0" aria-hidden>
         <SoftAuroraLazy
+          deferUntilWindowLoad
+          deferUntilIdle
+          idleTimeoutMs={3500}
           speed={0.5}
           scale={1.4}
           brightness={0.85}
@@ -73,18 +96,7 @@ export default function Hero() {
           <HeroActions />
 
           <div className="relative mt-14 w-full md:mt-16">
-            <div
-              className="pointer-events-none absolute inset-x-0 -bottom-6 flex h-36 items-end justify-center gap-[3px] opacity-30 md:h-44"
-              aria-hidden
-            >
-              {waveformHeights.map((height, index) => (
-                <div
-                  key={index}
-                  className="w-px rounded-pill bg-primary/50"
-                  style={{ height: `${height}%` }}
-                />
-              ))}
-            </div>
+            <HeroWaveform />
             <ul className="relative flex flex-wrap justify-center gap-x-6 gap-y-3">
               {trustFeatures.map((feature) => (
                 <li
@@ -100,9 +112,7 @@ export default function Hero() {
               {languageChips.map((language) => (
                 <li
                   key={language}
-                  className={`rounded-pill border border-white/15 bg-[#101916]/90 px-4 py-2 text-sm font-semibold text-white shadow-sm shadow-black/30${
-                    language === "తెలుగు" ? " font-telugu" : ""
-                  }`}
+                  className="rounded-pill border border-white/15 bg-[#101916]/90 px-4 py-2 text-sm font-semibold text-white shadow-sm shadow-black/30"
                 >
                   {language}
                 </li>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Noto_Sans_Telugu } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
@@ -12,15 +12,6 @@ const inter = Inter({
   subsets: ["latin"],
   display: "swap",
   preload: true,
-});
-
-const notoTelugu = Noto_Sans_Telugu({
-  variable: "--font-noto-telugu",
-  subsets: ["telugu"],
-  weight: ["400", "600"],
-  display: "swap",
-  // Only used for a single language chip — don't block first paint.
-  preload: false,
 });
 
 export const metadata: Metadata = {
@@ -118,7 +109,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${notoTelugu.variable}`}>
+    <html lang="en" className={inter.variable}>
       <body>
         <Nav />
         {children}

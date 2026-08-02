@@ -1,29 +1,123 @@
 import Image from "next/image";
 import Link from "next/link";
-import { site, canonicalSentence } from "@/lib/content";
-import { routes, bookPilotHref } from "@/lib/nav";
+import { site } from "@/lib/content";
+import { languagePages } from "@/lib/languagePages";
+import { bookPilotHref } from "@/lib/nav";
+
+const productLinks = [
+  { href: "/how-it-works", label: "Platform" },
+  { href: "/voice-agents", label: "Voice agents" },
+  { href: "/languages", label: "Languages" },
+  { href: "/integrations", label: "Integrations" },
+  { href: "/compliance", label: "Security" },
+  { href: bookPilotHref, label: "Book a pilot" },
+] as const;
+
+const solutionLinks = [
+  { href: "/industries/ecommerce", label: "E-commerce" },
+  { href: "/industries/fintech", label: "Lending & Collections" },
+  { href: "/industries/insurance", label: "Insurance" },
+  { href: "/industries/healthcare", label: "Healthcare" },
+  { href: "/industries/automotive", label: "Automotive" },
+  { href: "/industries", label: "Industry intelligence" },
+  { href: "/use-cases", label: "Use cases" },
+] as const;
+
+const companyLinks = [
+  { href: "/about", label: "About" },
+  { href: "/partner", label: "Partner" },
+  {
+    href: "https://sarwagyna.com/careers",
+    label: "Careers",
+    external: true,
+  },
+  { href: "/faq", label: "FAQ" },
+  { href: `mailto:${site.email}`, label: "Contact" },
+] as const;
+
+const legalLinks = [
+  { href: "/compliance", label: "Compliance" },
+  { href: `${site.parentUrl}/privacy`, label: "Privacy", external: true },
+  { href: `${site.parentUrl}/terms`, label: "Terms", external: true },
+] as const;
+
+function FooterLink({
+  href,
+  label,
+  external,
+}: {
+  href: string;
+  label: string;
+  external?: boolean;
+}) {
+  const className =
+    "text-sm text-white/65 transition-colors hover:text-white";
+
+  if (external || href.startsWith("mailto:")) {
+    return (
+      <a
+        href={href}
+        className={className}
+        {...(external
+          ? { target: "_blank", rel: "noopener noreferrer" }
+          : {})}
+      >
+        {label}
+      </a>
+    );
+  }
+
+  return (
+    <Link href={href} className={className}>
+      {label}
+    </Link>
+  );
+}
 
 export default function Footer() {
   return (
     <footer className="bg-[#0b1110] text-white/80">
-      <div className="mx-auto max-w-6xl px-5 py-14">
-        <div className="grid gap-10 md:grid-cols-3">
-          <div>
-            <p className="text-lg font-[900] tracking-tight text-white">
-              SvaraCall AI
+      <div className="mx-auto max-w-6xl px-5 py-14 md:py-16">
+        {/* Top: brand + columns */}
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5 lg:gap-8">
+          <div className="sm:col-span-2 lg:col-span-1">
+            <Link href="/" className="inline-flex items-center gap-2">
+              <Image
+                src="/logo-mark.webp"
+                alt="SvaraCall AI"
+                width={28}
+                height={28}
+                className="h-7 w-7"
+              />
+              <span className="text-sm font-semibold text-white">
+                SvaraCall AI
+              </span>
+            </Link>
+            <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/65">
+              AI phone agents that sound human — in Telugu, Hindi &amp; English,
+              tuned to your business.
             </p>
-            <p className="mt-3 max-w-md text-sm text-white/70">
-              {canonicalSentence}
+            <p className="mt-5 text-sm font-semibold text-white">
+              {site.legalName}
             </p>
-            <p className="mt-4 text-sm text-white/70">
+            <p className="mt-1 text-sm text-white/55">
+              {site.city} · {site.state} · {site.country}
+            </p>
+            <a
+              href={`mailto:${site.email}`}
+              className="mt-3 inline-block text-sm text-white/70 transition-colors hover:text-primary"
+            >
+              {site.email}
+            </a>
+            <p className="mt-5 text-sm text-white/55">
               Also by{" "}
               <a
                 href={site.parentUrl}
                 className="font-semibold text-white hover:underline"
               >
-                {site.legalName}
+                Sarwagyna
               </a>
-:{" "}
+              :{" "}
               <a
                 href={site.svaraRxUrl}
                 className="inline-flex items-center gap-1.5 align-middle font-semibold text-primary hover:underline"
@@ -31,66 +125,107 @@ export default function Footer() {
                 <Image
                   src="/SvaraRx-Icon-sm.webp"
                   alt=""
-                  width={18}
-                  height={18}
-                  className="h-[18px] w-[18px] rounded-[5px]"
+                  width={16}
+                  height={16}
+                  className="h-4 w-4 rounded-[4px]"
                 />
                 SvaraRx
-              </a>{" "}
-              — voice prescriptions for doctors.
+              </a>
             </p>
           </div>
 
-          <nav aria-label="Footer">
-            <p className="text-xs font-semibold uppercase tracking-wider text-white/70">
-              Explore
-            </p>
-            <ul className="mt-4 flex flex-col gap-2.5 text-sm">
-              {routes.map((route) => (
-                <li key={route.href}>
-                  <Link
-                    href={route.href}
-                    className="text-white/70 transition-colors hover:text-white"
-                  >
-                    {route.label}
-                  </Link>
+          <nav aria-label="Product">
+            <p className="text-sm font-bold text-white">Product</p>
+            <ul className="mt-4 flex flex-col gap-2.5">
+              {productLinks.map((link) => (
+                <li key={link.href}>
+                  <FooterLink {...link} />
                 </li>
               ))}
-              <li>
-                <Link
-                  href={bookPilotHref}
-                  className="font-semibold text-primary hover:underline"
-                >
-                  Book a pilot
-                </Link>
-              </li>
             </ul>
           </nav>
 
-          <div className="md:text-right">
-            <address className="text-sm not-italic leading-relaxed text-white/70">
-              {site.legalName}
-              <br />
-              {site.city}, {site.state}, {site.country}
-              <br />
-              CIN: {site.cin}
-              <br />
-              <a
-                href={`mailto:${site.email}`}
-                className="text-white/80 hover:underline"
-              >
-                {site.email}
-              </a>
-            </address>
-          </div>
+          <nav aria-label="Solutions">
+            <p className="text-sm font-bold text-white">Solutions</p>
+            <ul className="mt-4 flex flex-col gap-2.5">
+              {solutionLinks.map((link) => (
+                <li key={link.href + link.label}>
+                  <FooterLink {...link} />
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <nav aria-label="Company">
+            <p className="text-sm font-bold text-white">Company</p>
+            <ul className="mt-4 flex flex-col gap-2.5">
+              {companyLinks.map((link) => (
+                <li key={link.label}>
+                  <FooterLink {...link} />
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <nav aria-label="Legal">
+            <p className="text-sm font-bold text-white">Legal</p>
+            <ul className="mt-4 flex flex-col gap-2.5">
+              {legalLinks.map((link) => (
+                <li key={link.label}>
+                  <FooterLink {...link} />
+                </li>
+              ))}
+            </ul>
+          </nav>
         </div>
 
-        <div className="mt-12 flex flex-col justify-between gap-3 border-t border-white/10 pt-6 text-xs text-white/65 sm:flex-row">
+        {/* Languages bar */}
+        <div className="mt-12 border-t border-white/10 pt-8">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/45">
+            Languages
+          </p>
+          <nav
+            aria-label="Languages"
+            className="mt-4 flex flex-wrap gap-x-5 gap-y-2"
+          >
+            {languagePages.map((page) => (
+              <Link
+                key={page.slug}
+                href={`/languages/${page.slug}`}
+                lang={page.langAttr}
+                className="text-sm text-white/70 transition-colors hover:text-primary"
+              >
+                {page.nativeName}
+              </Link>
+            ))}
+          </nav>
+        </div>
+
+        {/* Copyright bar */}
+        <div className="mt-8 flex flex-col justify-between gap-3 border-t border-white/10 pt-6 text-xs text-white/50 sm:flex-row sm:items-center">
           <p>
             &copy; {new Date().getFullYear()} {site.legalName}. All rights
-            reserved.
+            reserved. CIN: {site.cin}
           </p>
-          <p>Last updated: {site.lastUpdated}</p>
+          <div className="flex flex-wrap gap-4">
+            <a
+              href={`${site.parentUrl}/privacy`}
+              className="transition-colors hover:text-white"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Privacy
+            </a>
+            <a
+              href={`${site.parentUrl}/terms`}
+              className="transition-colors hover:text-white"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Terms
+            </a>
+            <span>Last updated: {site.lastUpdated}</span>
+          </div>
         </div>
       </div>
     </footer>
