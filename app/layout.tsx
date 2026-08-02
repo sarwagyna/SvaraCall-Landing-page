@@ -24,7 +24,6 @@ export const metadata: Metadata = {
   description:
     "AI voice agent that makes your outbound calls — lead follow-ups, reminders, confirmations — in Telugu, Hindi & English. Premium, human-grade calling at a fraction of a calling team's cost. Outcome-driven, TRAI & DPDP ready.",
   applicationName: site.name,
-  alternates: { canonical: "/" },
   manifest: "/site.webmanifest",
   icons: {
     icon: [

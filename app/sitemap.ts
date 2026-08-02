@@ -43,8 +43,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...industryPages.map((industry) => ({
       url: `${site.url}/industries/${industry.slug}`,
       lastModified,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
     })),
     ...languagePages.map((page) => ({
       url: `${site.url}/languages/${page.slug}`,
