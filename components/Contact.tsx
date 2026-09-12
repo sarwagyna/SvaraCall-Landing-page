@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { site, industryPages, useCases } from "@/lib/content";
 
 const callVolumes = [
@@ -236,6 +237,21 @@ export default function Contact() {
               >
                 Book my pilot →
               </button>
+              <p className="text-sm text-mute">
+                By booking a pilot you agree to our{" "}
+                <Link href="/terms" className="text-ink-deep hover:underline">
+                  Terms of Service
+                </Link>
+                ,{" "}
+                <Link href="/privacy" className="text-ink-deep hover:underline">
+                  Privacy Policy
+                </Link>
+                , and{" "}
+                <Link href="/aup" className="text-ink-deep hover:underline">
+                  Acceptable Use Policy
+                </Link>
+                .
+              </p>
             </form>
           )}
         </div>

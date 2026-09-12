@@ -11,6 +11,7 @@ import {
 import { nichePages } from "@/lib/nichePages";
 import { templatePages } from "@/lib/templatePages";
 import { routes, bookPilotHref } from "@/lib/nav";
+import { publishedLegalDocs } from "@/lib/legalDocs";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date(site.dateModified);
@@ -39,6 +40,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified,
       changeFrequency: "monthly" as const,
       priority: 0.5,
+    })),
+    ...publishedLegalDocs.map((doc) => ({
+      url: `${site.url}/${doc.slug}`,
+      lastModified,
+      changeFrequency: "yearly" as const,
+      priority: 0.4,
     })),
     ...industryPages.map((industry) => ({
       url: `${site.url}/industries/${industry.slug}`,

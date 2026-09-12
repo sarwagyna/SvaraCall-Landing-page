@@ -6,8 +6,11 @@ import { footerColumns } from "@/lib/nav";
 import ShareLinks from "@/components/ShareLinks";
 
 const legalLinks = [
-  { href: `${site.parentUrl}/privacy`, label: "Privacy policy", external: true },
-  { href: `${site.parentUrl}/terms`, label: "Terms of use", external: true },
+  { href: "/terms", label: "Terms of Service" },
+  { href: "/privacy", label: "Privacy Policy" },
+  { href: "/aup", label: "Acceptable Use" },
+  { href: "/dpa", label: "Data Processing Addendum" },
+  { href: "/refunds", label: "Refunds" },
 ] as const;
 
 function FooterLink({
@@ -85,37 +88,37 @@ export default function Footer() {
           </div>
 
           <div className="shrink-0 lg:pt-1">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/45">
-              Backed by
-            </p>
-            <div className="mt-5 flex flex-wrap items-center gap-x-8 gap-y-5">
+            <div className="flex flex-wrap items-center gap-x-5 gap-y-3">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/45">
+                Backed by
+              </p>
               <a
                 href="https://cartesia.ai"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center rounded-md bg-white px-3 py-2 transition-opacity hover:opacity-90"
+                className="inline-flex items-center rounded-sm bg-white px-1.5 py-1 transition-opacity hover:opacity-90"
               >
                 <Image
                   src="/Cartesia_Startups_Logo.png"
                   alt="Cartesia AI Startups"
                   width={280}
                   height={29}
-                  className="h-7 w-auto"
+                  className="h-6 w-auto"
                 />
               </a>
               <a
                 href="https://www.nvidia.com/en-us/startups/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="opacity-90 transition-opacity hover:opacity-100"
+                className="inline-flex items-center transition-opacity hover:opacity-90"
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/nvidia-inception-program-badge-rgb-for-screen.svg"
                   alt="NVIDIA Inception Program"
-                  width={140}
-                  height={60}
-                  className="h-[52px] w-auto"
+                  width={180}
+                  height={66}
+                  className="block h-16 w-auto"
                 />
               </a>
             </div>

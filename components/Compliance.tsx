@@ -1,4 +1,5 @@
 import Reveal from "./Reveal";
+import Link from "next/link";
 import { compliance, answers } from "@/lib/content";
 
 export default function Compliance({
@@ -29,6 +30,23 @@ export default function Compliance({
             </Reveal>
           ))}
         </div>
+
+        <p className="mt-10 max-w-3xl text-sm text-body">
+          Formal terms:{" "}
+          <Link href="/terms" className="text-ink-deep hover:underline">
+            Terms of Service
+          </Link>
+          ,{" "}
+          <Link href="/privacy" className="text-ink-deep hover:underline">
+            Privacy Policy
+          </Link>
+          , and{" "}
+          <Link href="/dpa" className="text-ink-deep hover:underline">
+            Data Processing Addendum
+          </Link>
+          . Telephony compliance terms and our subprocessor list are available
+          on request.
+        </p>
       </div>
     </section>
   );
