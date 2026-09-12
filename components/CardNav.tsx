@@ -31,6 +31,8 @@ export interface CardNavProps {
   buttonTextColor?: string;
   ctaLabel?: string;
   ctaHref?: string;
+  loginLabel?: string;
+  loginHref?: string;
   navClassName?: string;
   onNavigate?: () => void;
 }
@@ -67,6 +69,8 @@ export default function CardNav({
   buttonTextColor,
   ctaLabel = "Get Started",
   ctaHref = "/",
+  loginLabel,
+  loginHref,
   navClassName = "",
   onNavigate,
 }: CardNavProps) {
@@ -105,7 +109,7 @@ export default function CardNav({
       >
         <div className="card-nav-top relative z-[2] flex h-[60px] items-center justify-between p-2 pl-[1.1rem]">
           <div
-            className={`hamburger-menu ${isExpanded ? "open" : ""} group order-2 flex h-full cursor-pointer flex-col items-center justify-center gap-[6px] md:order-none`}
+            className={`hamburger-menu ${isExpanded ? "open" : ""} group order-3 flex h-full cursor-pointer flex-col items-center justify-center gap-[6px] md:order-none`}
             onClick={toggleMenu}
             onKeyDown={(e: React.KeyboardEvent<HTMLDivElement>) => {
               if (e.key === "Enter" || e.key === " ") {
@@ -150,14 +154,24 @@ export default function CardNav({
             </span>
           </Link>
 
-          <Link
-            href={ctaHref}
-            className="card-nav-cta-button hidden h-full items-center rounded-[calc(0.75rem-0.2rem)] border-0 px-4 font-medium no-underline transition-colors duration-300 md:inline-flex"
-            style={{ backgroundColor: buttonBgColor, color: buttonTextColor }}
-            onClick={handleLinkClick}
-          >
-            {ctaLabel}
-          </Link>
+          <div className="order-2 flex h-full items-center gap-1.5 md:order-none">
+            {loginHref ? (
+              <a
+                href={loginHref}
+                className="inline-flex h-full items-center rounded-[calc(0.75rem-0.2rem)] px-3 text-sm font-medium text-white/85 no-underline transition-colors hover:text-white"
+              >
+                {loginLabel ?? "Login"}
+              </a>
+            ) : null}
+            <Link
+              href={ctaHref}
+              className="card-nav-cta-button hidden h-full items-center rounded-[calc(0.75rem-0.2rem)] border-0 px-4 font-medium no-underline transition-colors duration-300 md:inline-flex"
+              style={{ backgroundColor: buttonBgColor, color: buttonTextColor }}
+              onClick={handleLinkClick}
+            >
+              {ctaLabel}
+            </Link>
+          </div>
         </div>
 
         {/* CSS grid 0fr→1fr expand — no GSAP, no layout measurement */}

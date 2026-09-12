@@ -2,7 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import CardNav, { type CardNavItem } from "@/components/CardNav";
-import { bookPilotHref, primaryNav } from "@/lib/nav";
+import { appLoginHref, bookPilotHref, primaryNav } from "@/lib/nav";
 
 const items: CardNavItem[] = [
   {
@@ -42,6 +42,8 @@ export default function Nav() {
       navClassName="backdrop-blur-md"
       ctaLabel="Book a pilot"
       ctaHref={bookPilotHref}
+      loginLabel="Login"
+      loginHref={appLoginHref}
       ease="power3.out"
     />
   );

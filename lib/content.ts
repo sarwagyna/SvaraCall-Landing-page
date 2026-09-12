@@ -5,6 +5,7 @@
 export const site = {
   name: "SvaraCall AI",
   url: "https://www.svaracall.com",
+  appUrl: "https://app.svaracall.com",
   homeTitle: "SvaraCall — Affordable Outbound Calling Agent for India",
   tagline: "Affordable outbound calling agent for India",
   legalName: "Sarwagyna Private Limited",

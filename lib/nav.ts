@@ -1,3 +1,5 @@
+import { site } from "@/lib/content";
+
 // Shared route list used by Nav, Footer, Explore, and sitemap.
 export type Route = { href: string; label: string };
 
@@ -19,6 +21,7 @@ export const routes: Route[] = [
 ];
 
 export const bookPilotHref = "/book-a-pilot";
+export const appLoginHref = site.appUrl;
 
 /** Vertical space reserved for the fixed CardNav bar */
 export const navTopOffset = "calc(60px + 1.2em)";
