@@ -5,8 +5,6 @@ const nextConfig: NextConfig = {
   // (e.g. http://192.168.1.57:3000) without blocking HMR/dev assets.
   allowedDevOrigins: ["192.168.1.57", "localhost", "127.0.0.1"],
   trailingSlash: false,
-  // Middleware handles trailing-slash → no-slash with an absolute Location.
-  skipTrailingSlashRedirect: true,
   images: {
     remotePatterns: [
       {

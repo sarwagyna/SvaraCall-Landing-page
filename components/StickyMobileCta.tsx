@@ -63,7 +63,7 @@ export default function StickyMobileCta() {
         onClick={() => trackEvent("sticky_cta_clicked")}
         className="flex h-12 w-full items-center justify-center rounded-pill bg-primary text-base font-semibold text-on-primary transition-colors hover:bg-primary-active"
       >
-        Book a pilot
+        Talk to SvaraCall
       </Link>
     </div>
   );

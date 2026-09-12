@@ -2,15 +2,15 @@ import { comparison } from "@/lib/content";
 
 const outcomeStrip = [
   {
-    title: "Outcome-driven pricing",
+    title: "Pay for conversions",
     body: "You pay for calls that convert, not headcount.",
   },
   {
-    title: "A human when it matters",
+    title: "Live handoff when needed",
     body: "Complex calls escalate to your team.",
   },
   {
-    title: "Every call accountable",
+    title: "Full call records",
     body: "Outcome, recording, and transcript logged.",
   },
 ];
@@ -84,7 +84,7 @@ export default function Outcomes() {
               key={item.title}
               className="rounded-card bg-canvas-soft p-6"
             >
-              <h3 className="text-base font-bold text-ink">{item.title}</h3>
+              <p className="text-base font-bold text-ink">{item.title}</p>
               <p className="mt-2 text-sm text-body">{item.body}</p>
             </li>
           ))}

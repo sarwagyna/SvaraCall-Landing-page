@@ -59,7 +59,7 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative flex min-h-[calc(100dvh-60px)] flex-col overflow-hidden bg-[#0b1110] pt-[calc(60px+2.5em)] pb-8 md:pt-[calc(60px+3.5em)] md:pb-12"
+      className="relative flex min-h-[100dvh] flex-col overflow-hidden bg-[#0b1110] pt-[calc(60px+4.5em)] pb-16 md:min-h-[115dvh] md:pt-[calc(60px+7em)] md:pb-24"
     >
       <div className="pointer-events-none absolute inset-0" aria-hidden>
         <SoftAuroraLazy
@@ -80,22 +80,21 @@ export default function Hero() {
       <div className="pointer-events-none absolute inset-0 bg-[#0b1110]/55" aria-hidden />
 
       <div className="relative z-10 flex flex-1 flex-col items-center justify-center text-center">
-        <div className="mx-auto w-full max-w-4xl px-5 pb-14 md:pb-20">
+        <div className="mx-auto w-full max-w-4xl px-5 pb-16 md:pb-24">
           <HeroEyebrow />
           <h1 className="display display-hero mx-auto mt-6 max-w-3xl text-white md:mt-8">
-            Missed calls are missed customers.
+            Affordable outbound calling agent for India.
           </h1>
           <p className="mx-auto mt-8 max-w-2xl text-lg text-white/75 md:mt-10">
-            SvaraCall AI is an AI voice agent that makes a business&apos;s
-            outbound calls — lead follow-ups, appointment reminders, payment
-            reminders — in Telugu, Hindi, and English, and logs every outcome
-            automatically. Premium, human-grade calling at a fraction of a
-            calling team&apos;s cost.
+            SvaraCall is an affordable outbound calling agent for businesses in
+            India. It places lead follow-ups, appointment reminders, and payment
+            reminders in Telugu, Hindi, and English, then logs every outcome
+            automatically — premium calling at a fraction of a team&apos;s cost.
           </p>
 
           <HeroActions />
 
-          <div className="relative mt-14 w-full md:mt-16">
+          <div className="relative mt-16 w-full md:mt-20">
             <HeroWaveform />
             <ul className="relative flex flex-wrap justify-center gap-x-6 gap-y-3">
               {trustFeatures.map((feature) => (
@@ -121,7 +120,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="mx-auto w-full max-w-6xl px-5 pb-20 md:pb-28">
+        <div className="mx-auto w-full max-w-6xl px-5 pb-24 md:pb-32">
           <HeroStats />
         </div>
       </div>

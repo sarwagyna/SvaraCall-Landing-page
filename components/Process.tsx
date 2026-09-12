@@ -65,7 +65,7 @@ export default function Process() {
               >
                 {step.n}
               </span>
-              <h3 className="mt-4 text-lg font-bold text-white">{step.title}</h3>
+              <p className="mt-4 text-lg font-bold text-white">{step.title}</p>
               <p className="mt-2 text-white/60">{step.body}</p>
             </Reveal>
           ))}
@@ -76,7 +76,7 @@ export default function Process() {
             href={bookPilotHref}
             className="inline-flex h-12 items-center rounded-pill bg-primary px-8 text-base font-semibold text-on-primary transition-colors hover:bg-primary-active"
           >
-            Book a pilot →
+            Start your four-step pilot →
           </Link>
         </div>
       </div>

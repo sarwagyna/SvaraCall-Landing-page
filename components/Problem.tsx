@@ -24,7 +24,7 @@ export default function Problem() {
               delayMs={i * 80}
               className="rounded-card bg-white/5 p-7 ring-1 ring-white/10"
             >
-              <h3 className="text-xl font-bold text-white">{card.title}</h3>
+              <p className="text-xl font-bold text-white">{card.title}</p>
               <p className="mt-3 text-white/60">{card.body}</p>
             </Reveal>
           ))}

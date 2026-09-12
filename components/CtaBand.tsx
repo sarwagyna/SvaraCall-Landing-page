@@ -39,7 +39,7 @@ export default function CtaBand() {
                 href={bookPilotHref}
                 className="mt-8 inline-flex h-12 items-center justify-center rounded-pill bg-primary px-8 text-base font-semibold text-on-primary transition-colors hover:bg-primary-active"
               >
-                Book a pilot
+                Get a demo on your phone
               </Link>
             </div>
 

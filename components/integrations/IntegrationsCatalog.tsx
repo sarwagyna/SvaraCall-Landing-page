@@ -27,20 +27,9 @@ function IntegrationCard({ item }: { item: Integration }) {
       >
         <IntegrationLogo item={item} size={44} />
         <div className="min-w-0 flex-1">
-          <div className="flex flex-wrap items-center gap-2">
-            <h3 className="text-sm font-semibold text-ink sm:text-[15px]">
-              {item.name}
-            </h3>
-            {item.status === "enterprise" ? (
-              <span className="rounded-pill bg-white/8 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-mute">
-                Enterprise
-              </span>
-            ) : (
-              <span className="rounded-pill bg-primary-soft px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-primary">
-                Ready
-              </span>
-            )}
-          </div>
+          <h3 className="text-sm font-semibold text-ink sm:text-[15px]">
+            {item.name}
+          </h3>
           <p className="mt-1 text-sm leading-relaxed text-body">
             {item.description}
           </p>
@@ -117,13 +106,13 @@ export default function IntegrationsCatalog() {
           <Reveal>
             <p className="eyebrow text-primary">Integrations</p>
             <h1 className="display display-hero mx-auto mt-4 max-w-4xl text-[clamp(2rem,7.5vw,4.2rem)] text-white sm:mt-5">
-              {integrationStats.total}+ integrations.{" "}
-              <span className="text-primary">Your stack stays yours.</span>
+              Integrate any of the tools you already use.
             </h1>
             <p className="mx-auto mt-5 max-w-2xl text-base text-white/70 sm:mt-6 sm:text-lg">
-              Search the catalog — connect in minutes where APIs allow, plus
-              enterprise paths that need partner approval. SvaraCall is the
-              conversation layer, not a walled garden.
+              CRM, WhatsApp, telephony, sheets, helpdesk — if it&apos;s in your
+              stack, we can connect it. Browse {integrationStats.total}+ ready
+              integrations below, or ask us to bridge a tool that isn&apos;t
+              listed yet.
             </p>
           </Reveal>
 
@@ -148,7 +137,7 @@ export default function IntegrationsCatalog() {
                 type="search"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search integrations…"
+                placeholder="Search your tools…"
                 className="h-12 w-full rounded-pill border border-line bg-surface/80 py-3 pl-12 pr-5 text-base text-ink outline-none transition-[box-shadow,border-color] placeholder:text-mute focus:border-primary/50 focus:ring-2 focus:ring-primary/25 sm:h-14 sm:py-3.5"
               />
             </div>
@@ -248,14 +237,15 @@ export default function IntegrationsCatalog() {
             <div className="mt-10 rounded-2xl border border-line bg-surface/40 px-6 py-14 text-center">
               <p className="text-lg font-semibold text-ink">No matches</p>
               <p className="mx-auto mt-2 max-w-md text-sm text-body">
-                Try another search — or tell us what you need. If it has an API,
-                we can usually bridge it.
+                Not in the catalog? We still integrate with the tools you
+                already run — tell us what you use and we&apos;ll map the
+                connection.
               </p>
               <Link
                 href={bookPilotHref}
                 className="mt-6 inline-flex h-11 items-center justify-center rounded-pill bg-primary px-6 text-sm font-semibold text-on-primary transition-colors hover:bg-primary-active"
               >
-                Ask about an integration
+                Connect your existing tools
               </Link>
             </div>
           ) : (
@@ -282,14 +272,15 @@ export default function IntegrationsCatalog() {
 
           <div className="mt-14 rounded-[2rem] bg-primary px-6 py-12 text-center sm:mt-16 sm:rounded-[2.5rem] sm:px-10 sm:py-14 md:px-14">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-on-primary/70">
-              Custom integrations are also available
+              Any tool you already run
             </p>
             <h2 className="display mt-3 text-[clamp(1.75rem,4vw,2.75rem)] leading-tight text-white">
-              Don&apos;t see yours?
+              Don&apos;t see yours? We&apos;ll still connect it.
             </h2>
             <p className="mx-auto mt-3 max-w-xl text-base text-on-primary sm:text-lg">
-              If it has an API, we can usually bridge it — book a pilot and
-              we&apos;ll map your stack in a live call.
+              Custom integrations are standard — API, webhook, or a mapped
+              export. Book a pilot and we&apos;ll wire SvaraCall into your
+              existing stack.
             </p>
             <Link
               href={bookPilotHref}

@@ -44,9 +44,9 @@ export default function HomeFaq() {
           </p>
 
           <div className="mt-10 rounded-3xl bg-canvas p-6 shadow-[0_1px_3px_rgba(14,15,12,0.06)] md:p-8">
-            <h3 className="text-xl font-semibold tracking-tight text-ink md:text-[1.35rem] md:leading-snug">
+            <p className="text-xl font-semibold tracking-tight text-ink md:text-[1.35rem] md:leading-snug">
               Need AI outbound calling on your leads?
-            </h3>
+            </p>
             <p className="mt-3 text-sm leading-relaxed text-body md:text-[0.95rem]">
               Book a pilot and hear SvaraCall place a live call to your phone —
               in Telugu, Hindi, or English — before you commit to anything.
@@ -73,7 +73,7 @@ export default function HomeFaq() {
                   <circle cx="10.5" cy="11.5" r="1" fill="currentColor" opacity="0.7" />
                 </svg>
               </span>
-              Book a pilot
+              Hear a live demo
             </Link>
           </div>
         </div>
@@ -91,7 +91,7 @@ export default function HomeFaq() {
                 key={faq.question}
                 className={isLast ? "" : "border-b border-ink/10"}
               >
-                <h3>
+                <div>
                   <button
                     id={buttonId}
                     type="button"
@@ -108,7 +108,7 @@ export default function HomeFaq() {
                     <span>{faq.question}</span>
                     <Chevron open={isOpen} />
                   </button>
-                </h3>
+                </div>
                 <div
                   id={panelId}
                   role="region"

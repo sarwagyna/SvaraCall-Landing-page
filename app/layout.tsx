@@ -17,8 +17,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default:
-      "SvaraCall AI — Affordable AI Outbound Calling Agent for Indian Businesses",
+    default: site.homeTitle,
     template: "%s · SvaraCall AI",
   },
   description:
@@ -38,16 +37,14 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: site.url,
     siteName: site.name,
-    title:
-      "SvaraCall AI — Affordable AI Outbound Calling Agent for Indian Businesses",
+    title: site.homeTitle,
     description:
       "Premium, human-grade AI calling in Telugu, Hindi & English at a fraction of a calling team's cost. Outcome-driven, TRAI & DPDP ready.",
     images: [{ url: "/opengraph-image" }],
   },
   twitter: {
     card: "summary_large_image",
-    title:
-      "SvaraCall AI — Affordable AI Outbound Calling Agent for Indian Businesses",
+    title: site.homeTitle,
     description:
       "Premium AI calling in Telugu, Hindi & English at a fraction of a calling team's cost. Outcome-driven, TRAI & DPDP ready.",
     images: ["/opengraph-image"],

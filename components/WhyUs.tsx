@@ -35,9 +35,9 @@ export default function WhyUs() {
                 {String(i + 1).padStart(2, "0")}
               </span>
               <div className="pt-1">
-                <h3 className="text-xl font-bold text-white md:text-2xl">
+                <p className="text-xl font-bold text-white md:text-2xl">
                   {card.title}
-                </h3>
+                </p>
                 <p className="mt-2 max-w-lg text-white/55">{card.body}</p>
               </div>
             </Reveal>

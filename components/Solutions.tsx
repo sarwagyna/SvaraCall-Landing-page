@@ -56,9 +56,9 @@ export default function Solutions() {
                     id={card.id}
                     className={`h-6 w-6 ${tone.icon}`}
                   />
-                  <h3 className={`mt-4 text-lg font-bold ${tone.title}`}>
+                  <p className={`mt-4 text-lg font-bold ${tone.title}`}>
                     {card.title}
-                  </h3>
+                  </p>
                   <p className={`mt-2 text-sm leading-relaxed ${tone.body}`}>
                     {card.body}
                   </p>

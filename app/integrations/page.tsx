@@ -7,9 +7,9 @@ import { site } from "@/lib/content";
 import { pageMetadata } from "@/lib/seoMeta";
 
 export const metadata = pageMetadata({
-  title: "Integrations — CRM, WhatsApp, Telephony & More",
+  title: "Integrations — Connect Any Tools You Already Use",
   description:
-    "Connect SvaraCall AI to the tools you already use — CRM, automation, e-commerce, WhatsApp, SMS, telephony, and more. Your stack stays yours.",
+    "SvaraCall AI integrates with the tools you already run — CRM, WhatsApp, telephony, sheets, and anything with an API. The catalog is a start; custom connections are standard.",
   path: "/integrations",
 });
 
@@ -24,7 +24,7 @@ const graph = {
       "@id": `${site.url}/integrations#page`,
       name: "SvaraCall AI Integrations",
       description:
-        "Catalog of CRM, automation, telephony, WhatsApp, and other tools that connect to SvaraCall AI voice agents.",
+        "SvaraCall AI connects to the tools a business already uses — listed integrations plus custom API bridges.",
       url: `${site.url}/integrations`,
       isPartOf: { "@id": `${site.url}/#website` },
       numberOfItems: integrationStats.total,

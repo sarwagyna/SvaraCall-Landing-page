@@ -4,17 +4,18 @@
 
 export const site = {
   name: "SvaraCall AI",
-  url: "https://svaracall.sarwagyna.com",
-  tagline: "AI outbound calling agent for Indian businesses",
+  url: "https://www.svaracall.com",
+  homeTitle: "SvaraCall — Affordable Outbound Calling Agent for India",
+  tagline: "Affordable outbound calling agent for India",
   legalName: "Sarwagyna Private Limited",
   city: "Ongole",
   state: "Andhra Pradesh",
   country: "India",
   cin: "U62013AP2026PTC124652",
   languages: ["Telugu", "Hindi", "English"] as const,
-  lastUpdated: "August 2026",
-  dateModified: "2026-08-02",
-  email: "contact@sarwagyna.com",
+  lastUpdated: "September 2026",
+  dateModified: "2026-09-12",
+  email: "contact@svaracall.com",
   whatsapp: "916305036991",
   parentUrl: "https://sarwagyna.com",
   // TODO: verify — replace with real profile URLs before launch

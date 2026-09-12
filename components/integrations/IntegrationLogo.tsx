@@ -84,7 +84,7 @@ export default function IntegrationLogo({
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={`/brand/integrations/${item.id}.svg`}
-        alt=""
+        alt={item.name}
         width={size}
         height={size}
         className={

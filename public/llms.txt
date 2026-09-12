@@ -46,63 +46,63 @@ SvaraCall AI is a product of Sarwagyna Private Limited, Ongole, Andhra Pradesh, 
 
 ## Contact
 
-- Website: https://svaracall.sarwagyna.com
-- Email: contact@sarwagyna.com
+- Website: https://www.svaracall.com
+- Email: contact@svaracall.com
 - WhatsApp (high-priority support): https://wa.me/916305036991
 - Parent company: https://sarwagyna.com
 - SvaraRx: https://svararx.sarwagyna.com
 
 ## Links
 
-- Home: https://svaracall.sarwagyna.com
-- Solutions: https://svaracall.sarwagyna.com/solutions
-- How it works: https://svaracall.sarwagyna.com/how-it-works
-- Voice agents: https://svaracall.sarwagyna.com/voice-agents
-- Languages: https://svaracall.sarwagyna.com/languages
-- English: https://svaracall.sarwagyna.com/languages/english
-- Hindi: https://svaracall.sarwagyna.com/languages/hindi
-- Hinglish: https://svaracall.sarwagyna.com/languages/hinglish
-- Telugu: https://svaracall.sarwagyna.com/languages/telugu
-- Tamil: https://svaracall.sarwagyna.com/languages/tamil
-- Bengali: https://svaracall.sarwagyna.com/languages/bengali
-- Marathi: https://svaracall.sarwagyna.com/languages/marathi
-- Gujarati: https://svaracall.sarwagyna.com/languages/gujarati
-- Kannada: https://svaracall.sarwagyna.com/languages/kannada
-- Malayalam: https://svaracall.sarwagyna.com/languages/malayalam
-- Punjabi: https://svaracall.sarwagyna.com/languages/punjabi
-- Integrations: https://svaracall.sarwagyna.com/integrations
-- Features: https://svaracall.sarwagyna.com/features
-- Compare: https://svaracall.sarwagyna.com/compare
-- Use cases: https://svaracall.sarwagyna.com/use-cases
-- Lead follow-up: https://svaracall.sarwagyna.com/use-cases/lead-follow-up
-- Appointment reminders: https://svaracall.sarwagyna.com/use-cases/appointment-reminders
-- AI receptionist: https://svaracall.sarwagyna.com/use-cases/ai-receptionist
-- Multilingual AI: https://svaracall.sarwagyna.com/features/multilingual-ai
-- Voice cloning: https://svaracall.sarwagyna.com/features/voice-cloning
-- Salesforce integration: https://svaracall.sarwagyna.com/integrations/salesforce
-- SvaraCall vs Retell AI: https://svaracall.sarwagyna.com/compare/svaracall-vs-retell-ai
-- By business: https://svaracall.sarwagyna.com/for
-- Dentists: https://svaracall.sarwagyna.com/for/dentists
-- Templates: https://svaracall.sarwagyna.com/templates
-- Appointment reminder script: https://svaracall.sarwagyna.com/templates/appointment-reminder-script
-- Industries: https://svaracall.sarwagyna.com/industries
-- Banking: https://svaracall.sarwagyna.com/industries/banking
-- Hotels: https://svaracall.sarwagyna.com/industries/hotels
-- Healthcare: https://svaracall.sarwagyna.com/industries/healthcare
-- Fintech: https://svaracall.sarwagyna.com/industries/fintech
-- Insurance: https://svaracall.sarwagyna.com/industries/insurance
-- Brokerage: https://svaracall.sarwagyna.com/industries/brokerage
-- Consultation: https://svaracall.sarwagyna.com/industries/consultation
-- E-commerce: https://svaracall.sarwagyna.com/industries/ecommerce
-- Real estate: https://svaracall.sarwagyna.com/industries/real-estate
-- HR tech: https://svaracall.sarwagyna.com/industries/hr-tech
-- Education: https://svaracall.sarwagyna.com/industries/education
-- Automotive: https://svaracall.sarwagyna.com/industries/automotive
-- Telecom & IT: https://svaracall.sarwagyna.com/industries/telecom
-- Compliance: https://svaracall.sarwagyna.com/compliance
-- FAQ: https://svaracall.sarwagyna.com/faq
-- Book a pilot: https://svaracall.sarwagyna.com/book-a-pilot
-- About: https://svaracall.sarwagyna.com/about
-- Partner: https://svaracall.sarwagyna.com/partner
+- Home: https://www.svaracall.com
+- Solutions: https://www.svaracall.com/solutions
+- How it works: https://www.svaracall.com/how-it-works
+- Voice agents: https://www.svaracall.com/voice-agents
+- Languages: https://www.svaracall.com/languages
+- English: https://www.svaracall.com/languages/english
+- Hindi: https://www.svaracall.com/languages/hindi
+- Hinglish: https://www.svaracall.com/languages/hinglish
+- Telugu: https://www.svaracall.com/languages/telugu
+- Tamil: https://www.svaracall.com/languages/tamil
+- Bengali: https://www.svaracall.com/languages/bengali
+- Marathi: https://www.svaracall.com/languages/marathi
+- Gujarati: https://www.svaracall.com/languages/gujarati
+- Kannada: https://www.svaracall.com/languages/kannada
+- Malayalam: https://www.svaracall.com/languages/malayalam
+- Punjabi: https://www.svaracall.com/languages/punjabi
+- Integrations: https://www.svaracall.com/integrations
+- Features: https://www.svaracall.com/features
+- Compare: https://www.svaracall.com/compare
+- Use cases: https://www.svaracall.com/use-cases
+- Lead follow-up: https://www.svaracall.com/use-cases/lead-follow-up
+- Appointment reminders: https://www.svaracall.com/use-cases/appointment-reminders
+- AI receptionist: https://www.svaracall.com/use-cases/ai-receptionist
+- Multilingual AI: https://www.svaracall.com/features/multilingual-ai
+- Voice cloning: https://www.svaracall.com/features/voice-cloning
+- Salesforce integration: https://www.svaracall.com/integrations/salesforce
+- SvaraCall vs Retell AI: https://www.svaracall.com/compare/svaracall-vs-retell-ai
+- By business: https://www.svaracall.com/for
+- Dentists: https://www.svaracall.com/for/dentists
+- Templates: https://www.svaracall.com/templates
+- Appointment reminder script: https://www.svaracall.com/templates/appointment-reminder-script
+- Industries: https://www.svaracall.com/industries
+- Banking: https://www.svaracall.com/industries/banking
+- Hotels: https://www.svaracall.com/industries/hotels
+- Healthcare: https://www.svaracall.com/industries/healthcare
+- Fintech: https://www.svaracall.com/industries/fintech
+- Insurance: https://www.svaracall.com/industries/insurance
+- Brokerage: https://www.svaracall.com/industries/brokerage
+- Consultation: https://www.svaracall.com/industries/consultation
+- E-commerce: https://www.svaracall.com/industries/ecommerce
+- Real estate: https://www.svaracall.com/industries/real-estate
+- HR tech: https://www.svaracall.com/industries/hr-tech
+- Education: https://www.svaracall.com/industries/education
+- Automotive: https://www.svaracall.com/industries/automotive
+- Telecom & IT: https://www.svaracall.com/industries/telecom
+- Compliance: https://www.svaracall.com/compliance
+- FAQ: https://www.svaracall.com/faq
+- Book a pilot: https://www.svaracall.com/book-a-pilot
+- About: https://www.svaracall.com/about
+- Partner: https://www.svaracall.com/partner
 
-Last updated: August 2026
+Last updated: September 2026

@@ -58,18 +58,18 @@ export const footerColumns: FooterColumn[] = [
   {
     title: "Platform",
     links: [
-      { href: "/how-it-works", label: "How it works" },
-      { href: "/voice-agents", label: "Voice agents" },
-      { href: "/integrations", label: "Integrations" },
-      { href: "/languages", label: "Languages" },
+      { href: "/how-it-works", label: "How SvaraCall works" },
+      { href: "/voice-agents", label: "Voice agent types" },
+      { href: "/integrations", label: "CRM & dialer integrations" },
+      { href: "/languages", label: "Voice languages" },
       { href: "/compliance", label: "Security & compliance" },
-      { href: bookPilotHref, label: "Book a pilot" },
+      { href: bookPilotHref, label: "Schedule a pilot" },
     ],
   },
   {
     title: "Solutions",
     links: [
-      { href: "/solutions", label: "All solutions" },
+      { href: "/solutions", label: "Browse solutions" },
       { href: "/solutions/lead-follow-up", label: "Lead follow-up" },
       { href: "/solutions/appointment-booking", label: "Appointment booking" },
       { href: "/solutions/no-show-recovery", label: "No-show recovery" },
@@ -80,7 +80,7 @@ export const footerColumns: FooterColumn[] = [
   {
     title: "Industries",
     links: [
-      { href: "/industries", label: "All industries" },
+      { href: "/industries", label: "Browse industries" },
       { href: "/industries/ecommerce", label: "E-commerce" },
       { href: "/industries/healthcare", label: "Healthcare" },
       { href: "/industries/fintech", label: "Lending & collections" },
@@ -93,13 +93,13 @@ export const footerColumns: FooterColumn[] = [
   {
     title: "Use cases",
     links: [
-      { href: "/use-cases", label: "All use cases" },
-      { href: "/use-cases/lead-follow-up", label: "Lead follow-up" },
-      { href: "/use-cases/appointment-reminders", label: "Appointment reminders" },
+      { href: "/use-cases", label: "Browse use cases" },
+      { href: "/use-cases/lead-follow-up", label: "Lead follow-up calls" },
+      { href: "/use-cases/appointment-reminders", label: "Appointment reminder calls" },
       { href: "/use-cases/debt-collection", label: "Debt collection" },
       { href: "/use-cases/ai-receptionist", label: "AI receptionist" },
       { href: "/use-cases/insurance-renewals", label: "Insurance renewals" },
-      { href: "/use-cases/patient-follow-up", label: "Patient follow-up" },
+      { href: "/use-cases/patient-follow-up", label: "Patient follow-up calls" },
     ],
   },
   {
@@ -130,11 +130,11 @@ export const footerColumns: FooterColumn[] = [
     title: "Templates",
     links: [
       { href: "/templates", label: "All templates" },
-      { href: "/templates/lead-follow-up-script", label: "Lead follow-up" },
-      { href: "/templates/appointment-reminder-script", label: "Appointment reminder" },
-      { href: "/templates/collection-call-script", label: "Collection call" },
-      { href: "/templates/insurance-renewal-script", label: "Insurance renewal" },
-      { href: "/templates/patient-follow-up-script", label: "Patient follow-up" },
+      { href: "/templates/lead-follow-up-script", label: "Lead follow-up script" },
+      { href: "/templates/appointment-reminder-script", label: "Appointment reminder script" },
+      { href: "/templates/collection-call-script", label: "Collection call script" },
+      { href: "/templates/insurance-renewal-script", label: "Insurance renewal script" },
+      { href: "/templates/patient-follow-up-script", label: "Patient follow-up script" },
     ],
   },
   {
@@ -151,15 +151,14 @@ export const footerColumns: FooterColumn[] = [
   {
     title: "Company",
     links: [
-      { href: "/about", label: "About" },
-      { href: "/partner", label: "Partner" },
+      { href: "/about", label: "About the company" },
+      { href: "/partner", label: "Partner program" },
       {
         href: "https://sarwagyna.com/careers",
         label: "Careers",
         external: true,
       },
-      { href: "/faq", label: "FAQ" },
-      { href: "/compliance", label: "Compliance" },
+      { href: "/faq", label: "Help & FAQ" },
     ],
   },
 ];

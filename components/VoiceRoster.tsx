@@ -143,7 +143,7 @@ export default function VoiceRoster() {
                 >
                   <RemoteImage
                     src={avatar}
-                    alt=""
+                    alt={`${voice.name} voice sample`}
                     fill
                     sizes="56px"
                     className="object-cover"

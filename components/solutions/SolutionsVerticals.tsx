@@ -47,7 +47,7 @@ export default function SolutionsVerticals() {
                       <>
                         <RemoteImage
                           src={photo.src}
-                          alt=""
+                          alt={photo.alt}
                           fill
                           sizes="12vw"
                           className="object-cover opacity-55 mix-blend-luminosity transition-opacity duration-500 group-hover:opacity-70"

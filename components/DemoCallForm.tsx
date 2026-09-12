@@ -84,19 +84,28 @@ export default function DemoCallForm({
     <form
       onSubmit={onSubmit}
       noValidate
+      className={isCompact && variant === "inline" ? "w-fit max-w-full" : undefined}
     >
       <div
         className={
           variant === "inline"
             ? `flex flex-col ${isCompact ? "gap-2" : "gap-3"} sm:flex-row sm:items-stretch`
-            : "space-y-3"
+            : isCompact
+              ? "space-y-2"
+              : "space-y-3"
         }
       >
         <div
-          className={`flex min-w-0 flex-1 items-stretch overflow-hidden rounded-input ring-1 ${inputWrapClass} focus-within:ring-2`}
+          className={`flex items-stretch overflow-hidden rounded-input ring-1 ${inputWrapClass} focus-within:ring-2 ${
+            isCompact && variant === "inline"
+              ? "w-auto shrink-0"
+              : "min-w-0 w-full flex-1"
+          }`}
         >
           <span
-            className={`grid shrink-0 place-items-center px-4 text-sm font-semibold ${prefixClass}`}
+            className={`grid shrink-0 place-items-center font-semibold ${prefixClass} ${
+              isCompact ? "px-2.5 text-xs" : "px-4 text-sm"
+            }`}
           >
             +91
           </span>
@@ -114,24 +123,32 @@ export default function DemoCallForm({
             }}
             aria-invalid={error ? true : undefined}
             aria-describedby={error ? `${inputId}-error` : undefined}
-            className={`${isCompact ? "h-8 px-3 text-sm" : "h-12 px-4"} w-full outline-none ${inputClass}`}
+            className={`${
+              isCompact
+                ? variant === "inline"
+                  ? "h-8 w-[9.5rem] px-2.5 text-sm"
+                  : "h-8 w-full px-2.5 text-sm"
+                : "h-12 w-full px-4"
+            } outline-none ${inputClass}`}
           />
         </div>
         <button
           type="submit"
-          className={`inline-flex shrink-0 items-center justify-center gap-2 rounded-pill bg-primary font-semibold text-on-primary transition-colors hover:bg-primary-active ${
-            isCompact ? "h-8 text-sm" : "h-12 text-base"
+          className={`inline-flex shrink-0 items-center justify-center rounded-pill bg-primary font-semibold text-on-primary transition-colors hover:bg-primary-active ${
+            isCompact ? "h-8 gap-1.5 text-xs" : "h-12 gap-2 text-base"
           } ${
             variant === "inline"
               ? isCompact
-                ? "px-4 sm:px-5"
+                ? "px-3 sm:px-4"
                 : "px-6 sm:px-8"
-              : "w-full px-8"
+              : isCompact
+                ? "w-full px-4"
+                : "w-full px-8"
           }`}
         >
           <svg
-            width="20"
-            height="20"
+            width={isCompact ? 14 : 20}
+            height={isCompact ? 14 : 20}
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -146,11 +163,20 @@ export default function DemoCallForm({
         </button>
       </div>
       {error && (
-        <p id={`${inputId}-error`} className={`mt-2 text-sm ${errorClass}`}>
+        <p
+          id={`${inputId}-error`}
+          className={`mt-2 text-sm ${errorClass} ${
+            isCompact && variant === "inline" ? "w-0 min-w-full text-center" : ""
+          }`}
+        >
           {error}
         </p>
       )}
-      <p className={`mt-2 ${isCompact ? "text-[11px]" : "text-xs"} ${finePrintClass}`}>
+      <p
+        className={`mt-2 ${isCompact ? "text-[11px]" : "text-xs"} ${finePrintClass} ${
+          isCompact && variant === "inline" ? "w-0 min-w-full text-center" : ""
+        }`}
+      >
         We&apos;ll only use your number to place this demo call.
       </p>
     </form>
