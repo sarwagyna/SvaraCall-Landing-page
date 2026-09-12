@@ -4,7 +4,7 @@ import type { NextRequest } from "next/server";
 /** Junk single-char paths Google crawled — permanently collapse to home. */
 const JUNK_PATHS = new Set(["/$", "/&"]);
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   if (JUNK_PATHS.has(pathname)) {

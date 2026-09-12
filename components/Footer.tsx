@@ -132,6 +132,44 @@ export default function Footer() {
           </nav>
         </div>
 
+        {/* Backed by */}
+        <div className="mt-12 border-t border-white/10 pt-8">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/45">
+            Backed by
+          </p>
+          <div className="mt-5 flex flex-wrap items-center gap-x-8 gap-y-5">
+            <a
+              href="https://cartesia.ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="opacity-90 transition-opacity hover:opacity-100"
+            >
+              <Image
+                src="/Cartesia_Startups_Logo.png"
+                alt="Cartesia AI Startups"
+                width={280}
+                height={29}
+                className="h-7 w-auto"
+              />
+            </a>
+            <a
+              href="https://www.nvidia.com/en-us/startups/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="opacity-90 transition-opacity hover:opacity-100"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/nvidia-inception-program-badge-rgb-for-screen.svg"
+                alt="NVIDIA Inception Program"
+                width={140}
+                height={60}
+                className="h-[52px] w-auto"
+              />
+            </a>
+          </div>
+        </div>
+
         {/* Languages bar */}
         <div className="mt-12 border-t border-white/10 pt-8">
           <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/45">
