@@ -89,9 +89,9 @@ export default function DemoCallForm({
       <div
         className={
           variant === "inline"
-            ? `flex flex-col ${isCompact ? "gap-2" : "gap-3"} sm:flex-row sm:items-stretch`
+            ? `flex flex-row items-stretch ${isCompact ? "gap-2" : "gap-3"}`
             : isCompact
-              ? "space-y-2"
+              ? "flex flex-row items-stretch gap-2"
               : "space-y-3"
         }
       >
@@ -135,15 +135,13 @@ export default function DemoCallForm({
         <button
           type="submit"
           className={`inline-flex shrink-0 items-center justify-center rounded-pill bg-primary font-semibold text-on-primary transition-colors hover:bg-primary-active ${
-            isCompact ? "h-8 gap-1.5 text-xs" : "h-12 gap-2 text-base"
+            isCompact ? "h-8 gap-1.5 px-3 text-xs" : "h-12 gap-2 text-base"
           } ${
-            variant === "inline"
+            variant === "inline" || isCompact
               ? isCompact
-                ? "px-3 sm:px-4"
+                ? ""
                 : "px-6 sm:px-8"
-              : isCompact
-                ? "w-full px-4"
-                : "w-full px-8"
+              : "w-full px-8"
           }`}
         >
           <svg

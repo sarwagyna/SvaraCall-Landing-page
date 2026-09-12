@@ -107,7 +107,7 @@ export default function CardNav({
         className={`card-nav ${isExpanded ? "open" : ""} block rounded-xl shadow-md relative overflow-hidden ${navClassName}`}
         style={{ backgroundColor: baseColor }}
       >
-        <div className="card-nav-top relative z-[2] flex h-[60px] items-center justify-between p-2 pl-[1.1rem]">
+        <div className="card-nav-top relative z-[2] flex h-[60px] items-center p-2 pl-[1.1rem] md:justify-between">
           <div
             className={`hamburger-menu ${isExpanded ? "open" : ""} group order-3 flex h-full cursor-pointer flex-col items-center justify-center gap-[6px] md:order-none`}
             onClick={toggleMenu}
@@ -154,7 +154,7 @@ export default function CardNav({
             </span>
           </Link>
 
-          <div className="order-2 flex h-full items-center gap-1.5 md:order-none">
+          <div className="order-2 ml-auto flex h-full items-center gap-1.5 md:order-none md:ml-0">
             {loginHref ? (
               <a
                 href={loginHref}
