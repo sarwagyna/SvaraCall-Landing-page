@@ -10,6 +10,7 @@ import {
 } from "@/lib/integrationPages";
 import { nichePages } from "@/lib/nichePages";
 import { templatePages } from "@/lib/templatePages";
+import { launchHref } from "@/lib/launch";
 import { routes, bookPilotHref } from "@/lib/nav";
 import { publishedLegalDocs } from "@/lib/legalDocs";
 
@@ -34,6 +35,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified,
       changeFrequency: "monthly" as const,
       priority: 0.9,
+    },
+    {
+      url: `${site.url}${launchHref}`,
+      lastModified,
+      changeFrequency: "daily" as const,
+      priority: 0.95,
     },
     ...["/about", "/partner"].map((path) => ({
       url: `${site.url}${path}`,

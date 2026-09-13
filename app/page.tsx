@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import nextDynamic from "next/dynamic";
 import Hero from "@/components/Hero";
 import Problem from "@/components/Problem";
@@ -7,14 +8,18 @@ import Outcomes from "@/components/Outcomes";
 import WhyUs from "@/components/WhyUs";
 import CtaBand from "@/components/CtaBand";
 import LazyMount from "@/components/LazyMount";
+import LaunchPageView, {
+  getLaunchPageMetadata,
+} from "@/components/LaunchPageView";
 import { site, canonicalSentence, useCases } from "@/lib/content";
 import { homeFaqs } from "@/lib/homeFaq";
+import { isLaunchAsHomepage } from "@/lib/launch";
 import { breadcrumbList, faqPageSchema } from "@/lib/schema";
 
-// Fully static marketing page — no request-time rendering.
-export const dynamic = "force-static";
+// Revalidate often enough to swap back to the marketing homepage
+// at 12:15 pm IST on 14 September 2026 without a redeploy.
+export const revalidate = 60;
 
-// Defer interactive below-fold islands so their JS isn't on the critical path.
 const RoiCalculator = nextDynamic(() => import("@/components/RoiCalculator"), {
   loading: () => (
     <div className="mx-auto max-w-6xl px-5 py-16 md:py-24" aria-hidden>
@@ -59,7 +64,14 @@ const graph = {
   ],
 };
 
-export default function Home() {
+export function generateMetadata(): Metadata {
+  if (isLaunchAsHomepage()) {
+    return getLaunchPageMetadata("/");
+  }
+  return {};
+}
+
+function MarketingHome() {
   return (
     <>
       <main className="pb-20 md:pb-0">
@@ -84,4 +96,11 @@ export default function Home() {
       />
     </>
   );
+}
+
+export default function Home() {
+  if (isLaunchAsHomepage()) {
+    return <LaunchPageView path="/" />;
+  }
+  return <MarketingHome />;
 }

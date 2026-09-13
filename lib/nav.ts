@@ -1,4 +1,5 @@
 import { site } from "@/lib/content";
+import { launchHref } from "@/lib/launch";
 
 // Shared route list used by Nav, Footer, Explore, and sitemap.
 export type Route = { href: string; label: string };
@@ -21,6 +22,7 @@ export const routes: Route[] = [
 ];
 
 export const bookPilotHref = "/book-a-pilot";
+export { launchHref };
 export const appLoginHref = site.appUrl;
 
 /** Vertical space reserved for the fixed CardNav bar */
@@ -155,6 +157,7 @@ export const footerColumns: FooterColumn[] = [
     title: "Company",
     links: [
       { href: "/about", label: "About the company" },
+      { href: launchHref, label: "Pilot launch" },
       { href: "/partner", label: "Partner program" },
       {
         href: "https://sarwagyna.com/careers",

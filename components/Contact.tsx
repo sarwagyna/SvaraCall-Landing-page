@@ -11,7 +11,25 @@ const callVolumes = [
   "10,000+ calls / month",
 ] as const;
 
-export default function Contact() {
+type ContactProps = {
+  id?: string;
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+  submitLabel?: string;
+  headingLevel?: 1 | 2;
+  messageIntro?: string;
+};
+
+export default function Contact({
+  id = "top",
+  eyebrow = "Book a pilot",
+  title = "Deploy your AI voice agent",
+  description = "Fill out the form and we'll set up a pilot for your business — with a live demo call in Telugu, Hindi, or English.",
+  submitLabel = "Book my pilot →",
+  headingLevel = 1,
+  messageIntro = "Hi SvaraCall AI, I'd like to book a pilot.",
+}: ContactProps) {
   const [fullName, setFullName] = useState("");
   const [phone, setPhone] = useState("");
   const [business, setBusiness] = useState("");
@@ -24,7 +42,7 @@ export default function Contact() {
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const message = [
-      "Hi SvaraCall AI, I'd like to book a pilot.",
+      messageIntro,
       "",
       `Full name: ${fullName}`,
       `Phone: ${phone}`,
@@ -47,14 +65,17 @@ export default function Contact() {
   const labelClass = "text-sm font-semibold text-ink";
 
   return (
-    <section id="top" className="bg-canvas-soft">
+    <section id={id} className="scroll-mt-[calc(60px+2em)] bg-canvas-soft">
       <div className="mx-auto max-w-3xl px-5 py-16 md:py-24">
         <div className="text-center">
-          <p className="eyebrow">Book a pilot</p>
-          <h1 className="display display-hero mt-4">Deploy your AI voice agent</h1>
+          <p className="eyebrow">{eyebrow}</p>
+          {headingLevel === 1 ? (
+            <h1 className="display display-hero mt-4">{title}</h1>
+          ) : (
+            <h2 className="display display-hero mt-4">{title}</h2>
+          )}
           <p className="mx-auto mt-5 max-w-xl text-lg text-body">
-            Fill out the form and we&apos;ll set up a pilot for your business —
-            with a live demo call in Telugu, Hindi, or English.
+            {description}
           </p>
         </div>
 
@@ -235,7 +256,7 @@ export default function Contact() {
                 type="submit"
                 className="mt-2 inline-flex h-12 items-center justify-center gap-2 rounded-pill bg-primary px-8 text-base font-semibold text-on-primary transition-colors hover:bg-primary-active"
               >
-                Book my pilot →
+                {submitLabel}
               </button>
               <p className="text-sm text-mute">
                 By booking a pilot you agree to our{" "}
