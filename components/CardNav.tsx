@@ -149,8 +149,9 @@ export default function CardNav({
               className="logo h-7 w-7"
               priority
             />
-            <span className="hidden text-sm font-semibold text-white/90 sm:inline">
-              SvaraCall AI
+            <span className="font-poppins text-[15px] font-semibold tracking-tight text-white md:font-sans md:text-sm md:text-white/90">
+              SvaraCall
+              <span className="hidden md:inline"> AI</span>
             </span>
           </Link>
 
