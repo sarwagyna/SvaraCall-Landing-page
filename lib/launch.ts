@@ -76,6 +76,21 @@ export function isLaunchLive(
   return nowMs >= targetMs;
 }
 
+/** Subscribe to the launch instant. Used by client countdown/nav (cleans up timers). */
+export function subscribeLaunchLive(onStoreChange: () => void) {
+  let timeoutId = 0;
+  const tick = () => {
+    onStoreChange();
+    if (isLaunchLive()) return;
+    timeoutId = window.setTimeout(
+      tick,
+      Math.max(16, 1000 - (getIstNowMs() % 1000)),
+    );
+  };
+  timeoutId = window.setTimeout(tick, 0);
+  return () => window.clearTimeout(timeoutId);
+}
+
 function parseUntilIso(raw: string | undefined, fallback: string): string {
   const value = raw?.trim();
   if (!value) return fallback;

@@ -254,7 +254,7 @@ export default function Contact({
 
               <button
                 type="submit"
-                className="mt-2 inline-flex h-12 items-center justify-center gap-2 rounded-pill bg-primary px-8 text-base font-semibold text-on-primary transition-colors hover:bg-primary-active"
+                className="mt-2 inline-flex h-12 w-full items-center justify-center gap-2 rounded-pill bg-primary px-8 text-base font-semibold text-on-primary transition-colors hover:bg-primary-active"
               >
                 {submitLabel}
               </button>

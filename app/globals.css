@@ -129,6 +129,15 @@ select {
   font-family: var(--font-sans);
 }
 
+/*
+  `color-scheme: dark` makes native <button> labels light.
+  Primary lime CTAs need the dark on-primary ink.
+*/
+button.bg-primary {
+  color: var(--color-on-primary) !important;
+  -webkit-text-fill-color: var(--color-on-primary);
+}
+
 h1,
 h2,
 h3 {

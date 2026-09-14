@@ -1,7 +1,9 @@
 "use client";
 
 import { usePathname } from "next/navigation";
+import { useSyncExternalStore } from "react";
 import CardNav, { type CardNavItem } from "@/components/CardNav";
+import { isLaunchLive, subscribeLaunchLive } from "@/lib/launch";
 import { appLoginHref, bookPilotHref, primaryNav } from "@/lib/nav";
 
 const items: CardNavItem[] = [
@@ -27,6 +29,11 @@ const items: CardNavItem[] = [
 
 export default function Nav() {
   const pathname = usePathname();
+  const launched = useSyncExternalStore(
+    subscribeLaunchLive,
+    isLaunchLive,
+    isLaunchLive,
+  );
 
   return (
     <CardNav
@@ -42,6 +49,7 @@ export default function Nav() {
       navClassName="backdrop-blur-md"
       ctaLabel="Book a pilot"
       ctaHref={bookPilotHref}
+      ctaVisibleOnMobile={launched}
       loginLabel="Login"
       loginHref={appLoginHref}
       ease="power3.out"

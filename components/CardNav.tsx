@@ -35,6 +35,8 @@ export interface CardNavProps {
   loginHref?: string;
   navClassName?: string;
   onNavigate?: () => void;
+  /** After launch, show Book a pilot on small screens too. */
+  ctaVisibleOnMobile?: boolean;
 }
 
 function ArrowUpRightIcon({ className }: { className?: string }) {
@@ -73,6 +75,7 @@ export default function CardNav({
   loginHref,
   navClassName = "",
   onNavigate,
+  ctaVisibleOnMobile = false,
 }: CardNavProps) {
   const [isExpanded, setIsExpanded] = useState(false);
   const panelId = useId();
@@ -166,7 +169,9 @@ export default function CardNav({
             ) : null}
             <Link
               href={ctaHref}
-              className="card-nav-cta-button hidden h-full items-center rounded-[calc(0.75rem-0.2rem)] border-0 px-4 font-medium no-underline transition-colors duration-300 md:inline-flex"
+              className={`card-nav-cta-button h-full items-center rounded-[calc(0.75rem-0.2rem)] border-0 px-3 text-sm font-medium no-underline transition-colors duration-300 md:px-4 md:text-base ${
+                ctaVisibleOnMobile ? "inline-flex" : "hidden md:inline-flex"
+              }`}
               style={{ backgroundColor: buttonBgColor, color: buttonTextColor }}
               onClick={handleLinkClick}
             >
